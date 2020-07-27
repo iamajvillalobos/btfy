@@ -1,3 +1,16 @@
+<h4>Instruction:</h4>
+<ol>
+  <li>
+    <p>
+      Add a CNAME entry for "staging.btfy.io". We suggest you add a letter as a subdomain like s.yourdomain.com
+    </p>
+    <p>
+      <img src="https://cleanshot-cloud-fra.s3.eu-central-1.amazonaws.com/media/6272/eeC3CQlHcKj1HJYUQzstn3wXErZGxlKrV6Rjkw60.jpeg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5MF2VVMNBYBOTT5A%2F20200727%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T110621Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=2fc2529a843c2cf6c7651737b8c2a83261c3a46832bd8d05a6c0795dbc5a5786"/>
+    </p>
+  </li>
+  <li>Copy the whole subdomain WITHOUT the http/https like s.yourdomain.com to the "Name" field</li>
+</ol>
+
 <%= form_with(model: custom_domain, local: true) do |form| %>
   <% if custom_domain.errors.any? %>
     <div id="error_explanation">
@@ -16,10 +29,10 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+ <!--  <div class="field">
     <%= form.label :redirect_url %>
     <%= form.text_field :redirect_url %>
-  </div>
+  </div> -->
 
   <div class="actions">
     <%= form.submit %>
