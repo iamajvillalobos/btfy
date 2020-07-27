@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :custom_domains
   resources :links
+  resource :billing, only: [:show]
 
 	authenticate :user do |user|
     mount Sidekiq::Web => '/sidekiq'
