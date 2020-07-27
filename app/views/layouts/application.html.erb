@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <nav style="display:flex; padding-bottom: 1rem;">
+      <%= link_to "Links", links_path %>
+      <%= link_to "Domains", custom_domains_path, { style: "margin-left: 1rem;" } %>
+    </nav>
     <%= yield %>
   </body>
 </html>
