@@ -1,7 +1,9 @@
 class Link < ApplicationRecord
-	belongs_to :custom_domain, optional: true
 	validates_presence_of :destination_url, :slug, :name
 	validates_uniqueness_of :slug
+
+	belongs_to :custom_domain, optional: true
+	belongs_to :user
 
 	def redirect_url
 		Rails.application.routes.url_helpers.redirect_url(

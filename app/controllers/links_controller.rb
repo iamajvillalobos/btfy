@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    @links = current_user.links
   end
 
   # GET /links/1
@@ -14,7 +14,7 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    @link = Link.new
+    @link = current_user.links.new
   end
 
   # GET /links/1/edit
@@ -24,7 +24,7 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    @link = current_user.links.new(link_params)
 
     respond_to do |format|
       if @link.save
@@ -64,7 +64,7 @@ class LinksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_link
-      @link = Link.find(params[:id])
+      @link = current_user.links.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -4,7 +4,7 @@ class CustomDomainsController < ApplicationController
   # GET /custom_domains
   # GET /custom_domains.json
   def index
-    @custom_domains = CustomDomain.all
+    @custom_domains = current_user.custom_domains
   end
 
   # GET /custom_domains/1
@@ -14,7 +14,7 @@ class CustomDomainsController < ApplicationController
 
   # GET /custom_domains/new
   def new
-    @custom_domain = CustomDomain.new
+    @custom_domain = current_user.custom_domains.new
   end
 
   # GET /custom_domains/1/edit
@@ -24,7 +24,7 @@ class CustomDomainsController < ApplicationController
   # POST /custom_domains
   # POST /custom_domains.json
   def create
-    @custom_domain = CustomDomain.new(custom_domain_params)
+    @custom_domain = current_user.custom_domains.new(custom_domain_params)
 
     respond_to do |format|
       if @custom_domain.save
@@ -64,7 +64,7 @@ class CustomDomainsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_custom_domain
-      @custom_domain = CustomDomain.find(params[:id])
+      @custom_domain = current_user.custom_domains.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

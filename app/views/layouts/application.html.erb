@@ -4,15 +4,22 @@
     <title>Btfy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
   </head>
 
   <body>
     <nav style="display:flex; padding-bottom: 1rem;">
       <%= link_to "Links", links_path %>
       <%= link_to "Domains", custom_domains_path, { style: "margin-left: 1rem;" } %>
+
+      <% if current_user %>
+        <%= link_to "Sign out", destroy_user_session_path, { style: "margin-left: auto;", method: :delete } %>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path, { style: "margin-left: auto;" } %>
+      <% end %>
     </nav>
 
     <p class="notice"><%= notice %></p>
