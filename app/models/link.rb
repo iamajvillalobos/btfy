@@ -3,8 +3,15 @@ class Link < ApplicationRecord
 
 	def redirect_url
 		Rails.application.routes.url_helpers.redirect_url(
-			host: custom_domain.name || "http://localhost:3000",
+			host: host,
 			slug: slug
 		)
+	end
+
+	private
+
+	def host
+		return custom_domain.name if custom_domain
+		Rails.application.routes.default_url_options[:host]
 	end
 end

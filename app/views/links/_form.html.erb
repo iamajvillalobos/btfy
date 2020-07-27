@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :custom_domain %>
-    <%= form.select :custom_domain_id, CustomDomain.all.map { |cd| [cd.name, cd.id] } %>
+    <%= form.select :custom_domain_id, CustomDomain.all.map { |cd| [cd.name, cd.id] }, { include_blank: true } %>
   </div>
 
   <div class="actions">
