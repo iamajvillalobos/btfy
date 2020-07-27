@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_081359) do
+ActiveRecord::Schema.define(version: 2020_07_27_084911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "custom_domains", force: :cascade do |t|
+    t.string "name"
+    t.string "redirect_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "links", force: :cascade do |t|
     t.text "destination_url"
@@ -21,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_07_27_081359) do
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "custom_domain_id"
+    t.index ["custom_domain_id"], name: "index_links_on_custom_domain_id"
   end
 
 end

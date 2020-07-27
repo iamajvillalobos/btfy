@@ -26,6 +26,11 @@
     <%= form.text_field :slug %>
   </div>
 
+  <div class="field">
+    <%= form.label :custom_domain %>
+    <%= form.select :custom_domain_id, CustomDomain.all.map { |cd| [cd.name, cd.id] } %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
