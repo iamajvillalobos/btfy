@@ -1,4 +1,5 @@
 class CustomDomainsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_custom_domain, only: [:show, :edit, :update, :destroy]
 
   # GET /custom_domains
