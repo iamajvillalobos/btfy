@@ -16,7 +16,10 @@
       <%= link_to "Domains", custom_domains_path, { style: "margin-left: 1rem;" } %>
 
       <% if current_user %>
-        <%= link_to "Sign out", destroy_user_session_path, { style: "margin-left: auto;", method: :delete } %>
+        <div style="margin-left: auto;">
+          <%= link_to "Sidekiq", "/sidekiq", { style: "margin-right: 1rem;" }%> 
+          <%= link_to "Sign out", destroy_user_session_path, { style: "margin-left: auto;", method: :delete } %>
+        </div>
       <% else %>
         <%= link_to "Log in", new_user_session_path, { style: "margin-left: auto;" } %>
       <% end %>
