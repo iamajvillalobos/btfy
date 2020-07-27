@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	root to: "links#index"
+
   resources :custom_domains
   resources :links
 
