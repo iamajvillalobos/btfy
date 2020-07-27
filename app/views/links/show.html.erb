@@ -15,5 +15,10 @@
   <%= @link.slug %>
 </p>
 
+<p>
+	<strong>Visit Counts:</strong>
+  <%= LinkStatsViewerAction.execute(link: @link).visit_count %>
+</p>
+
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
