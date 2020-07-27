@@ -16,7 +16,7 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link.name %></td>
-        <td><%= link.destination_url %></td>
+        <td><%= truncate(link.destination_url, length: 50) %></td>
         <td><%= link_to link.redirect_url, link.redirect_url %></td>
         <td><%= link_to 'Show', link %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
