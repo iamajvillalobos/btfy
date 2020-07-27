@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :custom_domains
   resources :links
 
   get "/:slug", to: "redirect_links#new", as: :redirect

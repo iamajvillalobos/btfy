@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @custom_domain.name %>
+</p>
+
+<p>
+  <strong>Redirect url:</strong>
+  <%= @custom_domain.redirect_url %>
+</p>
+
+<%= link_to 'Edit', edit_custom_domain_path(@custom_domain) %> |
+<%= link_to 'Back', custom_domains_path %>

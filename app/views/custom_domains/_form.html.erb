@@ -1,0 +1,27 @@
+<%= form_with(model: custom_domain, local: true) do |form| %>
+  <% if custom_domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(custom_domain.errors.count, "error") %> prohibited this custom_domain from being saved:</h2>
+
+      <ul>
+        <% custom_domain.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :redirect_url %>
+    <%= form.text_field :redirect_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
