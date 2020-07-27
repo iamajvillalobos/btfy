@@ -1,6 +1,7 @@
 class CustomDomainsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_custom_domain, only: [:show, :edit, :update, :destroy]
+  skip_before_action :track_ahoy_visit
 
   # GET /custom_domains
   # GET /custom_domains.json
