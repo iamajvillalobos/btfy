@@ -1,4 +1,6 @@
 <div data-controller="subscription">
+	<div data-target="subscription.user"><%= current_user.to_json %></div>
+
 	<h2>Basic Plan</h2>
 
 	<ul>
@@ -9,5 +11,7 @@
 		<li>Device Type tracking</li>
 	</ul>
 
-	<a href="#!" class="paddle_button" data-product="610658">Subscribe</a>
+	<button href="#!" data-action="subscription#subscribe">
+		Subscribe
+	</button>
 </div>

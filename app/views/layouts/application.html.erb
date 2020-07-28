@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
 </head>
   </head>
 
@@ -30,10 +31,5 @@
     <p class="alert"><%= alert %></p>
     
     <%= yield %>
-
-    <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-    <script type="text/javascript">
-      Paddle.Setup({ vendor: 118869 });
-    </script>
   </body>
 </html>
