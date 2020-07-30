@@ -2,11 +2,13 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   devise_for :users
-	root to: "links#index"
 
   resources :custom_domains
   resources :links
   resource :billing, only: [:show]
+  resource :dashboard, only: [:show]
+
+  root to: "dashboard#show"
 
 	authenticate :user do |user|
     mount Sidekiq::Web => '/sidekiq'
