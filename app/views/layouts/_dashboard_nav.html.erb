@@ -1,0 +1,16 @@
+<nav class="bg-indigo-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <%= link_to "Dashboard", root_path, class: "text-white" %>
+        <%= link_to "Links", links_path, class: "ml-4 text-white" %>
+        <%= link_to "Domains", custom_domains_path, class: "ml-4 text-white" %>
+      </div>
+
+      <div class="flex items-center">
+        <%= link_to "Settings", settings_path, class: "text-white" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "ml-4 text-white" %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -8,10 +8,12 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-</head>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+    <%= render partial: "layouts/dashboard_nav", current_user: current_user %>
   </body>
 </html>

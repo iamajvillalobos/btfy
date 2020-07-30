@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :links
   resource :billing, only: [:show]
   resource :dashboard, only: [:show]
+  resource :settings, only: [:show]
 
   root to: "dashboard#show"
 

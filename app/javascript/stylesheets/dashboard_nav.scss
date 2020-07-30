@@ -1,0 +1,16 @@
+.active-nav-link {
+	@apply border-indigo-500 text-gray-900;
+
+	&:focus {
+		color: red;
+		@apply outline-none border-indigo-700
+	}
+}
+
+.inactive-nav-link {
+	@apply border-transparent text-gray-500;
+
+	&:hover, &:focus {
+		@apply border-gray-300 text-gray-700;
+	}
+}

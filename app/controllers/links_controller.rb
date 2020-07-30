@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  layout 'dashboard'
+  
   before_action :authenticate_user!
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
