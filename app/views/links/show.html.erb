@@ -17,7 +17,7 @@
 
 <p>
 	<strong>Visit Counts:</strong>
-  <%= LinkStatsViewerAction.execute(link: @link).visit_count %>
+  <%= LinkStatsViewerAction.execute(link: @link).inspect %>
 </p>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
