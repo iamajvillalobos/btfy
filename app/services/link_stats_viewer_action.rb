@@ -5,11 +5,12 @@ class LinkStatsViewerAction
 
 	executed do |ctx|
 		events = Ahoy::Event.where_props(link_id: ctx.link.id)
+		uniq_events = events.uniq(&:visit_id)
 
 		ctx.unique_visit_count = events.distinct.pluck(:visit_id).count
 		ctx.visit_count = events.pluck(:visit_id).count
-		ctx.devices = events.map { |e| e.visit.device_type }.tally
-		ctx.browsers = events.map { |e| e.visit.browser }.tally
-		ctx.countries = events.map { |e| e.visit.country }.tally
+		ctx.devices = uniq_events.map { |e| e.visit.device_type }.tally
+		ctx.browsers = uniq_events.map { |e| e.visit.browser }.tally
+		ctx.countries = uniq_events.map { |e| e.visit.country }.tally
 	end
 end
