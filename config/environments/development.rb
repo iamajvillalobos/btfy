@@ -62,6 +62,5 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.hosts << "s.ajvillalobos.com"
-  config.hosts << "s.btfy.io"
+  config.hosts.clear
 end
