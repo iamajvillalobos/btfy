@@ -13,6 +13,7 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
+    @stats = LinkStatsViewerAction.execute(link: @link)
   end
 
   # GET /links/new

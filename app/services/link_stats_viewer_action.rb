@@ -11,7 +11,7 @@ class LinkStatsViewerAction
 
 	executed do |ctx|
 		events = Ahoy::Event.where_props(link_id: ctx.link.id)
-		uniq_events = events.uniq(&:visit_id)
+		uniq_events = Ahoy::Event.where(id: events.uniq(&:visit_id).map(&:id))
 
 		ctx.unique_visit_count = events.distinct.pluck(:visit_id).count
 		ctx.unique_visit_count_grouped = uniq_events.group_by_day(:time).count
