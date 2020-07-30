@@ -1,6 +1,6 @@
 class Link < ApplicationRecord
 	validates_presence_of :destination_url, :slug, :name
-	validates_uniqueness_of :slug
+	validate :unique_slug_per_custom_domain
 
 	belongs_to :custom_domain, optional: true
 	belongs_to :user
@@ -17,5 +17,17 @@ class Link < ApplicationRecord
 	def host
 		return custom_domain.name if custom_domain
 		Rails.application.routes.default_url_options[:host]
+	end
+
+	def unique_slug_per_custom_domain
+		link = if custom_domain
+			custom_domain.links.find_by(slug: slug)
+		else
+			Link.find_by(slug: slug, custom_domain: nil)
+		end
+
+		if link
+			errors.add(:slug, "must be unique")
+		end
 	end
 end
