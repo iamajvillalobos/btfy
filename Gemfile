@@ -58,3 +58,4 @@ gem 'ahoy_matey'
 gem 'light-service'
 gem 'groupdate'
 gem "chartkick"
+gem "view_component"
