@@ -60,3 +60,4 @@ gem 'groupdate'
 gem "chartkick"
 gem "view_component"
 gem "timecop"
+gem "faker"

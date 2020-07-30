@@ -96,6 +96,8 @@ GEM
       railties (>= 3.2)
     errbase (0.2.0)
     erubi (1.9.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     geocoder (1.6.3)
     globalid (0.4.2)
@@ -240,6 +242,7 @@ DEPENDENCIES
   chartkick
   devise
   dotenv-rails
+  faker
   groupdate
   jbuilder (~> 2.7)
   light-service
