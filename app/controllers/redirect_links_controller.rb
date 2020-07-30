@@ -1,7 +1,6 @@
 class RedirectLinksController < ApplicationController
 	def new
-		link = Link.find_by(slug: params[:slug])
-		ahoy.track "Viewed link", link_id: link.id
-		redirect_to link.destination_url
+		link = LinkFinder.(request, params[:slug], ahoy).url
+		redirect_to link
 	end
 end
