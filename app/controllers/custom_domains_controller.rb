@@ -1,6 +1,6 @@
 class CustomDomainsController < ApplicationController
-  layout 'dashboard'
-  
+  layout "dashboard"
+
   before_action :authenticate_user!
   before_action :set_custom_domain, only: [:show, :edit, :update, :destroy]
 
@@ -31,7 +31,7 @@ class CustomDomainsController < ApplicationController
 
     respond_to do |format|
       if @custom_domain.save
-        format.html { redirect_to @custom_domain, notice: 'Custom domain was successfully created.' }
+        format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully created." }
         format.json { render :show, status: :created, location: @custom_domain }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class CustomDomainsController < ApplicationController
   def update
     respond_to do |format|
       if @custom_domain.update(custom_domain_params)
-        format.html { redirect_to @custom_domain, notice: 'Custom domain was successfully updated.' }
+        format.html { redirect_to @custom_domain, notice: "Custom domain was successfully updated." }
         format.json { render :show, status: :ok, location: @custom_domain }
       else
         format.html { render :edit }
@@ -59,19 +59,20 @@ class CustomDomainsController < ApplicationController
   def destroy
     @custom_domain.destroy
     respond_to do |format|
-      format.html { redirect_to custom_domains_url, notice: 'Custom domain was successfully destroyed.' }
+      format.html { redirect_to custom_domains_url, notice: "Custom domain was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_custom_domain
-      @custom_domain = current_user.custom_domains.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def custom_domain_params
-      params.require(:custom_domain).permit(:name, :redirect_url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_custom_domain
+    @custom_domain = current_user.custom_domains.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def custom_domain_params
+    params.require(:custom_domain).permit(:name, :redirect_url)
+  end
 end

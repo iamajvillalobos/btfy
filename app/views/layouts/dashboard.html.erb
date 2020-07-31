@@ -12,7 +12,8 @@
 
   <body class="bg-gray-200">
     <%= render partial: "layouts/dashboard_nav", current_user: current_user %>
-    <main>
+    <main class="container">
+      <%= render partial: "layouts/flash", flash: flash %>
       <%= yield %>
     </main>
   </body>
