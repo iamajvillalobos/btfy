@@ -1,7 +1,10 @@
-require 'sidekiq/web'
+require "sidekiq/web"
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
 
   resources :custom_domains
   resources :links
@@ -11,8 +14,8 @@ Rails.application.routes.draw do
 
   root to: "dashboard#show"
 
-	authenticate :user do |user|
-    mount Sidekiq::Web => '/sidekiq'
+  authenticate :user do |user|
+    mount Sidekiq::Web => "/sidekiq"
   end
 
   get "/:slug", to: "redirect_links#new", as: :redirect
