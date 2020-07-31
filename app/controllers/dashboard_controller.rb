@@ -1,8 +1,10 @@
 class DashboardController < ApplicationController
-	before_action :authenticate_user!
-	
-	layout 'dashboard'
+  before_action :authenticate_user!
 
-	def show
-	end
+  layout "dashboard"
+
+  def show
+    @links = current_user.links.limit(5)
+    @stats = GroupLinkStatsViewer.call(@links)
+  end
 end
