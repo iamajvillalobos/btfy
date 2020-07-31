@@ -1,9 +1,12 @@
-import '../controllers'
-import '../stylesheets/application.scss'
-
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-require("chartkick")
-require("chart.js")
+import "../controllers";
+import "../stylesheets/application.scss";
+import "jquery";
+import "popper.js";
+import "bootstrap";
+require.context("../img", true);
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("@rails/activestorage").start();
+require("channels");
+require("chartkick");
+require("chart.js");

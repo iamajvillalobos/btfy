@@ -10,10 +10,10 @@
     <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
   </head>
 
-  <body class="flex flex-col min-h-screen bg-gray-200">
-    <main class="flex-grow">
+  <body class="bg-gray-200">
+    <%= render partial: "layouts/dashboard_nav", current_user: current_user %>
+    <main>
       <%= yield %>
     </main>
-    <%= render partial: "layouts/dashboard_nav", current_user: current_user %>
   </body>
 </html>
