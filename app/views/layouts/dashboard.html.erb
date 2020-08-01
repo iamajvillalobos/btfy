@@ -10,11 +10,8 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   </head>
 
-  <body class="bg-gray-200">
-    <%= render partial: "layouts/dashboard_nav", current_user: current_user %>
-    <main class="container py-8">
-      <%= render partial: "layouts/flash", flash: flash %>
-      <%= yield %>
-    </main>
+  <body>
+    <%= render(NavbarComponent.new(current_user: current_user)) %>
+    <%= yield %>
   </body>
 </html>

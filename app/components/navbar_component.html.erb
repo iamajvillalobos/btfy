@@ -1,0 +1,44 @@
+<div class="bg-white border-b border-gray-100 px-6">
+  <div class="container mx-auto flex items-center h-16">
+    <!-- Logo -->
+    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h24v24H0z"/>
+        <rect fill="#0e9f6e" x="4" y="16" width="4" height="4" rx="1"/>
+        <rect fill="#0e9f6e" x="4" y="10" width="4" height="4" rx="1"/>
+        <rect fill="#0e9f6e" x="10" y="16" width="4" height="4" rx="1"/>
+        <rect fill="#0e9f6e" opacity=".3" x="10" y="10" width="4" height="4" rx="1"/>
+        <rect fill="#0e9f6e" x="4" y="4" width="4" height="4" rx="1"/>
+        <rect fill="#0e9f6e" x="16" y="16" width="4" height="4" rx="1"/>
+        </g>
+    </svg>
+    <% if @current_user %>
+      <ul class="flex ml-8">
+        <li>
+          <%= link_to "Dashboard", root_path, class: active_link(root_path) %>
+        </li>
+        <li class="ml-4">
+          <%= link_to "Links", links_path, class: active_link(links_path) %>
+        </li>
+        <li class="ml-4">
+          <%= link_to "Domains", custom_domains_path, class: active_link(custom_domains_path) %>
+        </li>
+      </ul>
+    <% end %>
+    <ul class="flex ml-auto">
+      <% if @current_user %>
+        <li>
+          <%= link_to "Settings", settings_path, class: active_link(settings_path) %>
+        </li>
+        <li class="ml-4">
+          <%= link_to "Log out", destroy_user_session_path,
+            method: :delete, class: "text-gray-500" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Log in", new_user_session_path, class: "text-gray-500" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

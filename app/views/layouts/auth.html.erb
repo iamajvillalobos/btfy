@@ -8,14 +8,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-</head>
   </head>
 
-  <body class="bg-gray-200">
-    <section class="section-border border-primary">
-      <div class="container d-flex flex-column">
-        <%= yield %>
-      </div>
-    </section>
+  <body>
+    <%= render(NavbarComponent.new(current_user: current_user)) %>
+    <%= yield %>
   </body>
 </html>
