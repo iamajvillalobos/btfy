@@ -7,9 +7,9 @@ class NavbarComponent < ViewComponent::Base
 
   def active_link(current_path)
     if current_page?(current_path)
-      "text-green-500"
+      "nav-link active"
     else
-      "text-gray-500"
+      "nav-link"
     end
   end
 end
