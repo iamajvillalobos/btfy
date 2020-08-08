@@ -1,37 +1,39 @@
 <%= form_with(model: link, local: true) do |form| %>
   <% if link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
-
-      <ul>
-        <% link.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="alert alert-danger">
+      <%= link.errors.full_messages.to_sentence %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :destination_url %>
-    <%= form.text_area :destination_url %>
+  <div class="mb-3">
+    <%= form.label :destination_url, class: "form-label" %>
+    <%= form.text_area :destination_url, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <%= form.label :slug, class: "form-label" %>
+        <%= form.text_field :slug, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :slug %>
-    <%= form.text_field :slug %>
+  <div class="mb-3">
+    <%= form.label :custom_domain, class: "form-label" %>
+    <%= form.select :custom_domain_id,
+      CustomDomain.all.map { |cd| [cd.name, cd.id] },
+      { include_blank: true },
+      { class: "form-select" }
+    %>
   </div>
 
-  <div class="field">
-    <%= form.label :custom_domain %>
-    <%= form.select :custom_domain_id, CustomDomain.all.map { |cd| [cd.name, cd.id] }, { include_blank: true } %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Create link", class: "btn btn-primary" %>
 <% end %>
