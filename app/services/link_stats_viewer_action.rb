@@ -7,7 +7,8 @@ class LinkStatsViewerAction
     :visit_count_grouped,
     :devices,
     :browsers,
-    :countries
+    :countries,
+    :range
 
   executed do |ctx|
     range = Time.now.last_month..Time.now
@@ -21,11 +22,13 @@ class LinkStatsViewerAction
     ctx.countries = uniq_events.map { |e| e.visit.country }.tally
 
     ctx.visit_count_grouped = events.group_by_day_of_month(
-      :time, range: range, series: false
+      :time, range: range
     ).count
 
     ctx.unique_visit_count_grouped = uniq_events.group_by_day_of_month(
-      :time, range: range, series: false
+      :time, range: range
     ).count
+
+    ctx.range = range
   end
 end

@@ -1,93 +1,94 @@
-<div class="container mx-auto py-8">
-	<div class="bg-indigo-800 p-4 flex justify-center items-center">
-		<h3 class="text-lg leading-6 text-white">
-		  <%= link_to @link.redirect_url, @link.redirect_url %>
-		</h3>
-	</div>
+<div class="container">
+  <div class="card my-3">
+    <div class="card-body">
+      <div class="d-flex flex-row">
+        <section class="d-flex align-items-center">
+          <%= link_to links_path, class: "btn btn-sm btn-outline-primary" do %>
+            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+              <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          <% end %>
+        </section>
+        <section class="ml-auto d-flex flex-row flex-md-column align-items-center align-items-md-end">
+          <span class="d-none d-md-block"><%= @link.redirect_url %></span>
+          <span>
+            <%= @stats.range.first.stamp("Jan 1, 2020") %> to
+            <%= @stats.range.last.stamp("Jan 1, 2020") %>
+          </span>
+        </section>
+      </div>
+    </div>
+  </div>
 
-	<div class="my-8">
-		<div class="bg-white p-8 shadow border-b border-gray-200">
-			<%= column_chart stacked_chart_data,
-				stacked: true,
-				dataset: { borderWidth: 0 },
-				library: {
-					legend: { display: false },
-					scales: {
-						xAxes: [
-							{ gridLines: { display: false} },
-						],
-						yAxes: [
-							{ gridLines: { display: false} },
-						]
-					}
-				}
-			%>
-		</div>
-	</div>
+  <div class="card mb-3">
+    <div class="card-body p-4">
+      <%= column_chart stacked_chart_data,
+        stacked: true,
+        dataset: { borderWidth: 0 },
+        library: {
+          legend: { display: false },
+          scales: {
+            xAxes: [
+              { gridLines: { display: false} },
+            ],
+            yAxes: [
+              { gridLines: { display: false} },
+            ]
+          }
+        }
+      %>
+    </div>
+  </div>
 
-
-	<div class="flex justify-between">
-		<div class="flex flex-col w-full">
-			<div class="align-middle inline-block min-w-full shadow overflow-hidden border-b border-gray-200">
-				<table class="min-w-full divide-y divide-gray-200 ">
-					<thead>
-						<tr>
-							<th class="px-6 py-3 bg-white text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Device Type</th>
-							<th class="px-6 py-3 bg-white text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Uniques</th>
-						</tr>
-					</thead>
-					<tbody class="bg-white divide-y divide-gray-200">
-						<% @stats.devices.each do |device, count| %>
-							<tr>
-								<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"><%= device %></td>
-								<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"><%= count %></td>
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="flex flex-col w-full mx-8">
-			<div class="align-middle inline-block min-w-full shadow overflow-hidden border-b border-gray-200">
-				<table class="min-w-full divide-y divide-gray-200 ">
-					<thead>
-						<tr>
-							<th class="px-6 py-3 bg-white text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Browsers</th>
-							<th class="px-6 py-3 bg-white text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Uniques</th>
-						</tr>
-					</thead>
-					<tbody class="bg-white divide-y divide-gray-200">
-						<% @stats.browsers.each do |browser, count| %>
-							<tr>
-								<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"><%= browser %></td>
-								<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"><%= count %></td>
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="flex flex-col w-full">
-			<div class="align-middle inline-block min-w-full shadow overflow-hidden border-b border-gray-200">
-				<table class="min-w-full divide-y divide-gray-200 ">
-					<thead>
-						<tr>
-							<th class="px-6 py-3 bg-white text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Country</th>
-							<th class="px-6 py-3 bg-white text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Uniques</th>
-						</tr>
-					</thead>
-					<tbody class="bg-white divide-y divide-gray-200">
-						<% @stats.countries.each do |country, count| %>
-							<tr>
-								<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"><%= country %></td>
-								<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"><%= count %></td>
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row text-muted">
+            <div class="col">Device Type</div>
+            <div class="col text-right">Uniques</div>
+          </div>
+          <% @stats.devices.each do |device, count| %>
+            <div class="row">
+              <div class="col"><%= device %></div>
+              <div class="col text-right"><%= count %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-3 mt-md-0">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row text-muted">
+            <div class="col">Browser</div>
+            <div class="col text-right">Uniques</div>
+          </div>
+          <% @stats.browsers.each do |browser, count| %>
+            <div class="row">
+              <div class="col"><%= browser %></div>
+              <div class="col text-right"><%= count %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-3 mt-md-0">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row text-muted">
+            <div class="col">Country</div>
+            <div class="col text-right">Uniques</div>
+          </div>
+          <% @stats.countries.each do |country, count| %>
+            <div class="row">
+              <div class="col"><%= country %></div>
+              <div class="col text-right"><%= count %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
