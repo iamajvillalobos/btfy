@@ -1,29 +1,14 @@
-<h1>Links</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Destination url</th>
-      <th>Redirect url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <ul class="list-group mt-2 mt-lg-3">
     <% @links.each do |link| %>
-      <tr>
-        <td><%= link.name %></td>
-        <td><%= truncate(link.destination_url, length: 50) %></td>
-        <td><%= link_to link.redirect_url, link.redirect_url %></td>
-        <td><%= link_to 'Show', link %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li class="list-group-item d-flex flex-column flex-lg-row align-items-center">
+        <%= link.redirect_url %>
+        <div class="ml-lg-auto mt-1">
+          <button class="btn btn-sm btn-outline-primary mr-lg-1">Copy</button>
+          <%= link_to "Show", link_path(link), class: "btn btn-sm btn-outline-primary" %>
+          <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-outline-primary" %>
+        </div>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Link', new_link_path %>
+  </ul>
+</div>
