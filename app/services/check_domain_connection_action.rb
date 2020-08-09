@@ -4,15 +4,17 @@ class CheckDomainConnectionAction
   expects :domain
 
   executed do |ctx|
-    domain_ip =
-      begin
-        Resolv.getaddress(ctx.domain.name)
-      rescue Resolv::ResolvError
-        ctx.fail_and_return!("Domain is not valid. Please check again.")
-      end
-    host_ip = Resolv.getaddress(ENV["DEFAULT_URL_HOST"])
+    cname_entry = ""
 
-    if domain_ip != host_ip
+    begin
+      cname_entry = Resolv::DNS.open { |dns|
+        dns.getresource(ctx.domain.name, Resolv::DNS::Resource::IN::CNAME)
+      }.name.to_s
+    rescue Resolv::ResolvError => e
+      ctx.fail_and_return!(e)
+    end
+
+    if cname_entry != ENV.fetch("DEFAULT_URL_HOST")
       ctx.fail_and_return!("Domain not configured properly.")
     end
   end
