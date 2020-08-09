@@ -279,7 +279,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver (= 3.142.7)
   sidekiq (= 6.1.1)
-  stamp
+  stamp (= 0.6.0)
   standard (= 0.4.7)
   timecop (= 0.9.1)
   turbolinks (~> 5)
