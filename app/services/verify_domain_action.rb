@@ -1,10 +1,10 @@
 class VerifyDomainAction
-	extend LightService::Action
+  extend LightService::Action
 
-	expects :domain
-	promises :custom_domain
+  expects :domain
+  promises :custom_domain
 
-	executed do |ctx|
-		ctx.custom_domain = CustomDomain.find_by(name: ctx.domain)
-	end
+  executed do |ctx|
+    ctx.custom_domain = CustomDomain.find_by(name: ctx.domain)
+  end
 end

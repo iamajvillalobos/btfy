@@ -27,16 +27,26 @@ class CustomDomainsController < ApplicationController
   # POST /custom_domains
   # POST /custom_domains.json
   def create
-    @custom_domain = current_user.custom_domains.new(custom_domain_params)
+    # @custom_domain = current_user.custom_domains.new(custom_domain_params)
 
-    respond_to do |format|
-      if @custom_domain.save
-        format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully created." }
-        format.json { render :show, status: :created, location: @custom_domain }
-      else
-        format.html { render :new }
-        format.json { render json: @custom_domain.errors, status: :unprocessable_entity }
-      end
+    # respond_to do |format|
+    #   if @custom_domain.save
+    #     format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully created." }
+    #     format.json { render :show, status: :created, location: @custom_domain }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @custom_domain.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    @custom_domain = current_user.custom_domains.new(custom_domain_params)
+    result = CreateCustomDomain.call(@custom_domain)
+
+    if result.success?
+      redirect_to settings_path, notice: "Domain added successfully."
+    else
+      flash[:error] = result.message
+      redirect_to new_custom_domain_path
     end
   end
 
