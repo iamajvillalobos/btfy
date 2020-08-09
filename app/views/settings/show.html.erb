@@ -1,1 +1,17 @@
-<h1>Settings</h1>
+<div class="container">
+  <ul class="nav nav-tabs mt-3">
+    <li class="nav-item">
+      <a href="#domains" class="nav-link active" data-toggle="tab">Domains</a>
+    </li>
+    <li class="nav-item">
+      <a href="#billing" class="nav-link" data-toggle="tab">Billing</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active mt-3" id="domains">
+      <%= render partial: "settings/domain", locals: { domains: @domains } %>
+    </div>
+    <div class="tab-pane" id="billing">Billing</div>
+  </div>
+</div>

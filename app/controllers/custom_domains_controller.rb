@@ -59,7 +59,7 @@ class CustomDomainsController < ApplicationController
   def destroy
     @custom_domain.destroy
     respond_to do |format|
-      format.html { redirect_to custom_domains_url, notice: "Custom domain was successfully destroyed." }
+      format.html { redirect_to settings_path, notice: "Custom domain was successfully destroyed." }
       format.json { head :no_content }
     end
   end
