@@ -1,4 +1,57 @@
 <div class="container">
+  <%= render(PageHeaderWithButtonComponent.new(
+    pretitle: "overview",
+    title: "dashboard",
+    btn_link: new_link_path,
+    btn_text: "create link"))
+  %>
+
+  <div class="row">
+    <div class="col-12 col-lg-6 col-xl">
+      <%= render(StatsCardComponent.new(title: "Visits", count: @stats.total_visit_count)) %>
+    </div>
+    <div class="col-12 col-lg-6 col-xl">
+      <%= render(StatsCardComponent.new(title: "Unique Visits", count: @stats.total_unique_visit_count)) %>
+    </div>
+    <div class="col-12 col-lg-6 col-xl">
+      <%= render(StatsCardComponent.new(title: "Links", count: current_user.links.count)) %>
+    </div>
+    <div class="col-12 col-lg-6 col-xl">
+      <%= render(StatsCardComponent.new(title: "Domains", count: current_user.custom_domains.count)) %>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-header-title">Top Links</h4>
+    </div>
+    <div class="table-responsive mb-0">
+      <table class="table table-sm table-nowrap card-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Views</th>
+            <th>Uniques</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @links.each do |link| %>
+            <tr>
+              <td><%= link.name %></td>
+              <td><%= link.redirect_url %></td>
+              <td><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
+              <td><%= LinkStatsViewerAction.execute(link: link).unique_visit_count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container">
   <div class="mt-3 mt-lg-4">
     <div class="row">
       <div class="col-lg-3 mt-2 mt-lg-0">
@@ -28,3 +81,4 @@
     <% end %>
   </ul>
 </div>
+ -->
