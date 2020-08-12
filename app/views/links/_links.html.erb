@@ -1,0 +1,16 @@
+<ul class="list list-group list-group-flush list my-n3">
+  <% @links.each do |link| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col ml-n2">
+          <h4 class="mb-1 name"><%= link.name %></h4>
+          <p class="card-text small text-muted mb-1">
+            <%= link.redirect_url %>
+          </p>
+        </div>
+        <div class="col-auto">
+          <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-white" %>
+      </div>
+    </li>
+  <% end %>
+</ul>

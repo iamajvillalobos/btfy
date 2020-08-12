@@ -1,19 +1,24 @@
 <div class="container">
-  <section class="mt-3 d-flex">
-    <input type="text" placeholder="Search" class="form-control w-100">
-    <%= link_to "Create", new_link_path, class: "btn btn-primary ml-3" %>
-  </section>
-
-  <ul class="list-group mt-2 mt-lg-3">
-    <% @links.each do |link| %>
-      <li class="list-group-item d-flex flex-column flex-lg-row align-items-center">
-        <%= link.redirect_url %>
-        <div class="ml-lg-auto mt-1">
-          <button class="btn btn-sm btn-outline-primary mr-lg-1">Copy</button>
-          <%= link_to "Show", link_path(link), class: "btn btn-sm btn-outline-primary" %>
-          <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-outline-primary" %>
+  <div class="row">
+    <div class="col-12" data-controller="links">
+      <%= render(PageHeaderWithButtonComponent.new(
+        pretitle: "overview",
+        title: "Links",
+        btn_link: new_link_path,
+        btn_text: "create link"))
+      %>
+    <div id="links" class="card">
+      <div class="card-header">
+        <div class="input-group input-group-flush input-group-merge">
+          <input type="search"
+                 class="search form-control form-control-prepended"
+                 placeholder="Search">
         </div>
-      </li>
-    <% end %>
-  </ul>
+      </div>
+      <div class="card-body">
+        <%= render partial: "links", locals: { links: @links } %>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>

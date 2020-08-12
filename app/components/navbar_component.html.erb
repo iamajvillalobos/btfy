@@ -1,29 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
   <div class="container">
-    <!-- Logo -->
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd">
-          <path d="M0 0h24v24H0z"/>
-          <rect fill="#0d6efd" x="4" y="16" width="4" height="4" rx="1"/>
-          <rect fill="#0d6efd" x="4" y="10" width="4" height="4" rx="1"/>
-          <rect fill="#0d6efd" x="10" y="16" width="4" height="4" rx="1"/>
-          <rect fill="#0d6efd" opacity=".3" x="10" y="10" width="4" height="4" rx="1"/>
-          <rect fill="#0d6efd" x="4" y="4" width="4" height="4" rx="1"/>
-          <rect fill="#0d6efd" x="16" y="16" width="4" height="4" rx="1"/>
-          </g>
-      </svg>
+    <%= link_to root_path, class: "navbar-brand mr-3" do %>
+      <%= render LogoComponent.new() %>
     <% end %>
-    <!-- End of Logo -->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Menu -->
-    <div class="collapse navbar-collapse" id="navbar-content">
+    <div class="collapse navbar-collapse mr-auto" id="navbar-content">
       <% if @current_user %>
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <%= link_to "Dashboard", root_path, class: active_link(root_path) %>
           </li>
@@ -40,7 +28,7 @@
           </li>
         </ul>
       <% else %>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
           </li>
