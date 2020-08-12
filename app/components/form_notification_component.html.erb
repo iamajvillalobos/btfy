@@ -1,0 +1,9 @@
+<% if @model.errors.any? %>
+  <div class="alert alert-light alert-dismissible fade show">
+    <%= @model.errors.full_messages.to_sentence %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span>&times;</span>
+    </button>
+  </div>
+<% end %>
+
