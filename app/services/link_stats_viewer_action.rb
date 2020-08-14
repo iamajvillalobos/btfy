@@ -11,8 +11,9 @@ class LinkStatsViewerAction
     :range
 
   executed do |ctx|
-    range = Time.now.last_month..Time.now
+    range = Time.now.beginning_of_month..Time.now.end_of_month
     events = Ahoy::Event.where_props(link_id: ctx.link.id)
+              .where(time: range)
     uniq_events = Ahoy::Event.where(id: events.uniq(&:visit_id).map(&:id))
 
     ctx.unique_visit_count = events.distinct.pluck(:visit_id).count
