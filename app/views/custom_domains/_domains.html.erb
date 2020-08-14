@@ -14,7 +14,7 @@
         </div>
         <div class="col-auto">
           <%= link_to "Delete", custom_domain_path(domain),
-            method: :delete, data: { confirm: "Are you sure?" },
+            method: :delete, data: { confirm: "This will delete all links that you created with this domain, are you sure you want to delete?" },
             class: "btn btn-sm btn-white" %>
       </div>
     </li>
