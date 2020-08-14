@@ -1,13 +1,10 @@
-<div class="container">
+<div>
   <%= render(PageHeaderComponent.new(
     pretitle: @link.redirect_url,
     title: @link.name))
-  %>
-</div>
+    %>
+  </div>
 
-
-
-<div class="container">
   <div class="card">
     <div class="card-header">
       <h4 class="card-header-title text-right text-muted">
@@ -18,27 +15,23 @@
     <div class="card-body">
       <div class="chart">
         <%= column_chart stacked_chart_data,
-          stacked: true,
-          dataset: { borderWidth: 0 },
-          library: {
-            legend: { display: false },
-            scales: {
-              xAxes: [
-                { gridLines: { display: false} },
-              ],
-              yAxes: [
-                { gridLines: { display: false} },
-              ]
-            }
+        stacked: true,
+        dataset: { borderWidth: 0 },
+        library: {
+          legend: { display: false },
+          scales: {
+            xAxes: [
+              { gridLines: { display: false} },
+            ],
+            yAxes: [
+              { gridLines: { display: false} },
+            ]
           }
+        }
         %>
       </div>
     </div>
   </div>
-
-  
-
-  
 
   <div class="row">
     <div class="col-md-4">
@@ -49,10 +42,10 @@
             <div class="col text-right">Uniques</div>
           </div>
           <% @stats.devices.each do |device, count| %>
-            <div class="row">
-              <div class="col"><%= device %></div>
-              <div class="col text-right"><%= count %></div>
-            </div>
+          <div class="row">
+            <div class="col"><%= device %></div>
+            <div class="col text-right"><%= count %></div>
+          </div>
           <% end %>
         </div>
       </div>
@@ -65,10 +58,10 @@
             <div class="col text-right">Uniques</div>
           </div>
           <% @stats.browsers.each do |browser, count| %>
-            <div class="row">
-              <div class="col"><%= browser %></div>
-              <div class="col text-right"><%= count %></div>
-            </div>
+          <div class="row">
+            <div class="col"><%= browser %></div>
+            <div class="col text-right"><%= count %></div>
+          </div>
           <% end %>
         </div>
       </div>
@@ -81,10 +74,10 @@
             <div class="col text-right">Uniques</div>
           </div>
           <% @stats.countries.each do |country, count| %>
-            <div class="row">
-              <div class="col"><%= country %></div>
-              <div class="col text-right"><%= count %></div>
-            </div>
+          <div class="row">
+            <div class="col"><%= country %></div>
+            <div class="col text-right"><%= count %></div>
+          </div>
           <% end %>
         </div>
       </div>

@@ -7,7 +7,7 @@ class CustomDomainsController < ApplicationController
   # GET /custom_domains
   # GET /custom_domains.json
   def index
-    @custom_domains = current_user.custom_domains
+    @domains = current_user.custom_domains
   end
 
   # GET /custom_domains/1
@@ -43,7 +43,7 @@ class CustomDomainsController < ApplicationController
     result = CreateCustomDomain.call(@custom_domain)
 
     if result.success?
-      redirect_to settings_path, notice: "Domain added successfully."
+      redirect_to custom_domains_path, notice: "Domain added successfully."
     else
       flash[:error] = result.message
       redirect_to new_custom_domain_path

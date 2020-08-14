@@ -14,7 +14,8 @@
 
   <body class="pb-4">
     <%= render(NavbarComponent.new(current_user: current_user)) %>
-    <%= render(NotificationComponent.new()) %>
-    <%= yield %>
+    <div class="container p-md-0">
+      <%= yield %>
+    </div>
   </body>
 </html>

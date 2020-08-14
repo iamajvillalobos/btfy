@@ -1,8 +1,6 @@
-<div class="container-lg container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-10 col-xl-8">
-      <%= render(PageHeaderComponent.new(pretitle: "edit", title: @link.name)) %>
-      <%= render 'form', link: @link %>
-    </div>
+<div class="row justify-content-start">
+  <div class="col-12 col-lg-10 col-xl-8">
+    <%= render(PageHeaderComponent.new(pretitle: "edit", title: @link.name)) %>
+    <%= render 'form', link: @link %>
   </div>
 </div>

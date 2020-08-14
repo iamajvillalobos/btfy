@@ -1,24 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12" data-controller="links">
-      <%= render(PageHeaderWithButtonComponent.new(
-        pretitle: "overview",
-        title: "Links",
-        btn_link: new_link_path,
-        btn_text: "create link"))
-      %>
-    <div id="links" class="card">
-      <div class="card-header">
-        <div class="input-group input-group-flush input-group-merge">
-          <input type="search"
-                 class="search form-control form-control-prepended"
-                 placeholder="Search">
-        </div>
-      </div>
-      <div class="card-body">
-        <%= render partial: "links", locals: { links: @links } %>
+<div class="row">
+  <div class="col-12" data-controller="links">
+    <%= render(PageHeaderWithButtonComponent.new(
+      pretitle: "overview",
+      title: "Links",
+      btn_link: new_link_path,
+      btn_text: "create link"))
+    %>
+  <div id="links" class="card">
+    <div class="card-header">
+      <div class="input-group input-group-flush input-group-merge">
+        <input type="search"
+               class="search form-control form-control-prepended"
+               placeholder="Search">
       </div>
     </div>
+    <div class="card-body">
+      <%= render partial: "links", locals: { links: @links } %>
     </div>
+  </div>
   </div>
 </div>
