@@ -1,50 +1,43 @@
-<div class="row align-items-center justify-content-center no-gutters min-vh-100">
-  <div class="col-12 col-md-5 col-lg-4 py-8 py-md-11">
-    <%= render "devise/shared/error_messages", resource: resource %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-5 col-xl-4 my-5">
+      <h1 class="display-4 text-center mb-3">
+        Sign up
+      </h1>
 
-    <div class="d-flex justify-content-center mb-2">
-      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><rect fill="#335EEA" x="4" y="16" width="4" height="4" rx="1"/><rect fill="#335EEA" x="4" y="10" width="4" height="4" rx="1"/><rect fill="#335EEA" x="10" y="16" width="4" height="4" rx="1"/><rect fill="#335EEA" opacity=".3" x="10" y="10" width="4" height="4" rx="1"/><rect fill="#335EEA" x="4" y="4" width="4" height="4" rx="1"/><rect fill="#335EEA" x="16" y="16" width="4" height="4" rx="1"/></g></svg>
+      <p class="text-muted text-center mb-5">
+        Access your dashboard.
+      </p>
+      
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render(FormNotificationComponent.new(model: resource)) %>
+
+        <div class="form-group">
+          <%= f.label :email, "Email Address" %>
+          <%= f.email_field :email, class: "form-control",
+            placeholder: "name@address.com" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control",
+            placeholder: "Enter your password" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control",
+            placeholder: "Confirm your password" %>
+        </div>
+
+        <%= f.submit "Sign up", class: "btn btn-lg btn-block btn-primary mb-3" %>
+
+        <div class="text-center">
+          <small class="text-muted text-center">
+            Already have an account? <%= link_to "Sign in", new_session_path(resource_name) %>.
+          </small>
+        </div>
+      <% end %>
     </div>
-
-    <h1 class="mb-0 font-weight-bold text-center">
-      Sign up
-    </h1>
-
-    <p class="mb-6 text-center text-muted">
-      Shorten your links in seconds.
-    </p>
-
-    <%= form_for(resource, as: resource_name,
-      url: registration_path(resource_name), html: { class: "mb-6"} ) do |f| %>
-
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true,
-          class: "form-control",
-          placeholder: "name@address.com"
-        %>
-      </div>
-
-      <div class="form-group mb-5">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control",
-          placeholder: "Enter your password"
-        %>
-      </div>
-
-      <div class="form-group mb-5">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: "form-control",
-          placeholder: "Enter your password"
-        %>
-      </div>
-
-      <%= f.submit "Sign up", class: "btn btn-block btn-primary" %>
-    <% end %>
-    
-    <p class="mb-0 font-size-sm text-center text-muted">
-      Already have an account? <%= link_to "Sign in", new_session_path(resource_name) %>.
-    </p>
   </div>
 </div>
-
