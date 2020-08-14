@@ -11,4 +11,8 @@ module LinksHelper
 			}
 		]
 	end
+
+	def no_domains
+		current_user.custom_domains.count == 0
+	end
 end

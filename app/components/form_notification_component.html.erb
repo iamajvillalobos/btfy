@@ -6,4 +6,11 @@
     </button>
   </div>
 <% end %>
-
+<% if flash[:error] && @model.errors.empty? %>
+  <div class="alert alert-light alert-dismissible fade show">
+    <%= flash[:error] %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span>&times;</span>
+    </button>
+  </div>
+<% end %>

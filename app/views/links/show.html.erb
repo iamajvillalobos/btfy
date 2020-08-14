@@ -1,7 +1,7 @@
 <div>
   <%= render(PageHeaderComponent.new(
-    pretitle: @link.redirect_url,
-    title: @link.name))
+    pretitle: @link.name,
+    title: @link.redirect_url))
     %>
   </div>
 
@@ -37,9 +37,13 @@
     <div class="col-md-4">
       <div class="card h-100">
         <div class="card-body">
-          <div class="row text-muted">
-            <div class="col">Device Type</div>
-            <div class="col text-right">Uniques</div>
+          <div class="row">
+            <div class="col">
+              <small class="text-muted">Device Type</small>
+            </div>
+            <div class="col text-right">
+              <small class="text-muted">Uniques</small>
+            </div>
           </div>
           <% @stats.devices.each do |device, count| %>
           <div class="row">
@@ -54,8 +58,12 @@
       <div class="card h-100">
         <div class="card-body">
           <div class="row text-muted">
-            <div class="col">Browser</div>
-            <div class="col text-right">Uniques</div>
+            <div class="col">
+              <small class="text-muted">Browser</small>
+            </div>
+            <div class="col text-right">
+              <small class="text-muted">Uniques</small>
+            </div>
           </div>
           <% @stats.browsers.each do |browser, count| %>
           <div class="row">
@@ -70,8 +78,8 @@
       <div class="card h-100">
         <div class="card-body">
           <div class="row text-muted">
-            <div class="col">Country</div>
-            <div class="col text-right">Uniques</div>
+            <div class="col"><small class="text-muted">Country</small></div>
+            <div class="col text-right"><small class="text-muted">Uniques</small></div>
           </div>
           <% @stats.countries.each do |country, count| %>
           <div class="row">

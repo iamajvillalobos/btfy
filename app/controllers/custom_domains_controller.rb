@@ -45,8 +45,9 @@ class CustomDomainsController < ApplicationController
     if result.success?
       redirect_to custom_domains_path, notice: "Domain added successfully."
     else
-      flash[:error] = result.message
-      redirect_to new_custom_domain_path
+      flash.now[:error] = result.message
+      render :new
+      return
     end
   end
 
@@ -69,7 +70,7 @@ class CustomDomainsController < ApplicationController
   def destroy
     @custom_domain.destroy
     respond_to do |format|
-      format.html { redirect_to settings_path, notice: "Custom domain was successfully destroyed." }
+      format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully destroyed." }
       format.json { head :no_content }
     end
   end

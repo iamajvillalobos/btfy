@@ -1,3 +1,10 @@
+<% if no_domains %>
+  <div class="alert alert-light">
+    <i class="fe fe-info mr-1"></i> You must add a custom domain first,
+    <%= link_to "create now", new_custom_domain_path %>.
+  </div>
+<% end %>
+
 <div class="card">
   <div class="card-body">
     <%= form_with(model: link, local: true) do |form| %>
@@ -28,7 +35,7 @@
               Choose from your domains
             </small>
             <%= form.select :custom_domain_id,
-              CustomDomain.all.map { |cd| [cd.name, cd.id] },
+              current_user.custom_domains.map { |cd| [cd.name, cd.id] },
               {},
               { class: "custom-select" }
             %>
@@ -48,7 +55,11 @@
       
       <div class="d-flex justify-content-between mt-3">
         <%= link_to "Cancel", links_path, class: "btn btn-white" %>
-        <%= form.submit class: "btn btn-primary" %>
+        <% if no_domains %>
+          <%= form.submit class: "btn btn-primary", disabled: true %>
+        <% else %>
+          <%= form.submit class: "btn btn-primary" %>
+        <% end %>
       </div>
     <% end %>
   </div>
