@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :billing, only: [:show]
   resource :dashboard, only: [:show]
   resource :settings, only: [:show]
+  resources :user_plans
 
   root to: "dashboard#show"
 

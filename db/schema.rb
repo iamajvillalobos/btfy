@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_081847) do
+ActiveRecord::Schema.define(version: 2020_08_15_172317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,15 @@ ActiveRecord::Schema.define(version: 2020_08_15_081847) do
     t.string "status"
     t.string "update_url"
     t.string "cancel_url"
+  end
+
+  create_table "user_plans", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount", default: "0.0", null: false
+    t.string "interval"
+    t.integer "paddle_plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
