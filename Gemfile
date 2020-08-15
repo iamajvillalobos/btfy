@@ -23,6 +23,8 @@ gem "sidekiq", "6.1.1"
 gem "timecop", "0.9.1"
 gem "view_component", "2.18.0"
 gem "stamp", "0.6.0"
+gem "pay", git: "https://github.com/nm/pay", branch: "paddle"
+gem 'paddle_pay', '~> 0.0.1'
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"

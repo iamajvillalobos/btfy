@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_123024) do
+ActiveRecord::Schema.define(version: 2020_08_15_081847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,39 @@ ActiveRecord::Schema.define(version: 2020_07_27_123024) do
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 
+  create_table "pay_charges", id: :serial, force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.integer "amount", null: false
+    t.integer "amount_refunded"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "receipt_url"
+  end
+
+  create_table "pay_subscriptions", id: :serial, force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "name", null: false
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.string "processor_plan", null: false
+    t.integer "quantity", default: 1, null: false
+    t.datetime "trial_ends_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "status"
+    t.string "update_url"
+    t.string "cancel_url"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -86,6 +119,14 @@ ActiveRecord::Schema.define(version: 2020_07_27_123024) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "processor"
+    t.string "processor_id"
+    t.datetime "trial_ends_at"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.text "extra_billing_info"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
