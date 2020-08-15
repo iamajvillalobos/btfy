@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="header-body">
+    <div class="row">
+      <div class="col">
+        <h6 class="header-pretitle">overview</h6>
+        <h1 class="header-title">Settings</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-tabs nav-overflow header-tabs">
+          <li class="nav-item">
+            <a href="account-billing.html"
+              class="nav-link <%= 'active' if @active == 'billing' %>">
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="account-security.html"
+              class="nav-link <%= 'active' if @active == 'security' %>">
+              Security
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

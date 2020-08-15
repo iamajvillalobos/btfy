@@ -1,17 +1,1 @@
-<div data-controller="subscription">
-	<div data-target="subscription.user"><%= current_user.to_json %></div>
-
-	<h2>Basic Plan</h2>
-
-	<ul>
-		<li>Unlimited clicks</li>
-		<li>100 links created per month</li>
-		<li>1 custom domain</li>
-		<li>City level data</li>
-		<li>Device Type tracking</li>
-	</ul>
-
-	<button href="#!" data-action="subscription#subscribe">
-		Subscribe
-	</button>
-</div>
+<%= render SettingsPageHeaderComponent.new(active: "billing") %>
