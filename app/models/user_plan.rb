@@ -39,4 +39,8 @@ class UserPlan < ApplicationRecord
       amount
     end
   end
+
+  def savings_percentage
+    ((monthly_total - amount) / monthly_total * 100).to_i
+  end
 end

@@ -1,5 +1,5 @@
 <div class="card" data-controller="subscription"
-  data-subscription-user="<%= @user.email.to_json %>">
+  data-subscription-user="<%= @user.to_json %>">
   <div class="card-body">
     <h6 class="text-uppercase text-center text-muted my-2">
       <%= @plan.name %>
@@ -16,7 +16,7 @@
     <h6 class="text-uppercase text-center text-muted my-2">per month</h6>
 
     <div class="row justify-content-center">
-      <span class="badge badge-light mt-4">Save 70%</span>
+      <span class="badge badge-light mt-4">Save <%= @plan.savings_percentage %>%</span>
       <span class="text-muted mt-3 text-center w-100" style="font-size: 0.8rem;">
         <% if @plan.monthly_total != @plan.amount %>
           <del class="text-danger">$<%= @plan.monthly_total %></del>
