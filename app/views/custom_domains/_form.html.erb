@@ -1,33 +1,73 @@
-<div class="card">
-  <div class="card-body">
-    <%= form_with(model: custom_domain, local: true) do |form| %>
 
-      <section class="alert alert-light">
-        <h6 class="text-uppercase">Instructions</h6>
-        <ol class="pl-4">
-          <li>Go to your DNS settings for your domain</li>
-          <li>Add a CNAME entry that points your domain to
-            <strong><%= ENV.fetch("DEFAULT_URL_HOST") %></strong>
-          </li>
-          <li>Add your domain below</li>
-        </ol>
-      </section>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <%= form_with(model: custom_domain, local: true) do |form| %>
+          <div class="form-group">
+            <%= render(FormNotificationComponent.new(model: custom_domain)) %>
+            <%= form.label :name, "Domain" %>
+            <small class="form-text text-muted">
+              Enter the your domain without http or https
+            </small>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
 
-      <hr>
-
-      <div class="form-group">
-        <%= render(FormNotificationComponent.new(model: custom_domain)) %>
-        <%= form.label :name, "Domain" %>
-        <small class="form-text text-muted">
-          Enter the your domain without http or https
-        </small>
-        <%= form.text_field :name, class: "form-control" %>
+          <div class="d-flex justify-content-between mt-3">
+            <%= link_to "Cancel", links_path, class: "btn btn-white" %>
+            <%= form.submit "Add domain", class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
+    </div>
+  </div>
 
-      <div class="d-flex justify-content-between mt-3">
-        <%= link_to "Cancel", links_path, class: "btn btn-white" %>
-        <%= form.submit "Add domain", class: "btn btn-primary" %>
+  <!-- Domain instructions -->
+  <div class="col-12 col-md-6">
+    <div class="card border">
+      <div class="card-header bg-light">
+        <h4 class="card-header-title">Connecting your domain</h4>
       </div>
-    <% end %>
+      <div class="card-body">
+        <p class="small text-muted mb-3">
+          Choose a name for your subdomain (link, go, click). It will look
+          something like:<br>
+          link.mydomainname.com
+        </p>
+
+        <div class="alert alert-light mb-0">
+          <small>
+            Your domain will not be available immediately, it can take up to
+            <strong>24 hours</strong> for the DNS to propogate. Go back to this
+            page and add your domain again.
+          </small>
+        </div>
+
+        <hr>
+        
+        <p class="small text-muted">
+          Apply the following DNS configuration to turn your any domain into
+          your own link shortener. All you have to do is "point" your
+          <strong>CNAME Records</strong> to btfy.
+        </p>
+
+        <table class="table table-sm table-bordered mb-0">
+          <thead>
+            <tr>
+              <th>Record type</th>
+              <th>Hostname (or name)</th>
+              <th>Points to (or addres))</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CNAME</td>
+              <td>link</td>
+              <td><%= ENV.fetch("DEFAULT_URL_HOST") %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
