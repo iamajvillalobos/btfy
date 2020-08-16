@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   has_many :links, dependent: :destroy
   has_many :custom_domains, dependent: :destroy
+
+  def user_plan
+    UserPlan.find_by(paddle_plan_id: subscription.processor_plan)
+  end
 end

@@ -26,7 +26,7 @@ export default class extends Controller {
 		let isCompleted = data.checkout.completed;
 
 		if (isCompleted) {
-			location.href = this.data.get("billing-path");
+			Turbolinks.visit(this.data.get("billing-path"));
 		}
 	}
 }
