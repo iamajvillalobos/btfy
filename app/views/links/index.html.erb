@@ -1,11 +1,15 @@
+<%= render NotificationComponent.new() %>
+
+<%= render(PageHeaderWithButtonComponent.new(
+  pretitle: "overview",
+  title: "Links",
+  btn_link: new_link_path,
+  btn_text: "create link"))
+%>
+
 <div class="row">
   <div class="col-12" data-controller="links">
-    <%= render(PageHeaderWithButtonComponent.new(
-      pretitle: "overview",
-      title: "Links",
-      btn_link: new_link_path,
-      btn_text: "create link"))
-    %>
+    
   <div id="links" class="card">
     <div class="card-header">
       <div class="input-group input-group-flush input-group-merge">

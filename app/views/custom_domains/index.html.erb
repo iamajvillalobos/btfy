@@ -1,22 +1,25 @@
+<%= render NotificationComponent.new() %>
+
+<%= render(PageHeaderWithButtonComponent.new(
+  pretitle: "overview",
+  title: "Domains",
+  btn_link: new_custom_domain_path,
+  btn_text: "create domain"))
+%>
+
 <div class="row">
   <div class="col-12" data-controller="domains">
-    <%= render(PageHeaderWithButtonComponent.new(
-      pretitle: "overview",
-      title: "Domains",
-      btn_link: new_custom_domain_path,
-      btn_text: "create domain"))
-    %>
-  <div id="domains" class="card">
-    <div class="card-header">
-      <div class="input-group input-group-flush input-group-merge">
-        <input type="search"
-               class="search form-control form-control-prepended"
-               placeholder="Search">
+    <div id="domains" class="card">
+      <div class="card-header">
+        <div class="input-group input-group-flush input-group-merge">
+          <input type="search"
+          class="search form-control form-control-prepended"
+          placeholder="Search">
+        </div>
+      </div>
+      <div class="card-body">
+        <%= render partial: "domains", locals: { domains: @domains } %>
       </div>
     </div>
-    <div class="card-body">
-      <%= render partial: "domains", locals: { domains: @domains } %>
-    </div>
-  </div>
   </div>
 </div>
