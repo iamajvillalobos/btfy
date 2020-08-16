@@ -1,5 +1,6 @@
 <div class="card" data-controller="subscription"
-  data-subscription-user="<%= @user.to_json %>">
+  data-subscription-user="<%= @user.to_json %>"
+  data-subscription-billing-path="<%= billing_url %>">
   <div class="card-body">
     <h6 class="text-uppercase text-center text-muted my-2">
       <%= @plan.name %>
