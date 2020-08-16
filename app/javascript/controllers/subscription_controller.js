@@ -1,32 +1,34 @@
-import { Controller } from "stimulus";
+import { Controller } from 'stimulus'
 
 export default class extends Controller {
-	initialize() {
-		this.user = JSON.parse(this.data.get("user"));
-	}
+  initialize () {
+    this.user = JSON.parse(this.data.get('user'))
+  }
 
-	connect() {
-		Paddle.Setup({ vendor: 118869 });
-	}
+  connect () {
+    Paddle.Setup({ vendor: 118869 })
+  }
 
-	subscribe(event) {
-		const product = event.currentTarget.dataset.product;
-		Paddle.Checkout.open({
-			product: product,
-			email: this.user.email,
-			passthrough: JSON.stringify({
-				owner_id: this.user.id,
-				owner_type: "User",
-			}),
-			successCallback: this.checkoutComplete.bind(this),
-		});
-	}
+  subscribe (event) {
+    const product = event.currentTarget.dataset.product
+    Paddle.Checkout.open({
+      product: product,
+      email: this.user.email,
+      passthrough: JSON.stringify({
+        owner_id: this.user.id,
+        owner_type: 'User'
+      }),
+      successCallback: this.checkoutComplete.bind(this)
+    })
+  }
 
-	checkoutComplete(data) {
-		let isCompleted = data.checkout.completed;
+  checkoutComplete (data) {
+    let isCompleted = data.checkout.completed
 
-		if (isCompleted) {
-			Turbolinks.visit(this.data.get("billing-path"));
-		}
-	}
+    if (isCompleted) {
+      setTimeout(() => {
+        Turbolinks.visit(this.data.get('billing-path'))
+      }, 1000)
+    }
+  }
 }

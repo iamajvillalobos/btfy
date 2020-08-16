@@ -1,34 +1,15 @@
 <%= render SettingsPageHeaderComponent.new %>
 <%= render NotificationComponent.new() %>
 
-<div class="row" data-no-turbolink="true">
+<div class="row mt-3">
   <div class="col-12 col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <div class="row align-items-center">
-          <div class="col">
-            <h6 class="text-uppercase text-muted mb-2">
-              Current plan
-            </h6>
-            <span class="h2 mb-0">
-              <% if current_user.subscribed? %>
-                $<%= current_user.user_plan.monthly_value %>/mo
-              <% else %>
-                Free
-              <% end %>
-            </span>
-          </div>
-          <div class="col-auto">
-            <% if current_user.subscribed? %>
-              <%= link_to "Cancel", subscriptions_path, method: :delete,
-                class: "btn btn-sm btn-danger" %>
-            <% else %>
-              <%= link_to "Upgrade", user_plans_path, class: "btn btn-sm btn-primary" %>
-            <% end %>
-          </div>
-        </div>
+    <% if !current_user.subscribed? %>
+      <div class="alert alert-light">
+        Please refresh the page if your plan hasn't updated yet.
       </div>
-    </div>
+    <% end %>
+
+    <%= render UserCurrentPlanCardComponent.new(user: current_user) %>
   </div>
 </div>
 
