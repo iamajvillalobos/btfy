@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col">
+        <h6 class="text-uppercase text-muted mb-2">
+          Current plan
+        </h6>
+        <span class="h2 mb-0">
+          <%= @user.subscribed? ? @user.user_plan.monthly_value : "Free" %>
+        </span>
+      </div>
+      <div class="col-auto">
+        <% if @user.subscribed? %>
+          <%= link_to "Cancel", subscriptions_path,
+            method: :delete, class: "btn btn-sm btn-danger" %>
+        <% else %>
+          <%= link_to "Upgrade", user_plans_path, class: "btn btn-sm btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
