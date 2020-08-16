@@ -44,3 +44,5 @@ group :test do
   gem "webdrivers", "4.4.1"
 end
 
+
+gem "active_link_to", "~> 1.0"

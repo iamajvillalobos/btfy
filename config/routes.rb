@@ -7,13 +7,17 @@ Rails.application.routes.draw do
     passwords: "users/passwords"
   }
 
+  resource :dashboard, only: [:show]
   resources :custom_domains
   resources :links
-  resource :billing, only: [:show]
-  resource :dashboard, only: [:show]
-  resource :settings, only: [:show]
+
+  # Plans
   resources :user_plans
   resource :subscriptions, only: [:destroy]
+
+  # Settings
+  resource :settings, only: [:show]
+  resource :billing, only: [:show]
 
   root to: "dashboard#show"
 

@@ -10,16 +10,7 @@
       <div class="col">
         <ul class="nav nav-tabs nav-overflow header-tabs">
           <li class="nav-item">
-            <a href="account-billing.html"
-              class="nav-link <%= 'active' if @active == 'billing' %>">
-              Billing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="account-security.html"
-              class="nav-link <%= 'active' if @active == 'security' %>">
-              Security
-            </a>
+            <%= active_link_to "Billing", billing_path, class: "nav-link", active: :inclusive %>
           </li>
         </ul>
       </div>
