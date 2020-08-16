@@ -26,4 +26,17 @@ class UserPlan < ApplicationRecord
       "every month"
     end
   end
+
+  def monthly_value
+    case name
+    when "3-year plan"
+      amount / 36
+    when "2-year plan"
+      amount / 24
+    when "1-year plan"
+      amount / 12
+    else
+      amount
+    end
+  end
 end

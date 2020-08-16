@@ -1,6 +1,7 @@
 class PricingCardComponent < ViewComponent::Base
-  def initialize(plan:)
+  def initialize(plan:, user:)
     @plan = plan
+    @user = user
   end
 
   def monthly_total

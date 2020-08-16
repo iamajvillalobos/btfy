@@ -1,4 +1,5 @@
-<div class="card">
+<div class="card" data-controller="subscription"
+  data-subscription-user="<%= @user.email.to_json %>">
   <div class="card-body">
     <h6 class="text-uppercase text-center text-muted my-2">
       <%= @plan.name %>
@@ -9,7 +10,7 @@
         <div class="h2 mb-0">$</div>
       </div>
       <div class="col-auto">
-        <div class="display-3 mb-0"><%= @plan.amount %></div>
+        <div class="display-3 mb-0"><%= @plan.monthly_value.round(2) %></div>
       </div>
     </div>
     <h6 class="text-uppercase text-center text-muted my-2">per month</h6>
@@ -25,7 +26,11 @@
     </div>
     
     <div class="d-flex justify-content-center mt-4">
-      <button class="btn btn-primary">Choose Plan</button>
+      <button class="btn btn-primary"
+        data-product="<%= @plan.paddle_plan_id %>"
+        data-action="subscription#subscribe">
+        Choose Plan
+      </button>
     </div>
   </div>
 </div>

@@ -1,23 +1,19 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-	static targets = ["user"]
-
 	initialize() {
-		this.user;
+		this.user = JSON.parse(this.data.get("user"))
 	}
 
 	connect() {
 		Paddle.Setup({ vendor: 118869 });
-
-		this.userTarget.style.display = "none";
-		this.user = JSON.parse(this.userTarget.textContent)
 	}
 
-	subscribe() {
+	subscribe(event) {
+		const product = event.currentTarget.dataset.product;
 		Paddle.Checkout.open({
-			product: 610658,
-			email: this.user.email,
+			product: product,
+			email: this.user,
 		})
 	}
 }
