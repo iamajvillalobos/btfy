@@ -1,4 +1,10 @@
-<%= render PageHeaderComponent.new(pretitle: "plan selection", title: "Choose a plan") %>
+<%= render NotificationComponent.new() %>
+
+<%= render PageHeaderComponent.new(
+  pretitle: "plan selection",
+  title: "Choose a plan")
+%>
+
 <div class="row">
   <% @plans.each do |plan| %>
     <div class="col-12 col-md-6 col-lg-3">
