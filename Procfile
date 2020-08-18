@@ -1,2 +1,3 @@
-web:    bundle exec puma -C config/puma.rb
-worker: bundle exec sidekiq -e production -C config/sidekiq.yml
+web:    bin/rails s
+worker: bundle exec sidekiq
+webpack: ./bin/webpack-dev-server
