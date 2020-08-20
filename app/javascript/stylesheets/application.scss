@@ -1,13 +1,14 @@
-@import "./theme.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Pacifico&display=swap');
+@import './theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://use.typekit.net/qwa7zhd.css');
 
 body {
-	font-family: 'Inter var', sans-serif;
+  font-family: proxima-nova, sans-serif;
 }
 
 // Remove underline in links by default
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .logo {
