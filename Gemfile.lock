@@ -147,6 +147,7 @@ GEM
     paddle_pay (0.0.1)
       faraday (~> 1.0)
       json (~> 2.0)
+    pagy (3.8.3)
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
@@ -298,6 +299,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   light-service (= 0.14.0)
   paddle_pay (~> 0.0.1)
+  pagy (~> 3.8)
   pay!
   pg (>= 0.18, < 2.0)
   pry (= 0.13.1)

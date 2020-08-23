@@ -13,6 +13,8 @@ gem "faker", "2.13.0"
 gem "groupdate", "5.0.0"
 gem "jbuilder", "~> 2.7"
 gem "light-service", "0.14.0"
+gem "paddle_pay", "~> 0.0.1"
+gem "pagy", "~> 3.8"
 gem "pay", git: "https://github.com/nm/pay", branch: "paddle"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
@@ -28,7 +30,6 @@ gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
-gem 'paddle_pay', '~> 0.0.1'
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"

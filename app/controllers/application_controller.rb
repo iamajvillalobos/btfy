@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 	skip_before_action :track_ahoy_visit
+  include Pagy::Backend
 
   rescue_from CanCan::AccessDenied do
     redirect_to user_plans_url,
