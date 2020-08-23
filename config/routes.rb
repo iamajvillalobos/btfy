@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :links, only: [:index]
     resources :custom_domains, only: [:index]
   end
+  get "/admin", to: "admin/links#index"
   
   get "/404", to: "errors#not_found", via: :all
   get "/422", to: "errors#unacceptable", via: :all
