@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   end
 
   resource :admin, only: [:show]
+  namespace :admin do
+    resources :links
+  end
 
   get "/404", to: "errors#not_found", via: :all
   get "/422", to: "errors#unacceptable", via: :all
