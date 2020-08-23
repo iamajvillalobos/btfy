@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header">
+    <div class="header-body">
+
+      <h6 class="header-pretitle">
+        Dashboard
+      </h6>
+      
+      <div class="d-flex align-items-center">
+        <h1 class="header-title">Users</h1>
+        <span class="badge badge-pill badge-soft-secondary ml-2"><%= @pagy.count %></span>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <%= render AdminUsersTableComponent.new(@users) %>
+        <div class="card-footer d-flex justify-content-between">
+          <%= render PagyNavComponent.new(@pagy) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

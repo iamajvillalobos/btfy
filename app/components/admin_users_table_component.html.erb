@@ -1,0 +1,20 @@
+<div class="table-responsive mb-0">
+  <table class="table table-sm table-nowrap table-hover card-table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Links</th>
+        <th>Custom Domains</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.links.count %></td>
+          <td><%= user.custom_domains.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
