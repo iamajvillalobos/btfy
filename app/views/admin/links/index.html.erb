@@ -15,24 +15,7 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <div class="table-responsive mb-0">
-          <table class="table table-sm table-nowrap table-hover card-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>URL</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @links.each do |link| %>
-                <tr>
-                  <td><%= link.name %></td>
-                  <td><%= link.destination_url %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+        <%= render AdminLinksTableComponent.new(@links) %>
         <div class="card-footer">
           <%= render PagyNavComponent.new(@pagy) %>
         </div>
