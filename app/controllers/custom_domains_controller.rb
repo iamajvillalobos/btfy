@@ -4,8 +4,6 @@ class CustomDomainsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_custom_domain, only: [:show, :edit, :update, :destroy]
 
-  authorize_resource
-
   # GET /custom_domains
   # GET /custom_domains.json
   def index
