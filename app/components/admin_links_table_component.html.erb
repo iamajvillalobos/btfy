@@ -4,6 +4,7 @@
       <tr>
         <th>Name</th>
         <th>URL</th>
+        <th>User</th>
       </tr>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
         <tr>
           <td><%= link.name %></td>
           <td><%= link.destination_url %></td>
+          <td><%= link.user.email %></td>
         </tr>
       <% end %>
     </tbody>
