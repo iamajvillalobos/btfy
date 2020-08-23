@@ -5,10 +5,10 @@ class Ability
 
   def initialize(user)
     if user.subscribed?
-      can [:index,:new, :show, :create, :destroy], Link
-      can [:index,:new, :create, :destroy], CustomDomain
+      can [:index, :new, :show, :create, :destroy], Link
+      can [:index, :new, :create, :destroy], CustomDomain
     else
-      can [:index], Link
+      can [:index, :new, :show, :create, :destroy], Link
       can [:index], CustomDomain
     end
   end
