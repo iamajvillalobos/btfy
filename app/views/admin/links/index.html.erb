@@ -1,11 +1,20 @@
 <div class="container">
-  <div class="row mt-5">
+  <div class="header">
+    <div class="header-body">
+
+      <h6 class="header-pretitle">
+        Dashboard
+      </h6>
+      
+      <h1 class="header-title">
+        Links
+      </h1>
+
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
-          <h4 class="card-header-title">Links</h4>
-          <span class="text-muted small"><%= @links.count %></span>
-        </div>
         <div class="table-responsive mb-0">
           <table class="table table-sm table-nowrap table-hover card-table">
             <thead>
@@ -23,6 +32,9 @@
               <% end %>
             </tbody>
           </table>
+        </div>
+        <div class="card-footer">
+          <%= render PagyNavComponent.new(@pagy) %>
         </div>
       </div>
     </div>
