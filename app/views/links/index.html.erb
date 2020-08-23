@@ -21,6 +21,9 @@
     <div class="card-body">
       <%= render partial: "links", locals: { links: @links } %>
     </div>
+    <div class="card-footer d-flex justify-content-between">
+      <%= render PagyNavComponent.new(@pagy) %>
+    </div>
   </div>
   </div>
 </div>
