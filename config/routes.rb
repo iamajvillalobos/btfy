@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resource :subscriptions, only: [:destroy]
 
   # Settings
-  resource :settings, only: [:show]
+  # resource :settings, only: [:show]
   resource :billing, only: [:show]
 
   root to: "dashboard#show"
