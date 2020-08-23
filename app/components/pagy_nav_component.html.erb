@@ -1,15 +1,43 @@
-<% link = helpers.pagy_link_proc(@pagy, 'class="page-link"') -%>
-<%#                            -%>  <ul class="pagination justify-content-center mb-0">
-<% if @pagy.prev                -%>    <li class="page-item prev"><%== link.call(@pagy.prev, helpers.pagy_t('pagy.nav.prev'), 'aria-label="previous"') %></li>
-<% else                        -%>    <li class="page-item prev disabled"><a href="#" class="page-link"><%== helpers.pagy_t('pagy.nav.prev') %></a></li>
-<% end                         -%>
-<% @pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
-<%   if    item.is_a?(Integer) -%>    <li class="page-item"><%== link.call(item) %></li>
-<%   elsif item.is_a?(String)  -%>    <li class="page-item active"><%== link.call(item) %></li>
-<%   elsif item == :gap        -%>    <li class="page-item disabled gap"><a href="#" class="page-link"><%== helpers.pagy_t('pagy.nav.gap') %></a></li>
-<%   end                       -%>
-<% end                         -%>
-<% if @pagy.next                -%>    <li class="page-item next"><%== link.call(@pagy.next, helpers.pagy_t('pagy.nav.next'), 'aria-label="next"') %></li>
-<% else                        -%>    <li class="page-item next disabled"><a href="#" class="page-link"><%== helpers.pagy_t('pagy.nav.next') %></a></li>
-<% end                         -%>
-<%#                            -%>  </ul>
+<!-- Prev -->
+<% link = helpers.pagy_link_proc(@pagy, 'class="page-link pl-0 pr-4 border-right"') %>
+<ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+  <% if @pagy.prev %>
+    <li class="page-item">
+      <%== link.call(@pagy.prev, helpers.pagy_t('pagy.nav.prev')) %>
+    </li>
+  <% else %>
+    <li class="page-item disabled border-top">
+      <%== link.call(helpers.pagy_t('pagy.nav.prev')) %>
+    </li>
+  <% end %>
+</ul>
+
+<!-- Pagination Numbers -->
+<% link = helpers.pagy_link_proc(@pagy, 'class="page"') %>
+<ul class="list-pagination pagination pagination-tabs card-pagination">
+  <% @pagy.series.each do |item| %>
+    <% if item.is_a?(Integer) %>
+      <li><%== link.call(item) %></li>
+    <% elsif item.is_a?(String) %>
+      <li class="active"><%== link.call(item) %></li>
+    <% elsif item == :gap %>
+      <li class="disabled">
+        <span class="page"><%== helpers.pagy_t('pagy.nav.gap') %></span>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<!-- Next -->
+<% link = helpers.pagy_link_proc(@pagy, 'class="page-link pl-4 pr-0 border-left"') %>
+<ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+  <% if @pagy.next %>
+    <li class="page-item">
+      <%== link.call(@pagy.next, helpers.pagy_t('pagy.nav.next') ) %>
+    </li>
+  <% else %>
+    <li class="page-item disabled border-top">
+      <%== link.call(helpers.pagy_t('pagy.nav.next')) %>
+    </li>
+  <% end %>
+</ul>
