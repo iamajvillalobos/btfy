@@ -27,15 +27,13 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = current_user.links.new(link_params)
+    result = CreateLink.call(@link)
 
-    respond_to do |format|
-      if @link.save
-        format.html { redirect_to @link, notice: "Link was successfully created." }
-        format.json { render :show, status: :created, location: @link }
-      else
-        format.html { render :new }
-        format.json { render json: @link.errors, status: :unprocessable_entity }
-      end
+    if result.success?
+      redirect_to links_path, notice: "Link was successfully created."
+    else
+      flash.now[:error] = result.message
+      render :new
     end
   end
 
