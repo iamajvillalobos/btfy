@@ -2,6 +2,9 @@ User.destroy_all
 Link.destroy_all
 CustomDomain.destroy_all
 
+# Create AdminUser
+admin_user = AdminUser.create!(email: "admin@example.com", password: "password", password_confirmation: "password")
+
 # Create user
 user = User.create!(email: "test@example.com", password: "password", password_confirmation: "password")
 
