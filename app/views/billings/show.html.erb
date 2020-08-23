@@ -3,12 +3,6 @@
 
 <div class="row mt-3">
   <div class="col-12 col-md-6">
-    <% if !current_user.subscribed? %>
-      <div class="alert alert-light">
-        Please refresh the page if your plan hasn't updated yet.
-      </div>
-    <% end %>
-
     <%= render UserCurrentPlanCardComponent.new(user: current_user) %>
   </div>
 </div>
