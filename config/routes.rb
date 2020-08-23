@@ -28,7 +28,8 @@ Rails.application.routes.draw do
 
   resource :admin, only: [:show]
   namespace :admin do
-    resources :links
+    resources :links, only: [:index]
+    resources :custom_domains, only: [:index]
   end
 
   get "/404", to: "errors#not_found", via: :all

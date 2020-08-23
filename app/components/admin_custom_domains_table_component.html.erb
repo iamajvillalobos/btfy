@@ -1,0 +1,18 @@
+<div class="table-responsive mb-0">
+  <table class="table table-sm table-nowrap table-hover card-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @custom_domains.each do |domain| %>
+        <tr>
+          <td><%= domain.name %></td>
+          <td><%= domain.user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
