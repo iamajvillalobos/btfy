@@ -18,5 +18,8 @@ module Btfy
 
     # Use sidekiq as active job adapter
     config.active_job.queue_adapter = :sidekiq
+
+    # Customize error pages routes
+    config.exceptions_app = self.routes
   end
 end
