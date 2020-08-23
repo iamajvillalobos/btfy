@@ -15,3 +15,8 @@ user = User.create!(email: "test@example.com", password: "password", password_co
     slug: slug
   )
 end
+
+# Create Custom Domains
+50.times do
+  user.custom_domains.create!(name: Faker::Internet.domain_name)
+end
