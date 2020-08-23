@@ -1,5 +1,4 @@
 class Link < ApplicationRecord
-  validates_presence_of :slug, :name
   validates :destination_url, url: true
   validate :unique_slug_per_custom_domain
 
