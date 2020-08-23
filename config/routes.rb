@@ -26,7 +26,6 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sidekiq"
   end
 
-  resource :admin, only: [:show]
   namespace :admin do
     resources :links, only: [:index]
     resources :custom_domains, only: [:index]
