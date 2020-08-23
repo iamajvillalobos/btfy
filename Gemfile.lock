@@ -257,6 +257,9 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
+    validate_url (1.0.11)
+      activemodel (>= 3.0.0)
+      public_suffix
     view_component (2.18.0)
       activesupport (>= 5.0.0, < 7.0)
     warden (1.2.8)
@@ -316,6 +319,7 @@ DEPENDENCIES
   timecop (= 0.9.1)
   turbolinks (~> 5)
   tzinfo-data
+  validate_url (~> 1.0)
   view_component (= 2.18.0)
   web-console (>= 3.3.0)
   webdrivers (= 4.4.1)

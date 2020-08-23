@@ -28,6 +28,7 @@ gem "stamp", "0.6.0"
 gem "timecop", "0.9.1"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "validate_url", "~> 1.0"
 gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
 
