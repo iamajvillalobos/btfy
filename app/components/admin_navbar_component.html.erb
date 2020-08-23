@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container justify-content-start">
+
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-brand mr-5" do %>
+      <div class="d-flex align-items-center">
+        <%= render LogoComponent.new() %>
+      </div>
+    <% end %>
+    <!-- End of Logo -->
+
+    <!-- Button -->
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- End of Button -->
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Links", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Custom Domains", root_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse ml-auto">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_admin_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+    <!-- End of Nav Links -->
+
+  </div>
+</nav>
