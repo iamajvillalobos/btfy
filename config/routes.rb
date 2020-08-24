@@ -1,8 +1,6 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  get "/", to: "marketing#index"
-  
   devise_for :users, path: "users", controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
@@ -23,10 +21,15 @@ Rails.application.routes.draw do
   # resource :settings, only: [:show]
   resource :billing, only: [:show]
 
-  root to: "dashboard#show"
+  authenticated :user do |user|
+    root to: "dashboard#show", as: :authenticated_root
+  end
 
-  authenticate :user do |user|
+  root to: "marketing#index"
+
+  authenticate :admin_user do |user|
     mount Sidekiq::Web => "/sidekiq"
+    root to: "admin/links#index", as: :authenticated_admin_root
   end
 
   namespace :admin do
