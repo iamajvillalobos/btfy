@@ -1,6 +1,8 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
+  get "/", to: "marketing#index"
+  
   devise_for :users, path: "users", controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
@@ -33,11 +35,11 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
   end
   get "/admin", to: "admin/links#index"
-  
+
   get "/404", to: "errors#not_found", via: :all
   get "/422", to: "errors#unacceptable", via: :all
   get "/500", to: "errors#internal_error", via: :all
 
+  # This must be the last route in the file
   get "/:slug", to: "redirect_links#new", as: :redirect
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
