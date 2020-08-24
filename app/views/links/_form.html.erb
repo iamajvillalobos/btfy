@@ -19,7 +19,7 @@
               Choose from your domains
             </small>
             <%= form.select :custom_domain_id,
-              current_user.custom_domains.map { |cd| [cd.name, cd.id] },
+              custom_domain_dropdown,
               {},
               { class: "custom-select" }
             %>
