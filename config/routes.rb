@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     passwords: "users/passwords"
   }
+  devise_scope :user do
+    get "login", to: "users/sessions#new"
+    get "register", to: "users/registrations#new"
+  end
 
   devise_for :admin_users, path: "admin_users"
 
