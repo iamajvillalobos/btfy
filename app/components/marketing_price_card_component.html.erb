@@ -1,36 +1,48 @@
-<div class="col-12 col-md-4">
-  <div class="card shadow-light-lg mb-6 mb-md-0 lift lift-lg">
-    <div class="card-body">
+<div class="col-12 col-md-3">
+  <div class="card shadow-light-lg mb-6 mb-md-0">
+    <div class="card-body text-center">
       <!-- Text -->
-      <h6 class="text-uppercase text-center text-primary my-4">
-        Free Plan
+      <% if @plan.name == "Yearly" %>
+        <span class="badge badge-pill badge-primary">
+          Save 20%
+        </span>
+      <% else %>
+        <span class="badge badge-pill badge-white text-white">&nbsp;</span>
+      <% end %>
+      <h6 class="text-uppercase text-center text-primary mt-2 mb-4">
+        <%= @plan.name %> Plan
       </h6>
+
       <!-- Price -->
       <div class="row no-gutters align-items-center justify-content-center">
         <div class="col-auto">
           <div class="h2 mb-0">$</div>
         </div>
         <div class="col-auto">
-          <div class="display-2 mb-0">0</div>
+          <div class="display-2 mb-0"><%= @plan.price %></div>
         </div>
       </div>
       <div class="h6 text-uppercase text-center text-primary mb-5">
-        / month
+        <%= @plan.interval %>
       </div>
       <!-- Features -->
       <div class="mb-3">
         <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-            <small>Links</small><small>5</small>
+            <small>Links</small>
+            <small><%= @plan.links_limit %></small>
           </li>
           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-            <small>Custom Slug</small><small>-</small>
+            <small>Custom Slug</small>
+            <small><%= @plan.custom_slug_limit %></small>
           </li>
           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-            <small>Custom Domains</small><small>-</small>
+            <small>Custom Domains</small>
+            <small><%= @plan.custom_domains_limit %></small>
           </li>
           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-            <small>Link Analytics</small><small>Basic</small>
+            <small>Link Analytics</small>
+            <small><%= @plan.analytics_limit %></small>
           </li>
         </ul>
       </div>
