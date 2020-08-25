@@ -39,7 +39,7 @@
       <tbody>
         <% @links.each do |link| %>
           <tr>
-            <td><%= link.name.truncate(100) %></td>
+            <td><%= link_to link.name.truncate(100), link %></td>
             <td><%= link.redirect_url %></td>
             <td><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
             <td><%= LinkStatsViewerAction.execute(link: link).unique_visit_count %></td>
