@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
   layout "dashboard"
 
   def show
-    @links = current_user.links.order(created_at: :desc).limit(5)
-    @stats = GroupLinkStatsViewer.call(@links)
+    @links = GetTopLinksAction.execute(user: current_user).top_links
+    @stats = GroupLinkStatsViewer.call(current_user.links)
   end
 end
