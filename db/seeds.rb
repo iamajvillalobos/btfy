@@ -26,6 +26,6 @@ end
 
 # User plans
 UserPlan.create!(name: "Free", interval: "month")
-UserPlan.create!(name: "Monthly", interval: "month")
-UserPlan.create!(name: "Yearly", interval: "year")
-UserPlan.create!(name: "Forever", interval: "forever")
+UserPlan.create!(name: "Monthly", interval: "month", amount: 5.0)
+UserPlan.create!(name: "Yearly", interval: "year", amount: 50.0)
+UserPlan.create!(name: "Forever", interval: "forever", amount: 250.0)
