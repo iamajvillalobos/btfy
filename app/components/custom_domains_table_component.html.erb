@@ -1,0 +1,37 @@
+<div data-controller="domains">
+  <div id="domains" class="card">
+    <div class="card-header">
+      <div class="input-group input-group-flush input-group-merge">
+          <input type="search"
+            class="search form-control form-control-prepended"
+            placeholder="Search">
+      </div>
+    </div>
+    <div class="table-responsive mb-0">
+      <table class="table table-sm table-nowrap card-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Links</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="list">
+          <% @domains.each do |domain| %>
+            <tr>
+              <td class="name"><%= domain.name %></td>
+              <td><%= domain.links.count %></td>
+              <td class="text-right">
+                <%= link_to "Delete", custom_domain_path(domain),
+                  method: :delete,
+                  data: { confirm: "This will delete all links that you created with this domain, are you sure you want to delete?" },
+                  class: "btn btn-sm btn-secondary"
+                %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

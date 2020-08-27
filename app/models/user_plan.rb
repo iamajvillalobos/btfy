@@ -1,47 +1,21 @@
 class UserPlan < ApplicationRecord
-  def monthly_total
-    monthly_amount = UserPlan.find_by(name: "1-month plan").amount
-
-    case name
-    when "3-year plan"
-      monthly_amount * 36
-    when "2-year plan"
-      monthly_amount * 24
-    when "1-year plan"
-      monthly_amount * 12
-    else
-      monthly_amount
-    end
+  def price
+    amount.to_i
   end
 
-  def interval_text
-    case name
-    when "3-year plan"
-      "every 3 years"
-    when "2-year plan"
-      "every 2 years"
-    when "1-year plan"
-      "every year"
-    else
-      "every month"
-    end
+  def links_limit
+    name == "Free" ? 5 : "Unlimited"
   end
 
-  def monthly_value
-    value = case name
-      when "3-year plan"
-        amount / 36
-      when "2-year plan"
-        amount / 24
-      when "1-year plan"
-        amount / 12
-      else
-        amount
-      end
-    value.round(2)
+  def custom_slug_limit
+    name == "Free" ? 0 : "Unlimited"
   end
 
-  def savings_percentage
-    ((monthly_total - amount) / monthly_total * 100).to_i
+  def custom_domains_limit
+    name == "Free" ? 0 : "Unlimited"
+  end
+
+  def analytics_limit
+    name == "Free" ? "Basic" : "All Access"
   end
 end

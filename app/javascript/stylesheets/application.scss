@@ -1,15 +1,6 @@
-@import './theme.css';
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://use.typekit.net/qwa7zhd.css');
-
-body {
-  font-family: proxima-nova, sans-serif;
-}
-
-// Remove underline in links by default
-a {
-  text-decoration: none;
-}
+@import './theme.css';
 
 .logo {
   font-family: 'Pacifico', cursive;
