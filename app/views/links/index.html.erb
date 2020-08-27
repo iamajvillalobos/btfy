@@ -8,22 +8,8 @@
 %>
 
 <div class="row">
-  <div class="col-12" data-controller="links">
-    
-  <div id="links" class="card">
-    <div class="card-header">
-      <div class="input-group input-group-flush input-group-merge">
-        <input type="search"
-               class="search form-control form-control-prepended"
-               placeholder="Search">
-      </div>
-    </div>
-    <div class="card-body">
-      <%= render partial: "links", locals: { links: @links } %>
-    </div>
-    <div class="card-footer d-flex justify-content-between">
-      <%= render PagyNavComponent.new(@pagy) %>
-    </div>
-  </div>
+  <div class="col-12">
+    <%= render LinksTableComponent.new(@links, @pagy) %>
   </div>
 </div>
+    

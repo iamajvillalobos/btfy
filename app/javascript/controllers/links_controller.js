@@ -3,10 +3,8 @@ import List from "list.js";
 
 export default class extends Controller {
   connect() {
-    var options = {
-      valueNames: [ "name "]
-    }
-
-    var linkList = new List("links", options);
+    new List("links-table", {
+      valueNames: ["name"],
+    });
   }
 }
