@@ -1,6 +1,7 @@
 class Link < ApplicationRecord
   validates :destination_url, url: true
   validate :unique_slug_per_custom_domain
+  validates_format_of :slug, with: /\A[a-zA-Z0-9]*\z/, message: "must only be numbers and letters"
 
   belongs_to :custom_domain, optional: true
   belongs_to :user
