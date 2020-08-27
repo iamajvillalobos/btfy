@@ -6,6 +6,10 @@
         <span class="badge badge-pill badge-primary">
           Save 20%
         </span>
+      <% elsif @plan.name == "Forever" %>
+        <span class="badge badge-pill badge-warning">
+          99 slots left
+        </span>
       <% else %>
         <span class="badge badge-pill badge-white text-white">&nbsp;</span>
       <% end %>
@@ -46,6 +50,14 @@
           </li>
         </ul>
       </div>
+      <!-- CTA -->
+      <% if @plan.name == "Yearly" %>
+        <%= link_to "Get Started", @plan.register_link, class: "btn btn-primary btn-block" %>
+      <% elsif @plan.name == "Forever" %>
+        <%= link_to "Get Started", @plan.register_link, class: "btn btn-warning btn-block" %>
+      <% else %>
+        <%= link_to "Get Started", @plan.register_link, class: "btn btn-secondary btn-block" %>
+      <% end %>
     </div>
   </div>
 </div>
