@@ -19,7 +19,7 @@ class UserPlan < ApplicationRecord
   end
 
   def links_limit
-    name == "Free" ? 5 : "Unlimited"
+    name == "Free" ? Ability::MAX_LINKS_FOR_FREE_USER : "Unlimited"
   end
 
   def custom_slug_limit

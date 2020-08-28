@@ -22,7 +22,7 @@
     <div class="list-group list-group-flush my-n3 small">
       <div class="list-group-item px-4 d-flex">
         <span>Links</span>
-        <span class="ml-auto"><%= @user&.user_plan&.links_limit || 5 %></span>
+        <span class="ml-auto"><%= @user&.user_plan&.links_limit || Ability::MAX_LINKS_FOR_FREE_USER %></span>
       </div>
       <div class="list-group-item px-4 d-flex">
         <span class="mr-2">Custom Slug</span>

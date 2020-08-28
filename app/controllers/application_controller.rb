@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   rescue_from CanCan::AccessDenied do
-    flash[:notice] = "You must subscribe to plan to do this action"
+    flash[:notice] = "You must be a paid account to access this. Please choose a plan below."
     redirect_to subscriptions_path
   end
 end

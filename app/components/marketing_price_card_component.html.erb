@@ -6,10 +6,6 @@
         <span class="badge badge-pill badge-primary">
           Save 20%
         </span>
-      <% elsif @plan.name == "Forever" %>
-        <span class="badge badge-pill badge-warning">
-          99 slots left
-        </span>
       <% else %>
         <span class="badge badge-pill badge-white text-white">&nbsp;</span>
       <% end %>
@@ -37,7 +33,10 @@
             <small><%= @plan.links_limit %></small>
           </li>
           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-            <small>Custom Slug</small>
+            <small class="d-flex">
+              Custom Slug
+              <%= render SlugInfoTooltipComponent.new %>
+            </small>
             <small><%= @plan.custom_slug_limit %></small>
           </li>
           <li class="list-group-item d-flex align-items-center justify-content-between px-0">

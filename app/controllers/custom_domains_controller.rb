@@ -3,6 +3,7 @@ class CustomDomainsController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_custom_domain, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   def index
     @domains = current_user.custom_domains

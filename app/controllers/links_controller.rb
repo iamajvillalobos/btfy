@@ -3,23 +3,25 @@ class LinksController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   def index
     @pagy, @links = pagy(current_user.links.order(created_at: :desc), items: 10)
   end
 
-  # GET /links/1
-  # GET /links/1.json
   def show
     @stats = LinkStatsViewerAction.execute(link: @link)
   end
 
-  # GET /links/new
   def new
+    if current_user.links.count >= Ability::MAX_LINKS_FOR_FREE_USER
+      flash[:notice] = "You already reach the max amount of links. Please choose a plan below."
+      redirect_to subscriptions_path
+    end
+    
     @link = current_user.links.new
   end
 
-  # GET /links/1/edit
   def edit
   end
 
