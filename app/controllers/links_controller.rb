@@ -14,7 +14,8 @@ class LinksController < ApplicationController
   end
 
   def new
-    if current_user.links.count >= Ability::MAX_LINKS_FOR_FREE_USER
+    if !current_user.subscribed? &&
+        current_user.links.count >= Ability::MAX_LINKS_FOR_FREE_USER
       flash[:notice] = "You already reach the max amount of links. Please choose a plan below."
       redirect_to subscriptions_path
     end
