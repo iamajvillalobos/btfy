@@ -1,6 +1,7 @@
 <%= render SettingsHeaderComponent.new %>
 <div class="row">
   <div class="col-12 col-md-6">
-    <%= render UserCurrentPlanCardComponent.new(user: current_user) %>
+    <%= render UserCurrentPlanCardComponent.new(
+      user: current_user, show_button: true) %>
   </div>
 </div>

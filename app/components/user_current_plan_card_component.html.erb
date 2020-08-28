@@ -7,9 +7,11 @@
           <%= @user.subscribed? ? @user.user_plan.monthly_value : "Free" %>
         </span>
       </div>
-      <div class="col-auto">
-        <%= link_to "Upgrade", "", class: "btn btn-sm btn-primary" %>
-      </div>
+      <% if @show_button %>
+        <div class="col-auto">
+          <%= link_to "Upgrade", subscriptions_path, class: "btn btn-sm btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="card-footer px-0">
