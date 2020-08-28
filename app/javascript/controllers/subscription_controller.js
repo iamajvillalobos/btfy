@@ -6,13 +6,12 @@ export default class extends Controller {
   }
 
   connect () {
-    Paddle.Setup({ vendor: 118869 })
+    Paddle.Setup({ vendor: Number(this.data.get("vendor-id")) })
   }
 
   subscribe (event) {
-    const product = event.currentTarget.dataset.product
     Paddle.Checkout.open({
-      product: product,
+      product: this.data.get("product-id"),
       email: this.user.email,
       passthrough: JSON.stringify({
         owner_id: this.user.id,
@@ -23,12 +22,10 @@ export default class extends Controller {
   }
 
   checkoutComplete (data) {
-    let isCompleted = data.checkout.completed
+    let isCompleted = data.checkout.completed;
 
     if (isCompleted) {
-      setTimeout(() => {
-        Turbolinks.visit(this.data.get('billing-path'))
-      }, 1000)
-    }
+      location.href = this.data.get("settings-path")
+    };
   }
 }

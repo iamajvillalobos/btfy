@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :custom_domains, dependent: :destroy
 
   def user_plan
+    return nil unless subscribed?
     UserPlan.find_by(paddle_plan_id: subscription.processor_plan)
   end
 

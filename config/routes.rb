@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :custom_domains
   resources :links
   resource :settings, only: [:show]
-  resources :subscriptions
+  resource :subscriptions, only: [:show, :destroy]
 
   authenticated :user do |user|
     root to: "dashboard#show", as: :authenticated_root

@@ -3,6 +3,21 @@ class UserPlan < ApplicationRecord
     amount.to_i
   end
 
+  def per_text
+    case name
+    when "Monthly"
+      "/ mo"
+    when "Yearly"
+      "/ yr"
+    else
+      ""
+    end
+  end
+
+  def price_with_per_text
+    "$#{price} #{per_text}"
+  end
+
   def links_limit
     name == "Free" ? 5 : "Unlimited"
   end

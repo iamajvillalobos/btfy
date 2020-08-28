@@ -1,12 +1,14 @@
 class SubscriptionsController < ApplicationController
   layout "dashboard"
   
-  def index
-    @plans = UserPlan.all.reject { |u| u.name == "Free" }
+  def show
+    redirect_to settings_path if current_user.subscribed?
+    @plans = UserPlan.all.reject { |u| u.name == "Free" }.sort
   end
 
   def destroy
     current_user.subscription.cancel
-    redirect_to billing_path, notice: "Cancelled plan successfully"
+    message = "We are sorry to see you leave. Your subscription has been cancelled."
+    redirect_to settings_path, notice: message
   end
 end
