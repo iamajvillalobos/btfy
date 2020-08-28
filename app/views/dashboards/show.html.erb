@@ -8,23 +8,23 @@
 %>
 
 <div class="row">
-  <div class="col-12 col-lg-6 col-xl">
-    <%= render(StatsCardComponent.new(title: "Visits", count: @stats.total_visit_count)) %>
+  <div class="col-12 col-lg-6">
+    <%= render(StatsCardComponent.new(
+      title: "Visits for this month of #{Date.today.strftime("%B")}",
+      count: @stats.total_visit_count)
+    )%>
   </div>
-  <div class="col-12 col-lg-6 col-xl">
-    <%= render(StatsCardComponent.new(title: "Unique Visits", count: @stats.total_unique_visit_count)) %>
-  </div>
-  <div class="col-12 col-lg-6 col-xl">
-    <%= render(StatsCardComponent.new(title: "Links", count: current_user.links.count)) %>
-  </div>
-  <div class="col-12 col-lg-6 col-xl">
-    <%= render(StatsCardComponent.new(title: "Domains", count: current_user.custom_domains.count)) %>
+  <div class="col-12 col-lg-6">
+    <%= render(StatsCardComponent.new(
+      title: "Unique Visits for this month of #{Date.today.strftime("%B")}",
+      count: @stats.total_unique_visit_count)
+    )%>
   </div>
 </div>
 
 <div class="card">
   <div class="card-header">
-    <h4 class="card-header-title">Top links this month</h4>
+    <h4 class="card-header-title">Top Links</h4>
   </div>
   <div class="table-responsive mb-0">
     <table class="table table-sm table-nowrap card-table">
@@ -39,8 +39,8 @@
       <tbody>
         <% @links.each do |link| %>
           <tr>
-            <td><%= link_to link.name.truncate(100), link %></td>
-            <td><%= link.redirect_url %></td>
+            <td><%= link_to link.name.truncate(50), link %></td>
+            <td><%= link_to link.redirect_url, link.redirect_url %></td>
             <td><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
             <td><%= LinkStatsViewerAction.execute(link: link).unique_visit_count %></td>
           </tr>
