@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resource :subscriptions, only: [:show, :destroy]
 
   authenticated :user do |user|
-    root to: "dashboard#show", as: :authenticated_root
+    root to: "links#index", as: :authenticated_root
   end
 
   root to: "marketing#index"
