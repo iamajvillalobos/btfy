@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, path: "admin_users"
 
   resource :dashboard, only: [:show]
-  resources :custom_domains
-  resources :links
+  resources :custom_domains, only: [:index, :new, :create, :destroy]
+  resources :links, except: [:destroy]
   resource :settings, only: [:show]
   resource :subscriptions, only: [:show, :destroy]
 
