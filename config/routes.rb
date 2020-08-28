@@ -19,11 +19,7 @@ Rails.application.routes.draw do
 
   # Plans
   resources :user_plans
-  resource :subscriptions, only: [:destroy]
-
-  # Settings
-  # resource :settings, only: [:show]
-  resource :billing, only: [:show]
+  resource :settings, only: [:show]
 
   authenticated :user do |user|
     root to: "dashboard#show", as: :authenticated_root
@@ -43,6 +39,7 @@ Rails.application.routes.draw do
   end
   get "/admin", to: "admin/links#index"
 
+  # Custom errors
   get "/404", to: "errors#not_found", via: :all
   get "/422", to: "errors#unacceptable", via: :all
   get "/500", to: "errors#internal_error", via: :all
