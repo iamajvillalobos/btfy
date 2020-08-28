@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def user_plan
     UserPlan.find_by(paddle_plan_id: subscription.processor_plan)
   end
+
+  def free_plan?
+    subscription.nil?
+  end
 end
