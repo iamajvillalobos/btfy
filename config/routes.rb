@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :links, only: [:index]
     resources :custom_domains, only: [:index]
     resources :users, only: [:index]
+    resources :user_plans
   end
   get "/admin", to: "admin/links#index"
 
