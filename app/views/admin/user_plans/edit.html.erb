@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <%= render(PageHeaderComponent.new(pretitle: "Edit", title: @user_plan.name)) %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <%= form_with(model: @user_plan,
+            url: admin_user_plan_path(@user_plan),
+            method: "patch", local: true) do |form| %>
+
+            <div class="form-group">
+              <%= form.label :name %>
+              <%= form.text_field :name, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :paddle_plan_id %>
+              <%= form.text_field :paddle_plan_id, class: "form-control" %>
+            </div>
+
+            <%= form.submit class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
