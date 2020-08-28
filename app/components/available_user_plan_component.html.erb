@@ -1,0 +1,34 @@
+<div class="card border">
+  <div class="card-body bg-light">
+    <div class="row align-items-center">
+      <div class="col">
+        <h6 class="text-uppercase text-muted mb-2"><%= @plan.name %></h6>
+        <span class="h2 mb-0">$<%= @plan.price %></span>
+      </div>
+      <div class="col-auto">
+        <%= link_to "Subscribe", subscriptions_path, class: "btn btn-sm btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer px-0">
+    <div class="list-group list-group-flush my-n3 small">
+      <div class="list-group-item px-4 d-flex">
+        <span>Links</span>
+        <span class="ml-auto"><%= @plan.links_limit %></span>
+      </div>
+      <div class="list-group-item px-4 d-flex">
+        <span class="mr-2">Custom Slug</span>
+        <%= render SlugInfoTooltipComponent.new %>
+        <span class="ml-auto"><%= @plan.custom_slug_limit %></span>
+      </div>
+      <div class="list-group-item px-4 d-flex">
+        <span>Custom Domains</span>
+        <span class="ml-auto"><%= @plan.custom_domains_limit %></span>
+      </div>
+      <div class="list-group-item px-4 d-flex">
+        <span>Link Analytics</span>
+        <span class="ml-auto"><%= @plan.analytics_limit %></span>
+      </div>
+    </div>
+  </div>
+</div>
