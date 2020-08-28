@@ -6,10 +6,5 @@
   font-family: 'Pacifico', cursive;
 }
 
-#HW_badge_cont {
-  position: absolute !important;
-  top: 1px;
-  right: -1px;
-}
-
+// For rails forms errors
 .field_with_errors { display: inline };
