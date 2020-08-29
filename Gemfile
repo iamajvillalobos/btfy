@@ -48,4 +48,5 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver", "3.142.7"
   gem "webdrivers", "4.4.1"
+  gem "capybara-screenshot", "~> 1.0"
 end

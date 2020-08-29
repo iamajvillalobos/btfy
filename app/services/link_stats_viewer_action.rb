@@ -1,5 +1,5 @@
 class LinkStatsViewerAction
-  include LightService::Action
+  extend LightService::Action
   expects :link
   promises :unique_visit_count,
     :unique_visit_count_grouped,
