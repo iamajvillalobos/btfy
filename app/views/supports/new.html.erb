@@ -1,0 +1,33 @@
+<%= render(PageHeaderComponent.new(
+  pretitle: "Support",
+  title: "Contact Us"))
+%>
+
+<div class="row">
+  <div class="col-12 col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <%= form_with url: support_path, method: :post, local: true do |f| %>
+          <div class="row">
+            <div class="col form-group">
+              <%= f.label :name, "Full name" %>
+              <%= f.text_field :name, class: "form-control",
+                placeholder: "Full name" %>
+            </div>
+            <div class="col form-group">
+              <%= f.label :email, "Email" %>
+              <%= f.text_field :email, class: "form-control",
+                placeholder: "hello@email.com", value: current_user.email %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :inquiry, "What can we help you with?" %>
+            <%= f.text_area :inquiry, class: "form-control",
+              placeholder: "Tell us what we can help you with!" %>
+          </div>
+          <%= f.submit "Send Message", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

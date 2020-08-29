@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :links, except: [:destroy]
   resource :settings, only: [:show]
   resource :subscriptions, only: [:show, :destroy]
+  resource :support, only: [:new, :create]
 
   authenticated :user do |user|
     root to: "links#index", as: :authenticated_root
