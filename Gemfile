@@ -33,8 +33,8 @@ gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "dotenv-rails", "2.7.6"
+  gem "factory_bot_rails", "~> 6.1"
   gem "pry", "0.13.1"
   gem "rspec-rails", "~> 4.0"
   gem "standard", "0.4.7"
