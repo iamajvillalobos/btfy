@@ -25,7 +25,8 @@ module Btfy
     # Use Postmark for emails
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = {
-      api_token: ENV["POSTMARK_API_TOKEN"]
+      api_token: ENV["POSTMARK_API_TOKEN"],
+      secure: false
     }
   end
 end
