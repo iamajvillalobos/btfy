@@ -34,6 +34,10 @@
         <span class="ml-auto"><%= @user&.user_plan&.custom_domains_limit || 0 %></span>
       </div>
       <div class="list-group-item px-4 d-flex">
+        <span>Dashboard</span>
+        <span class="ml-auto"><%= @user&.user_plan&.dashboard_access || "No" %></span>
+      </div>
+      <div class="list-group-item px-4 d-flex">
         <span>Link Analytics</span>
         <span class="ml-auto"><%= @user&.user_plan&.analytics_limit || "Basic" %></span>
       </div>

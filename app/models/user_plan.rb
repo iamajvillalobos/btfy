@@ -33,4 +33,8 @@ class UserPlan < ApplicationRecord
   def analytics_limit
     name == "Free" ? "Basic" : "All Access"
   end
+
+  def dashboard_access
+    name == "Free" ? "No" : "Yes"
+  end
 end
