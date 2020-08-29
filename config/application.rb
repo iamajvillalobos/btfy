@@ -21,5 +21,11 @@ module Btfy
 
     # Customize error pages routes
     config.exceptions_app = self.routes
+
+    # Use Postmark for emails
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = {
+      api_token: ENV["POSTMARK_API_TOKEN"]
+    }
   end
 end

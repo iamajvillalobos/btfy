@@ -31,6 +31,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "validate_url", "~> 1.0"
 gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
+gem "postmark-rails", "~> 0.20.0"
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"
