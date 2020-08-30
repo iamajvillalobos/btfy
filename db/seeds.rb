@@ -9,23 +9,34 @@ admin_user = AdminUser.create!(email: "admin@example.com", password: "password",
 user = User.create!(email: "test@example.com", password: "password", password_confirmation: "password")
 
 # Create links
-100.times do |i|
+50.times do |i|
   slug = Faker::Internet.slug
 
   user.links.create!(
-    name: slug,
+  	name: "Link#{i}",
     destination_url: Faker::Internet.url,
-    slug: slug
+    slug: SecureRandom.alphanumeric(5)
   )
 end
 
 # Create Custom Domains
-50.times do
+10.times do
   user.custom_domains.create!(name: Faker::Internet.domain_name)
 end
 
 # User plans
 UserPlan.create!(name: "Free", interval: "month", register_link: "/free")
-UserPlan.create!(name: "Monthly", interval: "month", amount: 5.0, register_link: "/monthly")
-UserPlan.create!(name: "Yearly", interval: "year", amount: 50.0, register_link: "/yearly")
-UserPlan.create!(name: "Forever", interval: "forever", amount: 250.0, register_link: "/forever")
+UserPlan.create!(
+	name: "Monthly",
+	interval: "month",
+	amount: 5.0,
+	register_link: "/monthly",
+	paddle_plan_id: 628081
+)
+UserPlan.create!(
+  name: "Yearly",
+  interval: "year",
+  amount: 50.0,
+  register_link: "/yearly",
+  paddle_plan_id: 628080
+)
