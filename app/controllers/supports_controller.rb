@@ -1,6 +1,8 @@
 class SupportsController < ApplicationController
   layout "dashboard"
 
+  before_action :authenticate_user!
+
   SUPPORT_EMAIL = "support@btfy.io"
 
   def new
