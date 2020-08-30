@@ -7,7 +7,7 @@ class ParseRequestParamsAction
 	executed do |ctx|
 		domain = ctx.request.domain
 		subdomain = ctx.request.subdomain
-		ctx.domain = if subdomain
+		ctx.domain = if subdomain.present?
 			"#{subdomain}.#{domain}"
 		else
 			domain
