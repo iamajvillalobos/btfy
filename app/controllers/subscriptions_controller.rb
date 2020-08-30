@@ -1,5 +1,7 @@
 class SubscriptionsController < ApplicationController
   layout "dashboard"
+
+  before_action :authenticate_user!
   
   def show
     redirect_to settings_path if current_user.subscribed?
