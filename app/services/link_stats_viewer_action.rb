@@ -8,7 +8,10 @@ class LinkStatsViewerAction
     :devices,
     :browsers,
     :countries,
-    :range
+    :cities,
+    :referrers,
+    :range,
+    :os
 
   executed do |ctx|
     range = Time.now.beginning_of_month..Time.now.end_of_month
@@ -17,10 +20,36 @@ class LinkStatsViewerAction
     uniq_events = Ahoy::Event.where(id: events.uniq(&:visit_id).map(&:id))
 
     ctx.unique_visit_count = events.distinct.pluck(:visit_id).count
+
     ctx.visit_count = events.pluck(:visit_id).count
-    ctx.devices = uniq_events.map { |e| e.visit.device_type }.tally
-    ctx.browsers = uniq_events.map { |e| e.visit.browser }.tally
-    ctx.countries = uniq_events.map { |e| e.visit.country }.tally
+
+    ctx.devices = tally_and_clean(uniq_events.map { |e| e.visit.device_type })
+
+    ctx.browsers = tally_and_clean(uniq_events.map { |e| e.visit.browser })
+
+    ctx.os = tally_and_clean(uniq_events.map { |e| e.visit.os })
+
+    ctx.countries = uniq_events.map do |e|
+      next unless e.visit.country
+      country = ISO3166::Country.new(e.visit.country)
+      case country.name
+      when "United States of America"
+        "#{country.emoji_flag} USA"
+      when "United Kingdom of Great Britain and Northern Ireland"
+        "#{country.emoji_flag} UK"
+      when "United Arab Emirates"
+        "#{country.emoji_flag} UAE"
+      else
+        "#{country.emoji_flag} #{country.name}"
+      end
+    end
+    ctx.countries = tally_and_clean(ctx.countries)
+
+    ctx.cities = tally_and_clean(uniq_events.map { |e| e.visit.city })
+
+    ctx.referrers = uniq_events.map do |e|
+      e.visit.referring_domain ? e.visit.referring_domain : "Direct"
+    end.tally
 
     ctx.visit_count_grouped = events.group_by_day_of_month(
       :time, range: range
@@ -32,4 +61,9 @@ class LinkStatsViewerAction
 
     ctx.range = range
   end
+
+  def self.tally_and_clean(data)
+    data.tally.delete_if { |k, v| k.nil? }
+  end
 end
+
