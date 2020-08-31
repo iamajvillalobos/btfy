@@ -12,6 +12,7 @@ class FetchTotalBrowsersCountAction
       browsers.merge!(browser) { |_, old_val, new_val| old_val + new_val }
     end
 
-    ctx.total_browsers = browsers.sort
+    # Todo: Found out why there is a nil browser accesing the link
+    ctx.total_browsers = browsers.keys.delete_if { |k, v| k.nil? }.sort
   end
 end
