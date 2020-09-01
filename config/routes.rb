@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resource :subscriptions, only: [:show, :destroy]
   resource :support, only: [:new, :create]
   # Settings
+  resource :account, only: [:show]
   resource :billing, only: [:show]
 
   authenticated :user do |user|
