@@ -1,8 +1,31 @@
 <%= render SettingsHeaderComponent.new %>
 
 <div class="row justify-content-start">
-  <div class="col-12 col-md-6">
+  <div class="col-12 col-md-8">
     <%= form_with model: @account, local: true do |f| %>
+      <!-- Avatar -->
+      <div class="row justify-content-between align-items-center">
+        <div class="col">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <div class="avatar">
+                <%= image_tag @account.image, class: "avatar-img rounded-circle" %>
+              </div>
+            </div>
+            <div class="col ml-n2">
+              <h4 class="mb-1">Your avatar</h4>
+              <small class="text-muted">PNG or JPEG, less than 5MB or it won't look good 😆</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <%= f.file_field :avatar, class: "form-control-file" %>
+        </div>
+      </div>
+      <hr class="my-5">
+      <!-- End of Avatar -->
+
+      <!-- Details -->
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="form-group">
