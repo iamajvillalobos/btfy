@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   # Settings
   resource :account, only: [:show, :update]
   resource :billing, only: [:show]
+  resource :bio, only: [:show]
 
   authenticated :user do |user|
     root to: "links#index", as: :authenticated_root

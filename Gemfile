@@ -6,6 +6,7 @@ ruby "2.7.1"
 gem "active_link_to", "~> 1.0"
 gem "active_storage_validations", "~> 0.9.0"
 gem "ahoy_matey", "3.0.4"
+gem "aws-sdk-s3", "~> 1.79", require: false
 gem "bootsnap", "1.4.7", require: false
 gem "cancancan", "~> 3.1"
 gem "chartkick", "3.3.2"
@@ -53,4 +54,3 @@ group :test do
   gem "webdrivers", "4.4.1"
   gem "capybara-screenshot", "~> 1.0"
 end
-
