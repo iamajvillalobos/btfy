@@ -1,1 +1,34 @@
 <%= render SettingsHeaderComponent.new %>
+
+<div class="row justify-content-start">
+  <div class="col-12 col-md-6">
+    <%= form_with model: @account, local: true do |f| %>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <%= f.label :bio %>
+            <small class="form-text text-muted">
+              Tell us something about yourself in 160 characters or less
+            </small>
+            <%= f.text_area :bio, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
