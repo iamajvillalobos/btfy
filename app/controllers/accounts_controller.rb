@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
   layout "dashboard"
 
   def show
-    @account = Account.find_or_create_by(user: current_user)
+    @account = current_user.account
   end
 
   def update

@@ -4,13 +4,13 @@ class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
   
   def show
-    redirect_to settings_path if current_user.subscribed?
+    redirect_to account_path if current_user.subscribed?
     @plans = UserPlan.all.reject { |u| u.name == "Free" }.sort
   end
 
   def destroy
     current_user.subscription.cancel
     message = "We are sorry to see you leave. Your subscription has been cancelled."
-    redirect_to settings_path, notice: message
+    redirect_to account_path, notice: message
   end
 end
