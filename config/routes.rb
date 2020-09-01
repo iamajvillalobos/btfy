@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   resources :links, except: [:destroy]
   resource :subscriptions, only: [:show, :destroy]
   resource :support, only: [:new, :create]
+  resources :bio
+
   # Settings
-  resource :account, only: [:show]
+  resource :account, only: [:show, :update]
   resource :billing, only: [:show]
 
   authenticated :user do |user|

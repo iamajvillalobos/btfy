@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :links, dependent: :destroy
   has_many :custom_domains, dependent: :destroy
+  has_one :account, dependent: :destroy
 
   def user_plan
     return nil unless subscribed?
