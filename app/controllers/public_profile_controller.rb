@@ -16,7 +16,7 @@ class PublicProfileController < ApplicationController
 
   def public_profile_params
     params.require(:public_profile).permit(
-      :facebook, :twitter, :instagram, :youtube, :wipchat
+      :facebook, :twitter, :instagram, :youtube, :tiktok
     )
   end
 end

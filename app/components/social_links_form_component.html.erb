@@ -5,32 +5,29 @@
   <div class="card-body">
     <%= form_with(model: @public_profile,
       url: public_profile_path(@public_profile), method: :put, local: true) do |f| %>
-      <div class="form-group">
-        <%= f.label :facebook, class: "text-muted small" %>
-        <%= f.text_field :facebook, class: "form-control",
-          placeholder: "https://facebook.com/facebookpageurl" %>
+      <div class="form-group small">
+        <%= f.label :facebook %>
+        <%= f.text_field :facebook, class: "form-control", placeholder: "https://www.facebook.com/yourpage" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :twitter, "Twitter", class: "text-muted small" %>
-        <%= f.text_field :twitter, class: "form-control", placeholder: "@yourtwitterhandle" %>
+      <div class="form-group small">
+        <%= f.label :instagram %>
+        <%= f.text_field :instagram, class: "form-control", placeholder: "https://www.instagram.com/yourusername" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :twitter, "Instagram", class: "text-muted small" %>
-        <%= f.text_field :twitter, class: "form-control", placeholder: "@instagram" %>
+      <div class="form-group small">
+        <%= f.label :twitter %>
+        <%= f.text_field :twitter, class: "form-control", placeholder: "https://twitter.com/yourhandle" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :twitter, "Youtube", class: "text-muted small" %>
-        <%= f.text_field :twitter, class: "form-control",
-          placeholder: "https://youtube.com/channel/youtubechannelurl" %>
+      <div class="form-group small">
+        <%= f.label :youtube %>
+        <%= f.text_field :youtube, class: "form-control", placeholder: "https://www.youtube.com/channel/yourchannelname" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :wipchat, "Wip Chat", class: "text-muted small" %>
-        <%= f.text_field :wipchat, class: "form-control",
-          placeholder: "https://wip.chat/@yourusername" %>
+      <div class="form-group small">
+        <%= f.label :tiktok %>
+        <%= f.text_field :tiktok, class: "form-control", placeholder: "https://www.tiktok.com/@yourusername" %>
       </div>
 
       <%= f.submit "Save", class: "btn btn-primary" %>

@@ -4,6 +4,6 @@ class BiosController < ApplicationController
   layout "dashboard"
 
   def show
-    @pagy, @links = pagy(current_user.links.order(public_profile_id: :asc), items: 25)
+    @pagy, @links = pagy(current_user.links.order(public_profile_id: :asc), items: 10)
   end
 end

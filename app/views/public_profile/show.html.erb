@@ -15,7 +15,7 @@
         </div>
         <!-- End of Profile -->
         <!-- Links -->
-        <div class="card-footer card-footer-boxed">
+        <div class="card-footer card-footer-boxed pb-2">
           <div class="row flex-column">
             <% @user.public_profile.links.each do |link| %>
               <div class="col-12 mb-3">
@@ -26,6 +26,9 @@
           </div>
         </div>
         <!-- End of Links -->
+        <div class="card-footer card-footer-boxed">
+          <%= render PublicProfileSocialLinksComponent.new(@user.public_profile) %>
+        </div>
       </div>
     </div>
   </div>
