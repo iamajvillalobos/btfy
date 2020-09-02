@@ -11,7 +11,7 @@
       <table class="table table-sm table-nowrap card-table">
         <thead>
           <tr>
-            <th>Original URL</th>
+            <th>Name</th>
             <th>Short Link</th>
             <th></th>
           </tr>
@@ -19,27 +19,34 @@
         <tbody class="list">
           <% @links.each do |link| %>
             <tr>
-              <td class="name"><%= link.destination_url.truncate(50) %></td>
+              <td class="name"><%= link.name.truncate(50) %></td>
               <td><%= link_to link.redirect_url, link.redirect_url %></td>
               <td>
-                <%= link_to "View", link, class: "btn btn-sm btn-white" %>
-                <% if @public_profile_links.include? link %>
-                  <%= link_to "Remove", public_profile_link_path(link),
-                    method: :delete, class: "btn btn-sm btn-danger" %>
-                <% else %>
-                  <%= link_to "Add", public_profile_links_path(link_id: link),
-                    method: :post, class: "btn btn-sm btn-white ml-2" %>
-                <% end %>
+                <div class="dropdown">
+                  <a href="#" class="dropdown-ellipses dropdown-toggle" data-toggle="dropdown">
+                    <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <%= link_to "View", link, class: "dropdown-item" %>
+                    <%= link_to "Edit", edit_link_path(link), class: "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <% if @public_profile_links.include? link %>
+                      <%= link_to "Remove", public_profile_link_path(link), method: :delete, class: "dropdown-item" %>
+                    <% else %>
+                      <%= link_to "Add", public_profile_links_path(link_id: link), method: :post, class: "dropdown-item" %>
+                    <% end %>
+                  </div>
+                </div>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-    <% if @links.count > Ability::MAX_LINKS_FOR_FREE_USER %>
-      <div class="card-footer d-flex justify-content-between">
-        <%= render PagyNavComponent.new(@pagy) %>
-      </div>
-    <% end %>
+    <div class="card-footer d-flex justify-content-between">
+      <%= render PagyNavComponent.new(@pagy) %>
+    </div>
   </div>
 </div>
