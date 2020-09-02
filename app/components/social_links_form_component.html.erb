@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-header-title">Social Links</h4>
+  </div>
+  <div class="card-body">
+    <%= form_with(model: @public_profile,
+      url: public_profile_path(@public_profile), method: :put, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :facebook, class: "text-muted small" %>
+        <%= f.text_field :facebook, class: "form-control",
+          placeholder: "https://facebook.com/facebookpageurl" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :twitter, "Twitter", class: "text-muted small" %>
+        <%= f.text_field :twitter, class: "form-control", placeholder: "@yourtwitterhandle" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :twitter, "Instagram", class: "text-muted small" %>
+        <%= f.text_field :twitter, class: "form-control", placeholder: "@instagram" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :twitter, "Youtube", class: "text-muted small" %>
+        <%= f.text_field :twitter, class: "form-control",
+          placeholder: "https://youtube.com/channel/youtubechannelurl" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :wipchat, "Wip Chat", class: "text-muted small" %>
+        <%= f.text_field :wipchat, class: "form-control",
+          placeholder: "https://wip.chat/@yourusername" %>
+      </div>
+
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

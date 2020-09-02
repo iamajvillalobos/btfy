@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resource :billing, only: [:show]
   resource :bio, only: [:show]
 
-  resources :public_profile, only: [:show]
+  resources :public_profile, only: [:show, :update]
   get "/@:username", to: "public_profile#show"
 
   authenticated :user do |user|

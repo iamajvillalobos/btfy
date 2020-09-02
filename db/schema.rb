@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_094925) do
+ActiveRecord::Schema.define(version: 2020_09_02_112932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,28 @@ ActiveRecord::Schema.define(version: 2020_09_02_094925) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "amazon"
+    t.string "android_play_store"
+    t.string "apple_app_store"
+    t.string "apple_music"
+    t.string "apple_podcast"
+    t.string "etsy"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "linkedin"
+    t.string "patreon"
+    t.string "payment"
+    t.string "pinterest"
+    t.string "poshmark"
+    t.string "snapchat"
+    t.string "soundcloud"
+    t.string "spotify"
+    t.string "tiktok"
+    t.string "twitch"
+    t.string "twitter"
+    t.string "whatsapp"
+    t.string "youtube"
+    t.string "wipchat"
     t.index ["user_id"], name: "index_public_profiles_on_user_id"
   end
 
