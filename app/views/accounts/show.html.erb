@@ -51,7 +51,62 @@
           </div>
         </div>
       </div>
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+      <hr class="my-5">
+      <!-- End of Details -->
+    <% end %>
+  </div>
+</div>
+
+
+<div class="row justify-content-start">
+  <div class="col-12 col-md-8">
+    <%= form_with model: current_user, url: user_attributes_path, method: :put, local: true do |f| %>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <%= f.label :username %>
+            <small class="form-text text-muted">
+              You can change your username anytime but this will change your
+              public bio link too
+            </small>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <%= f.text_field :username, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label>Public Bio</label>
+            <small class="form-text text-muted">
+              Create a public profile page where you can put up btfy links
+            </small>
+            <div class="row align-items-center pt-md-2">
+              <div class="col-auto">
+
+                <!-- Switch -->
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="switchOne">
+                  <label class="custom-control-label" for="switchOne"></label>
+                </div>
+
+              </div>
+              <div class="col ml-n2">
+
+                <!-- Help text -->
+                <small class="text-muted">
+                  You're currently invisible
+                </small>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

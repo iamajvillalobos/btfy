@@ -5,6 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
+  validates :username, uniqueness: true
+
   has_many :links, dependent: :destroy
   has_many :custom_domains, dependent: :destroy
   has_one :account, dependent: :destroy

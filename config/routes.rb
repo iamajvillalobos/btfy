@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   # Settings
   resource :account, only: [:show, :update]
+  resource :user_attributes, only: [:update]
   resource :billing, only: [:show]
   resource :bio, only: [:show]
 

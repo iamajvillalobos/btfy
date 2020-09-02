@@ -17,6 +17,11 @@
         <%= render(FormNotificationComponent.new(model: resource)) %>
 
         <div class="form-group">
+          <%= f.label :username %>
+          <%= f.text_field :username, class: "form-control", placeholder: "username" %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :email, "Email Address" %>
           <%= f.email_field :email, class: "form-control",
             placeholder: "name@address.com" %>
