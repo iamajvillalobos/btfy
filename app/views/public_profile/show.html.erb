@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-5 col-xl-4 my-5">
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="avatar avatar-xl card-avatar">
+            <%= image_tag @user.account.image,
+            class: "avatar-img rounded-circle border border-4 border-card" %>
+          </div>
+          <h2 class="card-title text-center"><%= @user.account.full_name %></h2>
+          <p class="small text-center text-muted mb-3">
+            <%= @user.account.bio %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

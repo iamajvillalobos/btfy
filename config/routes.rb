@@ -18,13 +18,15 @@ Rails.application.routes.draw do
   resources :links, except: [:destroy]
   resource :subscriptions, only: [:show, :destroy]
   resource :support, only: [:new, :create]
-  resource :bio
 
   # Settings
   resource :account, only: [:show, :update]
   resource :user_attributes, only: [:update]
   resource :billing, only: [:show]
   resource :bio, only: [:show]
+
+  resources :public_profile, only: [:show]
+  get "/@:username", to: "public_profile#show"
 
   authenticated :user do |user|
     root to: "links#index", as: :authenticated_root

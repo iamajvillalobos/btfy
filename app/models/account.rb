@@ -8,4 +8,8 @@ class Account < ApplicationRecord
   def image
     avatar.attached? ? avatar : GetGravatarLinkAction.execute(email: user.email).image_src
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
