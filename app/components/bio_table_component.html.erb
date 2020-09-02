@@ -23,7 +23,13 @@
               <td><%= link_to link.redirect_url, link.redirect_url %></td>
               <td>
                 <%= link_to "View", link, class: "btn btn-sm btn-white" %>
-                <%= link_to "Add", "", class: "btn btn-sm btn-white ml-2" %>
+                <% if @public_profile_links.include? link %>
+                  <%= link_to "Remove", public_profile_link_path(link),
+                    method: :delete, class: "btn btn-sm btn-danger" %>
+                <% else %>
+                  <%= link_to "Add", public_profile_links_path(link_id: link),
+                    method: :post, class: "btn btn-sm btn-white ml-2" %>
+                <% end %>
               </td>
             </tr>
           <% end %>

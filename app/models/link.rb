@@ -5,6 +5,7 @@ class Link < ApplicationRecord
 
   belongs_to :custom_domain, optional: true
   belongs_to :user
+  belongs_to :public_profile, optional: true
 
   def redirect_url
     Rails.application.routes.url_helpers.redirect_url(

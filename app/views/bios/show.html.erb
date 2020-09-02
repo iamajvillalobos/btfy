@@ -1,3 +1,5 @@
+<%= render NotificationComponent.new() %>
+
 <%= render(PageHeaderWithButtonComponent.new(
   pretitle: "Overview",
   title: "Setup Bio",
@@ -7,6 +9,6 @@
 
 <div class="row">
   <div class="col-12">
-    <%= render BioTableComponent.new(@links, @pagy) %>
+    <%= render BioTableComponent.new(@links, @pagy, current_user.public_profile.links) %>
   </div>
 </div>

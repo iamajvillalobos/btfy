@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show]
   resources :custom_domains, only: [:index, :new, :create, :destroy]
   resources :links, except: [:destroy]
+  resources :public_profile_links, only: [:create, :destroy]
   resource :subscriptions, only: [:show, :destroy]
   resource :support, only: [:new, :create]
 

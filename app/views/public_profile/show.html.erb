@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-5 col-xl-4 my-5">
-      <div class="card">
+      <div class="card border">
+        <!-- Profile Info -->
         <div class="card-body text-center">
           <div class="avatar avatar-xl card-avatar">
             <%= image_tag @user.account.image,
@@ -12,6 +13,19 @@
             <%= @user.account.bio %>
           </p>
         </div>
+        <!-- End of Profile -->
+        <!-- Links -->
+        <div class="card-footer card-footer-boxed">
+          <div class="row flex-column">
+            <% @user.public_profile.links.each do |link| %>
+              <div class="col-12 mb-3">
+                <%= link_to link.name, link.redirect_url,
+                class: "btn btn-outline-primary btn-block" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!-- End of Links -->
       </div>
     </div>
   </div>
