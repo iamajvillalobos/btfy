@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :links, except: [:destroy]
   resource :subscriptions, only: [:show, :destroy]
   resource :support, only: [:new, :create]
-  resources :bio
+  resource :bio
 
   # Settings
   resource :account, only: [:show, :update]

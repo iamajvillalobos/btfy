@@ -1,0 +1,12 @@
+<%= render(PageHeaderWithButtonComponent.new(
+  pretitle: "Overview",
+  title: "Setup Bio",
+  btn_link: new_custom_domain_path,
+  btn_text: "Preview Bio"))
+%>
+
+<div class="row">
+  <div class="col-12">
+    <%= render BioTableComponent.new(@links, @pagy) %>
+  </div>
+</div>

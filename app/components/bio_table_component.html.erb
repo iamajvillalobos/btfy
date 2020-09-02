@@ -1,0 +1,39 @@
+<div data-controller="links">
+  <div id="links-table" class="card">
+    <div class="card-header">
+      <div class="input-group input-group-flush input-group-merge">
+          <input type="search"
+            class="search form-control form-control-prepended"
+            placeholder="Search">
+      </div>
+    </div>
+    <div class="table-responsive mb-0">
+      <table class="table table-sm table-nowrap card-table">
+        <thead>
+          <tr>
+            <th>Original URL</th>
+            <th>Short Link</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="list">
+          <% @links.each do |link| %>
+            <tr>
+              <td class="name"><%= link.destination_url.truncate(50) %></td>
+              <td><%= link_to link.redirect_url, link.redirect_url %></td>
+              <td>
+                <%= link_to "View", link, class: "btn btn-sm btn-white" %>
+                <%= link_to "Add", "", class: "btn btn-sm btn-white ml-2" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% if @links.count > Ability::MAX_LINKS_FOR_FREE_USER %>
+      <div class="card-footer d-flex justify-content-between">
+        <%= render PagyNavComponent.new(@pagy) %>
+      </div>
+    <% end %>
+  </div>
+</div>
