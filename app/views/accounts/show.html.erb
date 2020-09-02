@@ -89,16 +89,20 @@
 
                 <!-- Switch -->
                 <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="switchOne">
-                  <label class="custom-control-label" for="switchOne"></label>
+                  <%= f.check_box :bio, class: "custom-control-input" %>
+                  <%= f.label :bio, "&nbsp;".html_safe, class: "custom-control-label" %>
                 </div>
 
               </div>
-              <div class="col ml-n2">
+              <div class="col ml-n4">
 
                 <!-- Help text -->
                 <small class="text-muted">
-                  You're currently invisible
+                  <% if current_user.bio %>
+                    You're bio can now be seen in public
+                  <% else %>
+                    You're currently invisible
+                  <% end %>
                 </small>
 
               </div>

@@ -1,7 +1,7 @@
 <%= render(PageHeaderWithButtonComponent.new(
   pretitle: "Overview",
   title: "Setup Bio",
-  btn_link: new_custom_domain_path,
+  btn_link: "/@#{current_user.username}",
   btn_text: "Preview Bio"))
 %>
 
