@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :links, dependent: :destroy
   has_many :custom_domains, dependent: :destroy
   has_one :account, dependent: :destroy
+  has_one :public_profile, dependent: :destroy
 
   def account
     Account.find_or_create_by(user: self)
