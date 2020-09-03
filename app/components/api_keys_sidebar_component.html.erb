@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-header-title">Authentication</h4>
+  </div>
+  <div class="card-body">
+    <small>
+      Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
+    </small>
+    <pre class="mb-0 mt-3"><code class="bash">
+    curl -L -X POST 'lvh.me:3000/api/v1/links' \
+    -H 'Authorization: Bearer token="your-token"'
+    </code></pre>
+  </div>
+</div>
+
+<%= render ApiDocsLinkComponent.new %>

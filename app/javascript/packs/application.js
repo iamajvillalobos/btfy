@@ -7,3 +7,7 @@ require("channels");
 require("chartkick");
 require("chart.js");
 import 'bootstrap';
+import hljs from "highlight.js"
+import "highlight.js/scss/hybrid.scss"
+
+hljs.initHighlightingOnLoad();

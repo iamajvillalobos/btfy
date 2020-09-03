@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h4 class="card-header-title">API Keys</h4>
+      </div>
+      <div class="col-auto">
+        <%= link_to "Create", api_keys_path, method: :post, class: "btn btn-sm btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm table-nowrap card-table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @api_keys.each do |api_key| %>
+          <tr>
+            <td><%= api_key.key %></td>
+            <td>
+              <% if api_key.deactivated_at.nil? %>
+                <span class="badge badge-light">Active</span>
+              <% else %>
+                <span class="badge badge-soft-danger">Deactivated</span>
+              <% end %>
+            </td>
+            <td class="text-right">
+              <% if api_key.deactivated_at.nil? %>
+                <%= link_to "Deactivate", api_key_deactivate_path(api_key), method: :post, class: "btn btn-sm btn-outline-danger" %>
+              <% else %>
+                <%= link_to "Reactivate", api_key_reactivate_path(api_key), method: :post, class: "btn btn-sm btn-outline-primary" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
