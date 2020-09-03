@@ -10,4 +10,6 @@ import 'bootstrap';
 import hljs from "highlight.js"
 import "highlight.js/scss/hybrid.scss"
 
-hljs.initHighlightingOnLoad();
+document.addEventListener("turbolinks:load", function() {
+  hljs.initHighlighting();
+})
