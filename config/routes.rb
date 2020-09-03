@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   resource :user_attributes, only: [:update]
   resource :billing, only: [:show]
   resource :bio, only: [:show]
-  resources :api_keys, only: [:index, :update]
+  resources :api_keys, only: [:index, :create, :edit, :update] do
+    post :reactivate
+    post :deactivate
+  end
 
   resources :public_profile, only: [:show, :update]
   get "/@:username", to: "public_profile#show"

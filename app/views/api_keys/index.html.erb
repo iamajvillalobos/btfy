@@ -9,7 +9,7 @@
             <h4 class="card-header-title">API Keys</h4>
           </div>
           <div class="col-auto">
-            <%= link_to "Create", "", class: "btn btn-sm btn-primary" %>
+            <%= link_to "Create", api_keys_path, method: :post, class: "btn btn-sm btn-primary" %>
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
                 </td>
                 <td class="text-right">
                   <% if api_key.deactivated_at.nil? %>
-                    <%= link_to "Deactivate", "", class: "btn btn-sm btn-outline-danger" %>
+                    <%= link_to "Deactivate", api_key_deactivate_path(api_key), method: :post, class: "btn btn-sm btn-outline-danger" %>
                   <% else %>
-                    <%= link_to "Reactivate", "", class: "btn btn-sm btn-outline-green" %>
+                    <%= link_to "Reactivate", api_key_reactivate_path(api_key), method: :post, class: "btn btn-sm btn-outline-primary" %>
                   <% end %>
                 </td>
               </tr>
