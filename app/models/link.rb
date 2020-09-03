@@ -14,6 +14,13 @@ class Link < ApplicationRecord
     )
   end
 
+  def as_json(options={})
+    options[:methods] ||= [:redirect_url]
+    options[:except] ||= [:public_profile_id]
+
+    super(options)
+  end
+
   private
 
   def host

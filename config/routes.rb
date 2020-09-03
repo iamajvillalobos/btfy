@@ -48,6 +48,14 @@ Rails.application.routes.draw do
   end
   get "/admin", to: "admin/links#index"
 
+
+  # API endpoints
+  namespace :api do
+    namespace :v1 do
+      resources :links, only: [:create]
+    end
+  end
+
   # Custom errors
   get "/404", to: "errors#not_found", via: :all
   get "/422", to: "errors#unacceptable", via: :all
