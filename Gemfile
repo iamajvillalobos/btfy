@@ -14,6 +14,7 @@ gem "countries", "~> 3.0"
 gem "devise", "4.7.2"
 gem "faker", "2.13.0"
 gem "groupdate", "5.0.0"
+gem "hiredis", "~> 0.6.3"
 gem "jbuilder", "~> 2.7"
 gem "light-service", "0.14.0"
 gem "paddle_pay", "~> 0.0.1"
@@ -22,6 +23,7 @@ gem "pay", git: "https://github.com/nm/pay", branch: "paddle"
 gem "pg", ">= 0.18", "< 2.0"
 gem "postmark-rails", "~> 0.20.0"
 gem "puma", "~> 4.1"
+gem "rack-attack", "~> 6.3"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "redis", "~> 4.0"
 gem "rollbar", "~> 2.27"
@@ -55,6 +57,3 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
 end
 
-gem "rack-attack", "~> 6.3"
-
-gem "hiredis", "~> 0.6.3"
