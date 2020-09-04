@@ -9,9 +9,6 @@ class CustomDomainsController < ApplicationController
     @domains = current_user.custom_domains
   end
 
-  def show
-  end
-
   def new
     @custom_domain = current_user.custom_domains.new
   end
@@ -35,7 +32,7 @@ class CustomDomainsController < ApplicationController
   def update
     respond_to do |format|
       if @custom_domain.update(custom_domain_params)
-        format.html { redirect_to @custom_domain, notice: "Custom domain was successfully updated." }
+        format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully updated." }
         format.json { render :show, status: :ok, location: @custom_domain }
       else
         format.html { render :edit }

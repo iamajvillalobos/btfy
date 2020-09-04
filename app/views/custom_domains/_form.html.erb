@@ -4,18 +4,27 @@
     <div class="card">
       <div class="card-body">
         <%= form_with(model: custom_domain, local: true) do |form| %>
+          <%= render(FormNotificationComponent.new(model: custom_domain)) %>
+        
           <div class="form-group">
-            <%= render(FormNotificationComponent.new(model: custom_domain)) %>
             <%= form.label :name, "Domain" %>
             <small class="form-text text-muted">
               Enter the your domain without http or https
             </small>
             <%= form.text_field :name, class: "form-control" %>
           </div>
+          
+          <div class="form-group">
+            <%= form.label :redirect_url %>
+            <small class="form-text text-muted">
+              This is where we redirect your users when they visit your connected domain
+            </small>
+            <%= form.text_field :redirect_url, class: "form-control" %>
+          </div>
 
           <div class="d-flex justify-content-between mt-3">
             <%= link_to "Cancel", links_path, class: "btn btn-white" %>
-            <%= form.submit "Add domain", class: "btn btn-primary" %>
+            <%= form.submit class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>

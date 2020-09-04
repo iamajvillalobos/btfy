@@ -13,6 +13,7 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Redirect URL</th>
             <th>Links</th>
             <th></th>
           </tr>
@@ -22,13 +23,24 @@
             <tr>
               <td><%= domain.id %></td>
               <td class="name"><%= domain.name %></td>
+              <td><%= domain.redirect_url %></td>
               <td><%= domain.links.count %></td>
               <td class="text-right">
-                <%= link_to "Delete", custom_domain_path(domain),
-                  method: :delete,
-                  data: { confirm: "This will delete all links that you created with this domain, are you sure you want to delete?" },
-                  class: "btn btn-sm btn-secondary"
-                %>
+                <div class="dropdown">
+                  <a href="#" class="dropdown-ellipses dropdown-toggle" data-toggle="dropdown">
+                    <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-left">
+                    <%= link_to "Edit", edit_custom_domain_path(domain), class: "dropdown-item" %>
+                    <%= link_to "Delete", custom_domain_path(domain),
+                      method: :delete,
+                      data: { confirm: "This will delete all links that you created with this domain, are you sure you want to delete?" },
+                      class: "dropdown-item"
+                    %>
+                  </div>
+                </div>
               </td>
             </tr>
           <% end %>
