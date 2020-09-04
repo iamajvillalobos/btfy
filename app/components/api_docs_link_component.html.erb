@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <pre><code class="bash">
-    curl -L -X POST 'lvh.me:3000/api/v1/links' \
+    curl -L -X POST '<%= ENV["DEFAULT_URL_HOST"] %>/api/v1/links' \
     -H 'Authorization: Bearer befad6fb-9963-4a38' \
     -H 'Content-Type: application/json' \
     -d '{
