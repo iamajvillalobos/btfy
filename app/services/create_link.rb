@@ -7,6 +7,7 @@ class CreateLink
     ).reduce(
       GenerateLinkNameAction,
       GenerateAvailableSlugAction,
+      AssociateToCustomDomainAction,
       SaveLinkAction
     )
   end
