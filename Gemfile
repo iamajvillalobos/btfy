@@ -54,3 +54,5 @@ group :test do
   gem "webdrivers", "4.4.1"
   gem "capybara-screenshot", "~> 1.0"
 end
+
+gem "rack-attack", "~> 6.3"

@@ -28,5 +28,7 @@ module Btfy
       api_token: ENV["POSTMARK_API_TOKEN"],
       secure: false
     }
+
+    config.middleware.use Rack::Attack
   end
 end
