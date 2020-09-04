@@ -11,6 +11,7 @@
       <table class="table table-sm table-nowrap card-table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Links</th>
             <th></th>
@@ -19,6 +20,7 @@
         <tbody class="list">
           <% @domains.each do |domain| %>
             <tr>
+              <td><%= domain.id %></td>
               <td class="name"><%= domain.name %></td>
               <td><%= domain.links.count %></td>
               <td class="text-right">
