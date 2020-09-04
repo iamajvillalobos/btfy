@@ -56,3 +56,5 @@ group :test do
 end
 
 gem "rack-attack", "~> 6.3"
+
+gem "hiredis", "~> 0.6.3"
