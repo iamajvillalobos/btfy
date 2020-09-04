@@ -1,11 +1,12 @@
 <div class="card">
   <div class="card-header">
-    <h4 class="card-header-title">Links</h4>
+    <small class="card-header-title text-primary">POST</small>
+    <small class="card-header-title">/api/v1/links</small>
   </div>
   <div class="card-body">
     <pre><code class="bash">
     curl -L -X POST 'lvh.me:3000/api/v1/links' \
-    -H 'Authorization: Bearer token="befad6fb-9963-4a38-9ff8-c788b957ce20"' \
+    -H 'Authorization: Bearer befad6fb-9963-4a38' \
     -H 'Content-Type: application/json' \
     -d '{
         "link": {
