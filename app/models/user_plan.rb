@@ -37,4 +37,8 @@ class UserPlan < ApplicationRecord
   def dashboard_access
     name == "Free" ? "No" : "Yes"
   end
+
+  def api_access
+    name == "Free" ? "No" : "Yes"
+  end
 end

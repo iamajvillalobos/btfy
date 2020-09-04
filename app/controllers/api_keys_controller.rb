@@ -1,6 +1,8 @@
 class ApiKeysController < ApplicationController
   layout "dashboard"
   
+  authorize_resource
+  
   def index
     @api_keys = current_user.api_keys.order(created_at: :desc)
   end
