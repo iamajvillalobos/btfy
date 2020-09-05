@@ -31,6 +31,9 @@
     </div>
 
     <div class="navbar-user ml-auto">
+      <div class="mr-3">
+        <%= render TrialDaysCounterComponent.new(user: @current_user) %>
+      </div>
       <div class="dropdown">
         <a href="#" class="avatar avatar-sm dropdown-toggle " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= image_tag @current_user.account.image, class: "avatar-img rounded-circle" %>
