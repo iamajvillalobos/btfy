@@ -6,7 +6,7 @@ class Ability
   MAX_LINKS_FOR_FREE_USER = 5
 
   def initialize(user)
-    if user.subscribed?
+    if user.subscribed? || user.on_generic_trial?
       can :manage, :all
       can :read, :dashboard
     else
