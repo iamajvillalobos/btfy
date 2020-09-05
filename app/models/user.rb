@@ -1,9 +1,7 @@
 class User < ApplicationRecord
   include Pay::Billable
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable,:recoverable, :rememberable,
+    :validatable
 
   validates :username, uniqueness: true
 
@@ -12,6 +10,8 @@ class User < ApplicationRecord
   has_many :api_keys, dependent: :destroy
   has_one :account, dependent: :destroy
   has_one :public_profile, dependent: :destroy
+
+  after_create :enable_trial
 
   def account
     Account.find_or_create_by(user: self)
@@ -24,5 +24,11 @@ class User < ApplicationRecord
 
   def free_plan?
     subscription.nil?
+  end
+
+  private
+
+  def enable_trial
+    update(trial_ends_at: 30.days.from_now)
   end
 end
