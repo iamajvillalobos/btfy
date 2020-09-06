@@ -23,13 +23,13 @@ class LinkStatsViewerAction
 
     ctx.visit_count = events.pluck(:visit_id).count
 
-    ctx.devices = tally_and_clean(uniq_events.map { |e| e.visit.device_type })
+    ctx.devices = tally_and_clean(events.map { |e| e.visit.device_type })
 
-    ctx.browsers = tally_and_clean(uniq_events.map { |e| e.visit.browser })
+    ctx.browsers = tally_and_clean(events.map { |e| e.visit.browser })
 
-    ctx.os = tally_and_clean(uniq_events.map { |e| e.visit.os })
+    ctx.os = tally_and_clean(events.map { |e| e.visit.os })
 
-    ctx.countries = uniq_events.map do |e|
+    ctx.countries = events.map do |e|
       next unless e.visit.country
       country = ISO3166::Country.new(e.visit.country)
       case country.name
@@ -45,7 +45,7 @@ class LinkStatsViewerAction
     end
     ctx.countries = tally_and_clean(ctx.countries)
 
-    ctx.cities = tally_and_clean(uniq_events.map { |e| e.visit.city })
+    ctx.cities = tally_and_clean(events.map { |e| e.visit.city })
 
     ctx.referrers = uniq_events.map do |e|
       e.visit.referring_domain ? e.visit.referring_domain : "Direct"
