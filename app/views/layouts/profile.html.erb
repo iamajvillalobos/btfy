@@ -10,7 +10,21 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex">
-    <%= yield %>
+  <body class="d-flex flex-column">
+    <div class="flex-fill">
+      <%= yield %>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-5 col-xl-4 my-5 text-center">
+          <%= link_to root_path do %>
+            <%= image_tag "https://btfy-app.s3-ap-southeast-1.amazonaws.com/press/logo-alternate-transparent.svg",
+              height: "48",
+              class: "ml-n4" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
