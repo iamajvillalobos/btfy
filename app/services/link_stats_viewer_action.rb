@@ -39,6 +39,8 @@ class LinkStatsViewerAction
         "#{country.emoji_flag} UK"
       when "United Arab Emirates"
         "#{country.emoji_flag} UAE"
+      when "Korea (Republic of)"
+        "#{country.emoji_flag} South Korea"
       else
         "#{country.emoji_flag} #{country.name}"
       end
