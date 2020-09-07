@@ -21,26 +21,7 @@
 </div>
 <div class="row">
   <div class="col-12 col-md-6">
-    <div class="card">
-      <div class="table-responsive mb-0">
-        <table class="table table-sm table-nowrap card-table">
-          <thead>
-            <tr>
-              <th>Links</th>
-              <th class="text-right">Views</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @links.each do |link| %>
-              <tr>
-                <td><%= link_to link.name.truncate(50), link %></td>
-                <td class="text-right"><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <%= render TopLinksTableComponent.new(links: @links) %>
   </div>
   <div class="col-12 col-md-6">
     <%= render TotalStatTableComponent.new(
