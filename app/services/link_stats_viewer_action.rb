@@ -49,9 +49,7 @@ class LinkStatsViewerAction
 
     ctx.cities = tally_and_clean(events.map { |e| e.visit.city })
 
-    ctx.referrers = uniq_events.map do |e|
-      e.visit.referring_domain ? e.visit.referring_domain : "Direct"
-    end.tally
+    ctx.referrers = GetLinkReferrerDataAction.execute(ahoy_events: events).referrers
 
     ctx.visit_count_grouped = events.group_by_day_of_month(
       :time, range: range
