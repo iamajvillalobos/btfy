@@ -1,13 +1,11 @@
 class GetLinkReferrerDataAction
   include LightService::Action
 
-  expects :ahoy_events
+  expects :events
   promises :referrers
 
   executed do |ctx|
-    referrers = ctx.ahoy_events.map do |event|
-      # event.visit.referring_domain ? event.visit.referring_domain : "Direct"
-
+    referrers = ctx.events.map do |event|
       ReferrerDomain.new(url: event.visit.referring_domain).name
     end
 

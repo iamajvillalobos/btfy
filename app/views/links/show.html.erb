@@ -4,35 +4,13 @@
     title: @link.redirect_url))
     %>
 </div>
-<div class="card">
-  <div class="card-header">
-    <h4 class="card-header-title text-right text-muted">
-      <%= @stats.range.first.stamp("Jan 1, 2020") %> to
-      <%= @stats.range.last.stamp("Jan 1, 2020") %>
-    </h4>
-  </div>
-  <div class="card-body">
-    <div class="chart">
-      <%= column_chart stacked_chart_data,
-        stacked: true,
-        dataset: { borderWidth: 0 },
-        library: {
-          legend: { display: false },
-          scales: {
-            xAxes: [
-              { gridLines: { display: false} },
-            ],
-            yAxes: [
-              { gridLines: { display: false} },
-            ]
-          }
-        }
-        %>
-    </div>
+<div class="row">
+  <div class="col-12">
+    <%= render LinkViewGraphComponent.new %>
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 col-md-6">
     <%= render TotalStatTableComponent.new(stats: @stats.referrers, label: "Referrers") %>
   </div>
 </div>

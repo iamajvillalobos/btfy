@@ -1,6 +1,6 @@
 class LinkStatsViewerAction
   extend LightService::Action
-  expects :link
+  expects :link, :period
   promises :unique_visit_count,
     :unique_visit_count_grouped,
     :visit_count,

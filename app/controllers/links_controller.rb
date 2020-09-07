@@ -10,7 +10,11 @@ class LinksController < ApplicationController
   end
 
   def show
-    @stats = LinkStatsViewerAction.execute(link: @link)
+    @stats = if params[:period].present?
+      GetLinkStats.call(@link, params[:period])
+    else
+      GetLinkStats.call(@link, "day")
+    end
   end
 
   def new
