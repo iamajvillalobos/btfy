@@ -11,7 +11,8 @@ class GroupLinkStatsViewer
       FetchTotalVisitCountAction,
       FetchTotalBrowsersCountAction,
       FetchTotalDevicesCountAction,
-      FetchTotalReferrersAction
+      FetchTotalReferrersAction,
+      FetchTotalCountriesAction
     )
   end
 end

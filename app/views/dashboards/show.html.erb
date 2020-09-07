@@ -47,3 +47,17 @@
       stats: @stats.total_referrers, label: "Referrers") %>
   </div>
 </div>
+<div class="row">
+  <div class="col-12 col-md-4">
+    <%= render TotalStatTableComponent.new(
+      stats: @stats.total_devices, label: "Device Type") %>
+  </div>
+  <div class="col-12 col-md-4">
+    <%= render TotalStatTableComponent.new(
+      stats: @stats.total_browsers, label: "Browser") %>
+  </div>
+  <div class="col-12 col-md-4">
+    <%= render TotalStatTableComponent.new(
+      stats: @stats.total_countries, label: "Country") %>
+  </div>
+</div>
