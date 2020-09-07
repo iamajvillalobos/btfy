@@ -5,4 +5,8 @@ class TotalStatTableComponent < ViewComponent::Base
     @stats = stats.sort_by { |k,v| v }.reverse.first(VIEW_LIMIT)
     @label = label
   end
+
+  def stats_limit_diff
+    VIEW_LIMIT - @stats.count
+  end
 end

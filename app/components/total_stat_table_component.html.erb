@@ -14,6 +14,14 @@
             <td class="text-right"><%= count%></td>
           </tr>
         <% end %>
+        <% if stats_limit_diff > 0 %>
+          <% stats_limit_diff.times do %>
+            <tr class="d-none d-md-table-row">
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          <% end %>
+        <% end %>
       </tbody>
     </table>
   </div>
