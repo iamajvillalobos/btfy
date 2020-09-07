@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="table-responsive mb-0">
+    <table class="table table-sm table-nowrap card-table">
+      <thead>
+        <tr>
+          <th><%= @label %></th>
+          <th class="text-right">Views</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @stats.each do |stat, count| %>
+          <tr>
+            <td><%= stat %></td>
+            <td class="text-right"><%= count%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

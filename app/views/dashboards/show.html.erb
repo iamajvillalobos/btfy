@@ -1,51 +1,49 @@
 <%= render NotificationComponent.new() %>
-
 <%= render(PageHeaderWithButtonComponent.new(
   pretitle: "overview",
   title: "dashboard",
   btn_link: new_link_path,
   btn_text: "create link"))
 %>
-
 <div class="row">
-  <div class="col-12 col-lg-6">
+  <div class="col-12 col-md-6">
     <%= render(StatsCardComponent.new(
       title: "Visits for this month of #{Date.today.strftime("%B")}",
       count: @stats.total_visit_count)
     )%>
   </div>
-  <div class="col-12 col-lg-6">
+  <div class="col-12 col-md-6">
     <%= render(StatsCardComponent.new(
-      title: "Unique Visits for this month of #{Date.today.strftime("%B")}",
-      count: @stats.total_unique_visit_count)
+      title: "Links created for this month of #{Date.today.strftime("%B")}",
+      count: current_user.links.where(created_at: Time.now.beginning_of_month..Time.now.end_of_month).count)
     )%>
   </div>
 </div>
-
-<div class="card">
-  <div class="card-header">
-    <h4 class="card-header-title">Top Links</h4>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="card">
+      <div class="table-responsive mb-0">
+        <table class="table table-sm table-nowrap card-table">
+          <thead>
+            <tr>
+              <th>Links</th>
+              <th class="text-right">Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @links.each do |link| %>
+              <tr>
+                <td><%= link_to link.name.truncate(50), link %></td>
+                <td class="text-right"><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-  <div class="table-responsive mb-0">
-    <table class="table table-sm table-nowrap card-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Url</th>
-          <th>Views</th>
-          <th>Uniques</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @links.each do |link| %>
-          <tr>
-            <td><%= link_to link.name.truncate(50), link %></td>
-            <td><%= link_to link.redirect_url, link.redirect_url %></td>
-            <td><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
-            <td><%= LinkStatsViewerAction.execute(link: link).unique_visit_count %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="col-12 col-md-6">
+    <%= render TotalStatTableComponent.new(
+      stats: @stats.total_referrers, label: "Referrers") %>
   </div>
 </div>
