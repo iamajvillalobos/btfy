@@ -23,7 +23,9 @@ class User < ApplicationRecord
   end
 
   def free_plan?
-    !subscribed? || !on_generic_trial?
+    return false if subscribed?
+    return false if on_generic_trial?
+    true
   end
 
   private
