@@ -3,18 +3,17 @@
     pretitle: @link.name,
     title: @link.redirect_url))
     %>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-header-title text-right text-muted">
+      <%= @stats.range.first.stamp("Jan 1, 2020") %> to
+      <%= @stats.range.last.stamp("Jan 1, 2020") %>
+    </h4>
   </div>
-
-  <div class="card">
-    <div class="card-header">
-      <h4 class="card-header-title text-right text-muted">
-        <%= @stats.range.first.stamp("Jan 1, 2020") %> to
-        <%= @stats.range.last.stamp("Jan 1, 2020") %>
-      </h4>
-    </div>
-    <div class="card-body">
-      <div class="chart">
-        <%= column_chart stacked_chart_data,
+  <div class="card-body">
+    <div class="chart">
+      <%= column_chart stacked_chart_data,
         stacked: true,
         dataset: { borderWidth: 0 },
         library: {
@@ -29,31 +28,22 @@
           }
         }
         %>
-      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <%= render LinkStatCardComponent.new(stats: @stats.referrers, label: "Sources") %>
-    </div>
-    <div class="col-12 col-md-4">
-      <%= render LinkStatCardComponent.new(stats: @stats.countries, label: "Countries") %>
-    </div>
-    <div class="col-12 col-md-4">
-      <%= render LinkStatCardComponent.new(stats: @stats.cities, label: "Cities") %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <%= render TotalStatTableComponent.new(stats: @stats.referrers, label: "Referrers") %>
   </div>
-
-  <div class="row mt-md-4">
-    <div class="col-12 col-md-4">
-      <%= render LinkStatCardComponent.new(stats: @stats.devices, label: "Device Type") %>
-    </div>
-    <div class="col-12 col-md-4">
-      <%= render LinkStatCardComponent.new(stats: @stats.browsers, label: "Browser") %>
-    </div>
-    <div class="col-12 col-md-4">
-      <%= render LinkStatCardComponent.new(stats: @stats.os, label: "OS") %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-12 col-md-4">
+    <%= render TotalStatTableComponent.new(stats: @stats.devices, label: "Device Type") %>
+  </div>
+  <div class="col-12 col-md-4">
+    <%= render TotalStatTableComponent.new(stats: @stats.browsers, label: "Browser") %>
+  </div>
+  <div class="col-12 col-md-4">
+    <%= render TotalStatTableComponent.new(stats: @stats.countries, label: "Country") %>
   </div>
 </div>
