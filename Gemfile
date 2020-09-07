@@ -57,3 +57,5 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
 end
 
+
+gem "pretender", "~> 0.3.4"

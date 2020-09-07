@@ -5,6 +5,7 @@
         <th>User</th>
         <th>Links</th>
         <th>Custom Domains</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
           <td><%= user.email %></td>
           <td><%= user.links.count %></td>
           <td><%= user.custom_domains.count %></td>
+          <td><%= link_to "Impersonate", impersonate_admin_user_path(user), method: :post, class: "btn btn-sm btn-warning" %></td>
         </tr>
       <% end %>
     </tbody>

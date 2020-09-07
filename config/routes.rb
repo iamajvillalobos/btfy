@@ -47,7 +47,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :links, only: [:index]
     resources :custom_domains, only: [:index]
-    resources :users, only: [:index]
+    resources :users, only: [:index] do
+      post :impersonate, on: :member
+      post :stop_impersonating, on: :collection
+    end
     resources :user_plans
   end
   get "/admin", to: "admin/links#index"

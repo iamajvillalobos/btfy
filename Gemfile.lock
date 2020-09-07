@@ -192,6 +192,8 @@ GEM
     postmark-rails (0.20.0)
       actionmailer (>= 3.0.0)
       postmark (~> 1.15)
+    pretender (0.3.4)
+      actionpack (>= 4.2)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -372,6 +374,7 @@ DEPENDENCIES
   pay!
   pg (>= 0.18, < 2.0)
   postmark-rails (~> 0.20.0)
+  pretender (~> 0.3.4)
   pry (= 0.13.1)
   puma (~> 4.1)
   rack-attack (~> 6.3)
