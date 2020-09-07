@@ -1,13 +1,12 @@
 class GroupLinkStatsViewer
   include LightService::Organizer
 
-  def self.call(links)
+  def self.call(links, period)
     with(
       links: links,
-      range: Time.now.last_month..Time.now
+      period: period
     ).reduce(
       FetchLinkStatsAction,
-      FetchTotalUniqueVisitCountAction,
       FetchTotalVisitCountAction,
       FetchTotalBrowsersCountAction,
       FetchTotalDevicesCountAction,

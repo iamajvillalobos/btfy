@@ -7,20 +7,6 @@
 %>
 <div class="row">
   <div class="col-12 col-md-6">
-    <%= render(StatsCardComponent.new(
-      title: "Visits for this month of #{Date.today.strftime("%B")}",
-      count: @stats.total_visit_count)
-    )%>
-  </div>
-  <div class="col-12 col-md-6">
-    <%= render(StatsCardComponent.new(
-      title: "Links created for this month of #{Date.today.strftime("%B")}",
-      count: current_user.links.where(created_at: Time.now.beginning_of_month..Time.now.end_of_month).count)
-    )%>
-  </div>
-</div>
-<div class="row">
-  <div class="col-12 col-md-6">
     <%= render TopLinksTableComponent.new(links: @links) %>
   </div>
   <div class="col-12 col-md-6">
