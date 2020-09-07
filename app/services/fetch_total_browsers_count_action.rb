@@ -1,14 +1,14 @@
 class FetchTotalBrowsersCountAction
   include LightService::Action
 
-  expects :links, :range
+  expects :links_with_stats
   promises :total_browsers
 
   executed do |ctx|
     browsers = {}
-
-    ctx.links.where(created_at: ctx.range).find_each do |link|
-      browser = LinkStatsViewerAction.execute(link: link).browsers
+    
+    ctx.links_with_stats.each do |link|
+      browser = link.browsers
       browsers.merge!(browser) { |_, old_val, new_val| old_val + new_val }
     end
 

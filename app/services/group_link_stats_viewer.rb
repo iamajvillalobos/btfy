@@ -6,6 +6,7 @@ class GroupLinkStatsViewer
       links: links,
       range: Time.now.last_month..Time.now
     ).reduce(
+      FetchLinkStatsAction,
       FetchTotalUniqueVisitCountAction,
       FetchTotalVisitCountAction,
       FetchTotalBrowsersCountAction,

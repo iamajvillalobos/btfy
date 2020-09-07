@@ -1,14 +1,14 @@
 class FetchTotalDevicesCountAction
   include LightService::Action
 
-  expects :links, :range
+  expects :links_with_stats
   promises :total_devices
 
   executed do |ctx|
     devices = {}
 
-    ctx.links.where(created_at: ctx.range).find_each do |link|
-      device = LinkStatsViewerAction.execute(link: link).devices
+    ctx.links_with_stats.each do |link|
+      device = link.devices
       devices.merge!(device) { |_, old_val, new_val| old_val + new_val }
     end
 

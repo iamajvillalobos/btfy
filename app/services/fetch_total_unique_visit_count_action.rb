@@ -1,16 +1,10 @@
 class FetchTotalUniqueVisitCountAction
   include LightService::Action
 
-  expects :links, :range
+  expects :links_with_stats
   promises :total_unique_visit_count
 
   executed do |ctx|
-    count = 0
-
-    ctx.links.where(created_at: ctx.range).find_each do |link|
-      count += LinkStatsViewerAction.execute(link: link).unique_visit_count
-    end
-
-    ctx.total_unique_visit_count = count
+    ctx.total_unique_visit_count = ctx.links_with_stats.sum(&:unique_visit_count)
   end
 end
