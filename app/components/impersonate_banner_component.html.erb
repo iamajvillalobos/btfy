@@ -1,0 +1,7 @@
+<div class="alert alert-danger rounded-0 mb-0">
+  <div class="d-flex justify-content-between align-items-center">
+    You are signed in as <%= @current_user.email %>
+    <%= link_to "Back to admin", stop_impersonating_admin_users_path,
+            method: :post, class: "btn btn-sm btn-white" %>
+  </div>
+</div>
