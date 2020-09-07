@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get "/@:username", to: "public_profile#show"
 
   authenticated :user do |user|
-    root to: "links#index", as: :authenticated_root
+    root to: "dashboards#show", as: :authenticated_root
   end
 
   root to: "marketing#index"

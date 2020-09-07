@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def free_plan?
-    subscription.nil?
+    !subscribed? || !on_generic_trial?
   end
 
   private
