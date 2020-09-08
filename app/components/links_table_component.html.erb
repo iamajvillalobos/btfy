@@ -2,7 +2,7 @@
   <div id="links-table" class="card">
     <div class="card-header">
       <div class="input-group input-group-flush input-group-merge">
-          <input type="search"
+        <input type="search"
             class="search form-control form-control-prepended"
             placeholder="Search">
       </div>
@@ -14,7 +14,6 @@
             <th>Name</th>
             <th>Original URL</th>
             <th>Short Link</th>
-            <th>Views</th>
             <th></th>
           </tr>
         </thead>
@@ -24,7 +23,6 @@
               <td class="name"><%= link.name.truncate(25) %></td>
               <td><%= link.destination_url.truncate(50) %></td>
               <td><%= link_to link.redirect_url, link.redirect_url %></td>
-              <td><%= LinkStatsViewerAction.execute(link: link).visit_count %></td>
               <td>
                 <%= link_to "View", link, class: "btn btn-sm btn-white" %>
                 <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-white ml-2" %>
