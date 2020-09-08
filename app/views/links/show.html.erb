@@ -5,7 +5,7 @@
         <h6 class="header-pretitle"><%= @link.name %></h6>
         <h1 class="header-title"><%= @link.redirect_url %></h1>
       </div>
-      <div class="col-auto">
+      <div class="col-auto mt-3 mt-md-0">
         <%= render PeriodDropdownComponent.new(path: link_path,
           default_text: "Last 7 days") %>
       </div>
