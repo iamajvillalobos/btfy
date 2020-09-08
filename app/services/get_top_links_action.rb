@@ -15,6 +15,7 @@ class GetTopLinksAction
       link.events.count
     end
 
-    ctx.top_links = sorted.reverse.first(LIMIT)
+
+    ctx.top_links = sorted.select { |s| s.events.count > 0 }.reverse.first(LIMIT)
   end
 end
