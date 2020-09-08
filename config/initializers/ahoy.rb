@@ -6,4 +6,3 @@ Ahoy.api = false
 
 # For GDRP compliant
 Ahoy.mask_ips = true
-Ahoy.cookies = false
