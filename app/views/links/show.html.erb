@@ -1,8 +1,16 @@
-<div>
-  <%= render(PageHeaderComponent.new(
-    pretitle: @link.name,
-    title: @link.redirect_url))
-    %>
+<div class="header">
+  <div class="header-body">
+    <div class="row align-items-center">
+      <div class="col">
+        <h6 class="header-pretitle"><%= @link.name %></h6>
+        <h1 class="header-title"><%= @link.redirect_url %></h1>
+      </div>
+      <div class="col-auto">
+        <%= render PeriodDropdownComponent.new(path: link_path,
+          default_text: "Last 7 days") %>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-12">
@@ -24,4 +32,5 @@
   <div class="col-12 col-md-4">
     <%= render TotalStatTableComponent.new(stats: @stats.countries, label: "Country") %>
   </div>
+</div>
 </div>

@@ -13,7 +13,7 @@ class LinksController < ApplicationController
     @stats = if params[:period].present?
       GetLinkStats.call(@link, params[:period])
     else
-      GetLinkStats.call(@link, "day")
+      GetLinkStats.call(@link, "7d")
     end
   end
 
