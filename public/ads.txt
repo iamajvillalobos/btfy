@@ -1,0 +1,5 @@
+#btfy.io/ads.txt
+#
+# Btfy cannot be purchased programmatically through open exchanges.
+# Therefore there are no authorized sellers or resellers listed 
+# in this btfy.io/ads.txt file.
