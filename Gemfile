@@ -37,6 +37,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "validate_url", "~> 1.0"
 gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
+gem "pretender", "~> 0.3.4"
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"
@@ -55,7 +56,5 @@ group :test do
   gem "selenium-webdriver", "3.142.7"
   gem "webdrivers", "4.4.1"
   gem "capybara-screenshot", "~> 1.0"
+  gem 'simplecov', require: false
 end
-
-
-gem "pretender", "~> 0.3.4"
