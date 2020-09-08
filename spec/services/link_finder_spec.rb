@@ -2,11 +2,11 @@ require "rails_helper"
 
 RSpec.describe LinkFinder do
   let(:user) { create(:user) }
+  let(:ahoy) { Ahoy::Tracker.new(request: OpenStruct.new(remote_ip: "1.1.1.1")) }
 
   context "without a custom domain" do
     let!(:link1) { create(:link, slug: "abc123", user: user) }
     let(:request) { double(domain: "lvh.me", subdomain: "") }
-    let(:ahoy) { Ahoy::Tracker.new }
 
     context "link exist" do
       let(:slug) { "abc123" }
@@ -34,7 +34,6 @@ RSpec.describe LinkFinder do
       create(:link, slug: "abc123", user: user, custom_domain: custom_domain)
     }
     let(:request) { double(domain: "custom.domain", subdomain: "") }
-    let(:ahoy) { Ahoy::Tracker.new }
 
     context "link exist" do
       let(:slug) { "abc123" }
@@ -52,7 +51,6 @@ RSpec.describe LinkFinder do
       create(:link, slug: "abc123", user: user, custom_domain: custom_domain)
     }
     let(:request) { double(domain: "custom.domain", subdomain: "link") }
-    let(:ahoy) { Ahoy::Tracker.new }
 
     context "link exist" do
       let(:slug) { "abc123" }
