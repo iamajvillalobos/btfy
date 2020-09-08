@@ -1,5 +1,14 @@
 <div class="card" data-controller="link-view-graph">
-  <div class="card-body">
-    <canvas data-target="link-view-graph.chart"></canvas>
-  </div>
+  <table class="table table-sm table-nowrap card-table">
+    <thead>
+      <tr>
+        <th>Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= column_chart @visits %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

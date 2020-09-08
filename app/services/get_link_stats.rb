@@ -11,6 +11,7 @@ class GetLinkStats
       GetDevicesDataAction,
       GetBrowsersDataAction,
       GetCountriesDataAction,
+      GetVisitsDataAction,
     )
   end
 end

@@ -23,6 +23,11 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-12">
+    <%= render LinkViewGraphComponent.new(visits: @stats.total_visits) %>
+  </div>
+</div>
+<div class="row">
   <div class="col-12 col-md-6">
     <%= render TopLinksTableComponent.new(links: @links) %>
   </div>
