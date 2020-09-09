@@ -1,5 +1,4 @@
 <%= render SettingsHeaderComponent.new %>
-
 <div class="row justify-content-start">
   <div class="col-12 col-md-8">
     <%= form_with model: @account, local: true do |f| %>
@@ -24,7 +23,6 @@
       </div>
       <hr class="my-5">
       <!-- End of Avatar -->
-
       <!-- Details -->
       <div class="row">
         <div class="col-12 col-md-6">
@@ -51,14 +49,20 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <%= f.label :timezone %>
+            <%= f.time_zone_select :timezone, nil, { include_blank: true }, { class: "custom-select" } %>
+          </div>
+        </div>
+      </div>
       <%= f.submit "Save", class: "btn btn-primary" %>
       <hr class="my-5">
       <!-- End of Details -->
     <% end %>
   </div>
 </div>
-
-
 <div class="row justify-content-start">
   <div class="col-12 col-md-8">
     <%= form_with model: current_user, url: user_attributes_path, method: :put, local: true do |f| %>
@@ -86,16 +90,13 @@
             </small>
             <div class="row align-items-center pt-md-2">
               <div class="col-auto">
-
                 <!-- Switch -->
                 <div class="custom-control custom-switch">
                   <%= f.check_box :bio, class: "custom-control-input" %>
                   <%= f.label :bio, "&nbsp;".html_safe, class: "custom-control-label" %>
                 </div>
-
               </div>
               <div class="col ml-n4">
-
                 <!-- Help text -->
                 <small class="text-muted">
                   <% if current_user.bio %>
@@ -104,7 +105,6 @@
                     You're currently invisible
                   <% end %>
                 </small>
-
               </div>
             </div>
           </div>
