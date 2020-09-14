@@ -6,7 +6,7 @@ class LinksController < ApplicationController
   authorize_resource
 
   def index
-    @pagy, @links = pagy(current_user.links.order(created_at: :desc), items: 10)
+    @links = current_user.links.order(created_at: :desc)
   end
 
   def show

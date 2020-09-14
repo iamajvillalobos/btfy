@@ -37,10 +37,5 @@
         </tbody>
       </table>
     </div>
-    <% if @links.count > Ability::MAX_LINKS_FOR_FREE_USER %>
-      <div class="card-footer d-flex justify-content-between">
-        <%= render PagyNavComponent.new(@pagy) %>
-      </div>
-    <% end %>
   </div>
 </div>

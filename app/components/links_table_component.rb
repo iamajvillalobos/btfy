@@ -1,6 +1,5 @@
 class LinksTableComponent < ViewComponent::Base
-  def initialize(links, pagy)
+  def initialize(links)
     @links = links
-    @pagy = pagy
   end
 end
