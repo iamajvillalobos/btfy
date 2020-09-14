@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+<nav class="navbar navbar-light bg-white border-bottom">
   <div class="container justify-content-start">
     <%= link_to root_path, class: "navbar-brand ml-n1 mr-3" do %>
       <div class="d-flex align-items-center">
@@ -7,13 +7,15 @@
     <% end %>
     <div class="collapse navbar-collapse" id="navbar-content">
     </div>
-    <div class="navbar-user ml-auto">
+    <div class="ml-auto">
       <div class="mr-3">
         <%= render TrialDaysCounterComponent.new(user: @current_user) %>
       </div>
       <div class="dropdown">
-        <a href="#" class="avatar avatar-sm dropdown-toggle " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= image_tag @current_user.account.image, class: "avatar-img rounded-circle" %>
+        <a href="#" class="dropdown-toggle"  data-toggle="dropdown">
+          <svg height="24" width="24"   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+          </svg>
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to "Links", links_path, class: "dropdown-item" %>

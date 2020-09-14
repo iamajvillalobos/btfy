@@ -6,10 +6,12 @@ require("@rails/activestorage").start();
 require("channels");
 require("chartkick");
 require("chart.js");
-import 'bootstrap';
-import hljs from "highlight.js"
-import "highlight.js/scss/hybrid.scss"
+import "jquery";
+import "popper.js";
+import "bootstrap";
+import hljs from "highlight.js";
+import "highlight.js/scss/hybrid.scss";
 
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("turbolinks:load", function () {
   hljs.initHighlighting();
-})
+});

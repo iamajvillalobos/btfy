@@ -8,3 +8,8 @@
 
 // For rails forms errors
 .field_with_errors { display: inline };
+
+// override dashkit dropdown
+.dropdown-toggle::after {
+  content: ""
+}
