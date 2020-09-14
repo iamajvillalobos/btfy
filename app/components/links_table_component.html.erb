@@ -22,7 +22,12 @@
             <tr>
               <td class="name"><%= link.name.truncate(25) %></td>
               <td><%= link.destination_url.truncate(50) %></td>
-              <td><%= link_to link.redirect_url, link.redirect_url %></td>
+              <td>
+                <div class="d-flex align-items-center justify-content-between">
+                  <%= link_to link.redirect_url, link.redirect_url %>
+                  <%= render CopyLinkButtonComponent.new(link) %>
+                </div>
+              </td>
               <td>
                 <%= link_to "View", link, class: "btn btn-sm btn-white" %>
                 <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-white ml-2" %>

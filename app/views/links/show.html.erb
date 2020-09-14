@@ -3,7 +3,10 @@
     <div class="row align-items-center">
       <div class="col">
         <h6 class="header-pretitle"><%= @link.destination_url.truncate(100) %></h6>
-        <h1 class="header-title"><%= @link.redirect_url %></h1>
+        <div class="d-flex align-items-center">
+          <h1 class="header-title"><%= @link.redirect_url %></h1>
+          <%= render CopyLinkButtonComponent.new(@link) %>
+        </div>
       </div>
       <div class="col-auto mt-3 mt-md-0">
         <%= render PeriodDropdownComponent.new(path: link_path,

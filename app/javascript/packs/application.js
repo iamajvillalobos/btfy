@@ -11,7 +11,10 @@ import "popper.js";
 import "bootstrap";
 import hljs from "highlight.js";
 import "highlight.js/scss/hybrid.scss";
+import ClipboardJS from "clipboard";
 
 document.addEventListener("turbolinks:load", function () {
   hljs.initHighlighting();
+
+  new ClipboardJS(".btn-clipboard-copy");
 });
