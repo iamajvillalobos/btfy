@@ -11,13 +11,10 @@ class DashboardsController < ApplicationController
 
     authorize! :read, :dashboard
 
-    if params[:period].present?
-      @stats = GroupLinkStatsViewer.call(current_user.links, params[:period])
-      @links = GetTopLinksAction.execute(user: current_user, period: params[:period])
-        .top_links
+    @stats = if params[:period].present?
+      GroupLinkStatsViewer.call(current_user.links, params[:period])
     else
-      @links = GetTopLinksAction.execute(user: current_user, period: "30d").top_links
-      @stats = GroupLinkStatsViewer.call(current_user.links, "30d")
+      GroupLinkStatsViewer.call(current_user.links, "30d")
     end
   end
 end

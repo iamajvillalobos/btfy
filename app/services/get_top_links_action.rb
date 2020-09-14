@@ -1,20 +1,15 @@
 class GetTopLinksAction
   include LightService::Action
 
-  expects :user, :period
+  expects :links_with_stats
   promises :top_links
 
   LIMIT = 5
 
   executed do |ctx|
-    links = ctx.user.links.map do |link|
-      GetEventsFromPeriodAction.execute(link: link, period: ctx.period)
-    end
-
-    sorted = links.sort_by do |link|
+    sorted = ctx.links_with_stats.sort_by do |link|
       link.events.count
     end
-
 
     ctx.top_links = sorted.select { |s| s.events.count > 0 }.reverse.first(LIMIT)
   end
