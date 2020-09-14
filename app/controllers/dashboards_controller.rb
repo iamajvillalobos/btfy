@@ -4,11 +4,6 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    if current_user.free_plan?
-      redirect_to links_path
-      return
-    end
-
     authorize! :read, :dashboard
 
     @stats = if params[:period].present?

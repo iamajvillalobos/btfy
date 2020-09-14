@@ -2,7 +2,7 @@ class SubscriptionsController < ApplicationController
   layout "dashboard"
 
   before_action :authenticate_user!
-  
+
   def show
     redirect_to account_path if current_user.subscribed?
     @plans = UserPlan.all.reject { |u| u.name == "Free" }.sort
