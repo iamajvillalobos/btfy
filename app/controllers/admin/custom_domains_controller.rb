@@ -4,6 +4,6 @@ class Admin::CustomDomainsController < ApplicationController
   before_action :authenticate_admin_user!
 
   def index
-    @pagy, @custom_domains = pagy(CustomDomain.order(created_at: :desc), items: 10)
+    @custom_domains = CustomDomain.order(created_at: :desc)
   end
 end

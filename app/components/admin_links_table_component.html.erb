@@ -2,7 +2,6 @@
   <table class="table table-sm table-nowrap table-hover card-table">
     <thead>
       <tr>
-        <th>Name</th>
         <th>URL</th>
         <th>Short link</th>
         <th>User</th>
@@ -11,7 +10,6 @@
     <tbody>
       <% @links.each do |link| %>
         <tr>
-          <td><%= link.name.truncate(50) %></td>
           <td><%= link.destination_url.truncate(50) %></td>
           <td><%= link.redirect_url %></td>
           <td><%= link.user.email %></td>
