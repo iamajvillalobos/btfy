@@ -11,6 +11,7 @@ gem "bootsnap", "1.4.7", require: false
 gem "cancancan", "~> 3.1"
 gem "chartkick", "3.3.2"
 gem "countries", "~> 3.0"
+gem "device_detector", "~> 1.0"
 gem "devise", "4.7.2"
 gem "faker", "2.13.0"
 gem "groupdate", "5.0.0"
@@ -22,6 +23,7 @@ gem "pagy", "~> 3.8"
 gem "pay", git: "https://github.com/nm/pay", branch: "paddle"
 gem "pg", ">= 0.18", "< 2.0"
 gem "postmark-rails", "~> 0.20.0"
+gem "pretender", "~> 0.3.4"
 gem "puma", "~> 4.1"
 gem "rack-attack", "~> 6.3"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
@@ -37,7 +39,6 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "validate_url", "~> 1.0"
 gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
-gem "pretender", "~> 0.3.4"
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"
