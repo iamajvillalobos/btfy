@@ -1,0 +1,2 @@
+class Salt < ApplicationRecord
+end
