@@ -10,7 +10,8 @@ class LinkFinder
       ParseRequestParamsAction,
       VerifyDomainAction,
       VerifySlugAction,
-      AddLinkAnalyticsAction
+      AddLinkAnalyticsAction,
+      AddVisitInformation
     )
   end
 end
