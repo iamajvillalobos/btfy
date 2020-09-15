@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_072752) do
+ActiveRecord::Schema.define(version: 2020_09_15_091614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,18 @@ ActiveRecord::Schema.define(version: 2020_09_15_072752) do
     t.index ["user_id"], name: "index_custom_domains_on_user_id"
   end
 
+  create_table "link_visits", force: :cascade do |t|
+    t.bigint "link_id"
+    t.text "visitor_hash"
+    t.string "browser"
+    t.string "device_type"
+    t.string "country"
+    t.string "referrer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["link_id"], name: "index_link_visits_on_link_id"
+  end
+
   create_table "links", force: :cascade do |t|
     t.text "destination_url"
     t.string "name"
@@ -209,6 +221,9 @@ ActiveRecord::Schema.define(version: 2020_09_15_072752) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "register_link"
+    t.bigint "clicks_per_month"
+    t.string "billing_cycle"
+    t.index ["clicks_per_month"], name: "index_user_plans_on_clicks_per_month"
   end
 
   create_table "users", force: :cascade do |t|
