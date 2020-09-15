@@ -60,3 +60,5 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem 'simplecov', require: false
 end
+
+gem "whenever", "~> 1.0"
