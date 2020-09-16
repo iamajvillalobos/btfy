@@ -32,6 +32,10 @@ class User < ApplicationRecord
     id == 1 && email == "hello@ajvillalobos.com"
   end
 
+  def username_or_email
+    username || email
+  end
+
   private
 
   def enable_trial
