@@ -7,6 +7,16 @@ class ParseVisitorDeviceType
   promises :device_type
 
   executed do |ctx|
-    ctx.device_type = ctx.device.device_type
+    device_type = case ctx.device.device_type
+    when "smartphone"
+      "Mobile"
+    when "tv"
+      "TV"
+    when "phablet"
+      "Tablet"
+    else
+      ctx.device.device_type.try(:titleize)
+    end
+    ctx.device_type = device_type
   end
 end

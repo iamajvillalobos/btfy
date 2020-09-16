@@ -10,7 +10,7 @@ class GenerateVisitorHashAction
     data = [
       ctx.request.referrer,
       ctx.request.ip,
-      ctx.request.env["HTTP_USER_AGENT"]
+      ctx.request.user_agent
     ].join
 
     ctx.visitor_hash = OpenSSL::HMAC.hexdigest(

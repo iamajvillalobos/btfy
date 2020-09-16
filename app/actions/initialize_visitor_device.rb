@@ -5,6 +5,6 @@ class InitializeVisitorDevice
   promises :device
 
   executed do |ctx|
-    ctx.device = DeviceDetector.new(ctx.request.env["HTTP_USER_AGENT"])
+    ctx.device = DeviceDetector.new(ctx.request.user_agent)
   end
 end
