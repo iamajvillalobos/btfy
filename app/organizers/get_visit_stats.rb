@@ -16,6 +16,8 @@ class GetVisitStats
       ::GetLinkUniqueVisits,
       ::GetLinkCountries,
       ::GetLinkDeviceTypes,
+      ::GetLinkReferrers,
+      ::GetLinkBrowsers,
       ::TallyVisitStats
     ]
   end
