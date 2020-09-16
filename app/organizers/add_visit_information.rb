@@ -16,9 +16,9 @@ class AddVisitInformation
       ::InitializeVisitorDevice,
       ::ParseVisitorBrowser,
       ::ParseVisitorDeviceType,
-      ::ParseVisitorCountry,
       ::ParseVisitorReferrer,
-      ::SaveLinkVisit
+      ::SaveLinkVisit,
+      ::ParseVisitorCountry
     ]
   end
 end
