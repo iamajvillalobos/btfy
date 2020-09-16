@@ -11,7 +11,9 @@ class LinkFinder
       VerifyDomainAction,
       VerifySlugAction,
       AddLinkAnalyticsAction,
-      AddVisitInformation
+      reduce_if(->(ctx) { ctx.success? }, [
+        AddVisitInformation
+      ])
     )
   end
 end
