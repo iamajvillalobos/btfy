@@ -6,8 +6,22 @@
       </h6>
       <div class="d-flex align-items-center">
         <h1 class="header-title">Links</h1>
-        <span class="badge badge-pill badge-soft-secondary ml-2"><%= @links.count %></span>
+        <span class="badge badge-pill badge-soft-secondary ml-2"><%= Link.count %></span>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= render LinkViewGraphComponent.new(@stats.total_visits) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <%= render TopLinksTableComponent.new(links: @stats.top_links) %>
+    </div>
+    <div class="col-12 col-md-6">
+      <%= render TotalStatTableComponent.new(
+      stats: @stats.total_referrers, label: "Referrers") %>
     </div>
   </div>
   <div class="row">
