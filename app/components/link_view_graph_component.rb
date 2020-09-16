@@ -3,7 +3,7 @@ class LinkViewGraphComponent < ViewComponent::Base
   COLOR_GRAY_600 = "#95AAC9"
 
   def initialize(visits)
-    @visits = visits[:visits]
+    @visits = visits
   end
 
   def show_chart
