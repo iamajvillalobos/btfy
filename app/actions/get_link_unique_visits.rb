@@ -7,6 +7,7 @@ class GetLinkUniqueVisits
   promises :unique_visits
 
   executed do |ctx|
-    ctx.unique_visits = ctx.visits.select(:visitor_hash).distinct
+    unique_visit_ids = ctx.visits.uniq(&:visitor_hash).pluck(:id)
+    ctx.unique_visits = LinkVisit.where(id: unique_visit_ids)
   end
 end
