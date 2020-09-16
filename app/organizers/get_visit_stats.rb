@@ -14,6 +14,8 @@ class GetVisitStats
     [
       ::GetLinkVisits,
       ::GetLinkUniqueVisits,
+      ::GetLinkCountries,
+      ::GetLinkDeviceTypes,
       ::TallyVisitStats
     ]
   end
