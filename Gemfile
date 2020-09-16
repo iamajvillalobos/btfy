@@ -19,6 +19,7 @@ gem "hiredis", "~> 0.6.3"
 gem "httparty", "~> 0.18.1"
 gem "jbuilder", "~> 2.7"
 gem "light-service"
+gem "lograge", "~> 0.11.2"
 gem "paddle_pay", "~> 0.0.1"
 gem "pagy", "~> 3.8"
 gem "pay", git: "https://github.com/nm/pay", branch: "paddle"
@@ -40,6 +41,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "validate_url", "~> 1.0"
 gem "view_component", "2.18.0"
 gem "webpacker", "~> 4.0"
+gem "whenever", "~> 1.0"
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"
@@ -60,5 +62,3 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem 'simplecov', require: false
 end
-
-gem "whenever", "~> 1.0"
