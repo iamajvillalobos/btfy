@@ -28,6 +28,10 @@ class User < ApplicationRecord
     true
   end
 
+  def admin?
+    id == 1 && email == "hello@ajvillalobos.com"
+  end
+
   private
 
   def enable_trial

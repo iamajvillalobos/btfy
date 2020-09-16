@@ -72,7 +72,15 @@ class LinksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_link
-    @link = current_user.links.find(params[:id])
+    @link = if current_user.admin?
+      Link.find(params[:id])
+    else
+      begin
+        current_user.links.find(params[:id])
+      rescue
+        redirect_to root_path
+      end
+    end
   end
 
   # Only allow a list of trusted parameters through.
