@@ -17,4 +17,9 @@ namespace :cleanup_device_type do
       visit.update(device_type: device_type)
     end
   end
+
+  task remove_bots: :environment do
+    bot_visits = LinkVisit.where(browser: nil, device_type: nil)
+    bot_visits.destroy_all
+  end
 end
