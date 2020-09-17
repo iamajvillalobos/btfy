@@ -2,14 +2,30 @@ class LinkViewGraphComponent < ViewComponent::Base
   COLOR_GRAY_300 = "#E3EBF6"
   COLOR_GRAY_600 = "#95AAC9"
 
-  def initialize(visits)
+  def initialize(visits:, uniques:)
     @visits = visits.sort.map { |date, count|
+      [date.stamp("Jan 01"), count]
+    }.to_h
+
+    @unique_visits = uniques.sort.map { |date, count|
       [date.stamp("Jan 01"), count]
     }.to_h
   end
 
   def show_chart
-    column_chart @visits, dataset: dataset_options, library: library_options
+    column_chart data, stacked: true, legend: false
+  end
+
+  def data
+   [
+     {name: "Visits", data: @visits, dataset: dataset_options, library: library_options},
+     {
+       name: "Uniques",
+       data: @unique_visits,
+       dataset: unique_visits_options,
+       library: library_options,
+      }
+   ]
   end
 
   def library_options
@@ -52,6 +68,13 @@ class LinkViewGraphComponent < ViewComponent::Base
     {
       backgroundColor: "#2C7BE5",
       borderColor: "#2C7BE5",
+    }
+  end
+
+  def unique_visits_options
+    {
+      backgroundColor: "#A6C5F7",
+      borderColor: "#A6C5F7"
     }
   end
 end
