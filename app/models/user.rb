@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one :account, dependent: :destroy
   has_one :public_profile, dependent: :destroy
 
-  after_create :enable_trial
+  # after_create :enable_trial
 
   def account
     Account.find_or_create_by(user: self)
