@@ -1,16 +1,14 @@
 class LinkFinder
   extend LightService::Organizer
 
-  def self.call(request, slug, ahoy)
+  def self.call(request, slug)
     with(
       request: request,
-      slug: slug,
-      ahoy: ahoy
+      slug: slug
     ).reduce(
       ParseRequestParamsAction,
       VerifyDomainAction,
       VerifySlugAction,
-      AddLinkAnalyticsAction,
       reduce_if(->(ctx) { ctx.success? }, [
         AddVisitInformation
       ])
