@@ -8,6 +8,7 @@ class GroupLinkStatsViewer
     ).reduce(
       FetchLinkStatsAction,
       FetchTotalVisitCountAction,
+      FetchTotalUniqueVisitsCountAction,
       FetchTotalBrowsersCountAction,
       FetchTotalDevicesCountAction,
       FetchTotalReferrersAction,

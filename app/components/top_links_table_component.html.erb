@@ -4,7 +4,8 @@
       <thead>
         <tr>
           <th>Top Links</th>
-          <th class="text-right">Views</th>
+          <th class="text-right">Visits</th>
+          <th class="text-right">Uniques</th>
         </tr>
       </thead>
       <tbody>
@@ -13,8 +14,9 @@
             <td>
               <%= link_to link[:link].redirect_url, link[:link] %>
             </td>
-            <td class="text-right"><%= link[:count] %>
-            </tr>
+            <td class="text-right"><%= link[:visits] %>
+            <td class="text-right"><%= link[:unique_visits] %>
+          </tr>
           <% end %>
           <% if links_limit_diff > 0 %>
             <% links_limit_diff.times do %>

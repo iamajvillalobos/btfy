@@ -5,7 +5,8 @@ class TopLinksTableComponent < ViewComponent::Base
     @links = links.map do |link|
       {
         link: link.link,
-        count: link.visits.count
+        visits: link.visits.count,
+        unique_visits: link.unique_visits.count
       }
     end
   end

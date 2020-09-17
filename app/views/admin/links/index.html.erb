@@ -12,7 +12,10 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <%= render LinkViewGraphComponent.new(@stats.total_visits) %>
+      <%= render LinkViewGraphComponent.new(
+        visits: @stats.total_visits,
+        uniques: @stats.total_visits)
+      %>
     </div>
   </div>
   <div class="row">
