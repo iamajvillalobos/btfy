@@ -17,7 +17,7 @@ class GetLinkReferrers
   end
 
   def self.parse(referrer)
-    return "Unknown" if referrer.nil?
+    return "Direct / None" if referrer.nil?
     key = Addressable::URI.parse(referrer).host
     return referrer unless REFERRER_MAP.key?(key)
     REFERRER_MAP[key]

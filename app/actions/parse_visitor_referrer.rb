@@ -7,6 +7,6 @@ class ParseVisitorReferrer
   promises :referrer
 
   executed do |ctx|
-    ctx.referrer = ctx.request.referrer
+    ctx.referrer = ctx.request.referrer || "Direct / None"
   end
 end
