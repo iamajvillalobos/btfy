@@ -11,7 +11,7 @@
         <% @links.each do |link| %>
           <tr>
             <td>
-              <%= link_to link[:link].name.truncate(50), link[:link] %>
+              <%= link_to link[:link].redirect_url, link[:link] %>
             </td>
             <td class="text-right"><%= link[:count] %>
             </tr>
