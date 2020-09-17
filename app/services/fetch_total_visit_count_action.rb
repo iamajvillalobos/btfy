@@ -8,7 +8,7 @@ class FetchTotalVisitCountAction
     visits = {}
 
     ctx.links_with_stats.each do |link|
-      visit = link.visits
+      visit = link.total_visits
       visits.merge!(visit) { |_, old_val, new_val| old_val + new_val }
     end
 

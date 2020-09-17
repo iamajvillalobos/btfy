@@ -8,12 +8,12 @@ class FetchTotalDevicesCountAction
     devices = {}
 
     ctx.links_with_stats.each do |link|
-      device = link.devices
+      device = link.device_types
       devices.merge!(device) do |_, old_val, new_val|
         old_val + new_val
       end
     end
 
-    ctx.total_devices = devices.sort
+    ctx.total_devices = devices
   end
 end
