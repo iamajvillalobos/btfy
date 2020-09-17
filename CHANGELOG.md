@@ -1,3 +1,76 @@
+<a name="2020-09-18"></a>
+### 2020-09-18
+
+
+#### Features
+
+* Remove free trial, make all users on free	 ([b174853](/../../commit/b174853))
+* Use LogoComponent on Bio	 ([3338c0f](/../../commit/3338c0f))
+* Remove ahoy	 ([2a62cd2](/../../commit/2a62cd2))
+* Remove tailwind completely	 ([edf2335](/../../commit/edf2335))
+* Use the new stats information in Dashboard	 ([f70b0cf](/../../commit/f70b0cf))
+* Use the new stats information in LinkShow	 ([c24975f](/../../commit/c24975f))
+* Use Direct instead of Unknown when referrer is blank	 ([6e91f99](/../../commit/6e91f99))
+
+
+<a name="2020-09-17"></a>
+### 2020-09-17
+
+
+#### Features
+
+* Use custom domain snippet of plausible	 ([71fb8d1](/../../commit/71fb8d1))
+* Show shorten links url instead of name in top links card	 ([ebf8802](/../../commit/ebf8802))
+* Remove pacifico google font	 ([084a9b7](/../../commit/084a9b7))
+
+
+#### Bug Fixes
+
+* Total visits of a link/links should be sorted by date asc	 ([a6f2c99](/../../commit/a6f2c99))
+
+
+<a name="2020-09-16"></a>
+### 2020-09-16
+
+
+#### Features
+
+* Don’t create LinkVisit record for bots	 ([4db1186](/../../commit/4db1186))
+* Add reduce_if to close out all actions even if it is an organizer	 ([5f3a3e0](/../../commit/5f3a3e0))
+* Create rake task for cleaning LinkVisit device_types	 ([848e0a1](/../../commit/848e0a1))
+* Capitalize device_type and also make smartphone tag as mobile	 ([62f34c5](/../../commit/62f34c5))
+* Move fetching of visitor country to a background job	 ([eba1744](/../../commit/eba1744))
+* Install and configure lograge	 ([5660adf](/../../commit/5660adf))
+* Also show alternative stat for admin	 ([ad3780b](/../../commit/ad3780b))
+* Show email or username in the navbar	 ([ea0cde9](/../../commit/ea0cde9))
+* allow admin user to view all links	 ([6c7260a](/../../commit/6c7260a))
+* Add Top links and Visit Chart in admin dashboard	 ([e315a06](/../../commit/e315a06))
+* Show alternative link stats to impersonate user only	 ([eabd605](/../../commit/eabd605))
+* Add GetLinkReferrers	 ([bc25d07](/../../commit/bc25d07))
+* Add GetLinkBrowsers	 ([84c20e1](/../../commit/84c20e1))
+* Add GetLinkDeviceType	 ([803a630](/../../commit/803a630))
+* Add GetLinkCountries	 ([5c1c69f](/../../commit/5c1c69f))
+* Create GetVisitStats organizer	 ([4a4ca54](/../../commit/4a4ca54))
+
+
+<a name="2020-09-15"></a>
+### 2020-09-15
+
+
+#### Features
+
+* Run CreateSaltJob every 12am	 ([ffbcde6](/../../commit/ffbcde6))
+* Add AddVisitInformation	 ([fd59948](/../../commit/fd59948))
+* Add SaveLinkVisit	 ([d6adf05](/../../commit/d6adf05))
+* Add ParseVisitorReferrer	 ([bf48deb](/../../commit/bf48deb))
+* Add ParseVisitorCountry	 ([fab61a2](/../../commit/fab61a2))
+* Add ParseVisitorDeviceType	 ([2ae540c](/../../commit/2ae540c))
+* Add InitializeVisitorDevice & ParseVisitorBrowser	 ([eb12ee9](/../../commit/eb12ee9))
+* Add GenerateVisitorHashAction	 ([d1d4c40](/../../commit/d1d4c40))
+* Create background job for creating new salt	 ([428c150](/../../commit/428c150))
+* create salt model	 ([4912766](/../../commit/4912766))
+
+
 <a name="2020-09-14"></a>
 ### 2020-09-14
 
