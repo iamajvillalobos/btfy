@@ -11,12 +11,6 @@ class LinksController < ApplicationController
 
   def show
     @stats = if params[:period].present?
-      GetLinkStats.call(@link, params[:period])
-    else
-      GetLinkStats.call(@link, "7d")
-    end
-
-    @visit_stats = if params[:period].present?
       GetVisitStats.call(@link, params[:period])
     else
       GetVisitStats.call(@link, "7d")

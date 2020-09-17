@@ -8,12 +8,10 @@ class TallyVisitStats
 
   executed do |ctx|
     ctx.total_visits = ctx.visits.group_by_day(:created_at,
-      format: "%b %-d",
       time_zone: ctx.link.user.account.timezone
     ).count
 
     ctx.total_unique_visits = ctx.unique_visits.group_by_day(:created_at,
-      format: "%b %-d",
       time_zone: ctx.link.user.account.timezone
     ).count
   end

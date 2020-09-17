@@ -17,7 +17,7 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <%= render LinkViewGraphComponent.new(@stats.visits) %>
+    <%= render LinkViewGraphComponent.new(@stats.total_visits) %>
   </div>
 </div>
 <div class="row">
@@ -25,7 +25,7 @@
     <%= render TotalStatTableComponent.new(stats: @stats.referrers, label: "Referrers") %>
   </div>
   <div class="col-12 col-md-3">
-    <%= render TotalStatTableComponent.new(stats: @stats.devices, label: "Device Type") %>
+    <%= render TotalStatTableComponent.new(stats: @stats.device_types, label: "Device Type") %>
   </div>
   <div class="col-12 col-md-3">
     <%= render TotalStatTableComponent.new(stats: @stats.browsers, label: "Browser") %>
@@ -34,33 +34,4 @@
     <%= render TotalStatTableComponent.new(stats: @stats.countries, label: "Country") %>
   </div>
 </div>
-<% if current_user != true_user || current_user.admin? %>
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <%= render TotalStatTableComponent.new(stats: @visit_stats.total_visits,
-        label: "Total Visits") %>
-    </div>
-    <div class="col-12 col-md-3">
-      <%= render TotalStatTableComponent.new(stats: @visit_stats.total_unique_visits,
-        label: "Unique Visits") %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <%= render TotalStatTableComponent.new(stats: @visit_stats.referrers,
-        label: "Referrers") %>
-    </div>
-    <div class="col-12 col-md-3">
-      <%= render TotalStatTableComponent.new(stats: @visit_stats.device_types,
-        label: "Device Type") %>
-    </div>
-    <div class="col-12 col-md-3">
-      <%= render TotalStatTableComponent.new(stats: @visit_stats.browsers,
-        label: "Browser") %>
-    </div>
-    <div class="col-12 col-md-3">
-      <%= render TotalStatTableComponent.new(stats: @visit_stats.countries,
-        label: "Country") %>
-    </div>
-  </div>
-<% end %>
+
