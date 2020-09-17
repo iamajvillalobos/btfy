@@ -3,7 +3,9 @@ class LinkViewGraphComponent < ViewComponent::Base
   COLOR_GRAY_600 = "#95AAC9"
 
   def initialize(visits)
-    @visits = visits
+    @visits = visits.sort.map { |date, count|
+      [date.stamp("Jan 01"), count]
+    }.to_h
   end
 
   def show_chart
