@@ -4,13 +4,16 @@ class ReferrerDomain
     "l.facebook.com" => "Facebook",
     "m.facebook.com" => "Facebook",
     "l.messenger.com" => "Facebook",
-    "www.facebook.com" => "Facebook"
+    "www.facebook.com" => "Facebook",
+    "lm.facebook.com" => "Facebook",
+    "l.instagram.com" => "Instagram"
   }
 
   attr_reader :name
 
   def initialize(url:)
-    @name = url ? parse_domain(url) : "Direct"
+    host = Addressable::URI.parse(url)&.host
+    @name = host ? parse_domain(host) : "Direct / None"
   end
 
   def parse_domain(url)
