@@ -3,8 +3,8 @@
 class GetLinkReferrers
   extend ::LightService::Action
 
-  expects :unique_visits
-  promises :referrers
+  expects :unique_visits, :visits
+  promises :unique_referrers, :referrers
 
   REFERRER_MAP = {
     "l.facebook.com" => "Facebook",
@@ -13,7 +13,8 @@ class GetLinkReferrers
   }
 
   executed do |ctx|
-    ctx.referrers = ctx.unique_visits.map { |uv| parse(uv.referrer) }.tally
+    ctx.referrers = ctx.visits.map { |uv| parse(uv.referrer) }.tally
+    ctx.unique_referrers = ctx.unique_visits.map { |uv| parse(uv.referrer) }.tally
   end
 
   def self.parse(referrer)

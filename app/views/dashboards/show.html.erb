@@ -17,8 +17,10 @@
     <%= render TopLinksTableComponent.new(links: @stats.top_links) %>
   </div>
   <div class="col-12 col-md-6">
-    <%= render TotalStatTableComponent.new(
-      stats: @stats.total_referrers, label: "Referrers") %>
+    <%= render ReferrerTableComponent.new(
+      visits: @stats.total_referrers,
+      uniques: @stats.total_unique_referrers,
+      label: "Referrers") %>
   </div>
 </div>
 <div class="row">

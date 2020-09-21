@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="table-responsive mb-0">
+    <table class="table table-sm table-nowrap card-table">
+      <thead>
+        <tr>
+          <th><%= @label %></th>
+          <th class="text-right">Visits</th>
+          <th class="text-right">Uniques</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @stats.each do |stat, count| %>
+          <tr>
+            <td><%= stat %></td>
+            <td class="text-right"><%= count[:visits] %></td>
+            <td class="text-right"><%= count[:uniques] %></td>
+          </tr>
+        <% end %>
+        <% if stats_limit_diff > 0 %>
+          <% stats_limit_diff.times do %>
+            <tr class="d-none d-md-table-row">
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
