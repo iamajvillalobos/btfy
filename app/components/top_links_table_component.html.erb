@@ -15,18 +15,19 @@
               <%= link_to link[:link].redirect_url, link[:link] %>
             </td>
             <td class="text-right"><%= link[:visits] %>
-            <td class="text-right"><%= link[:unique_visits] %>
-          </tr>
-          <% end %>
-          <% if links_limit_diff > 0 %>
-            <% links_limit_diff.times do %>
-              <tr class="d-none d-md-table-row">
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+              <td class="text-right"><%= link[:unique_visits] %>
               </tr>
             <% end %>
-          <% end %>
-        </tbody>
-      </table>
+            <% if links_limit_diff > 0 %>
+              <% links_limit_diff.times do %>
+                <tr class="d-none d-md-table-row">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
