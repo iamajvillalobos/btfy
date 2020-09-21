@@ -13,19 +13,14 @@ class LinkViewGraphComponent < ViewComponent::Base
   end
 
   def show_chart
-    column_chart data, stacked: true, legend: false
+    column_chart data, stacked: true, legend: false, library: library_options
   end
 
   def data
-   [
-     {name: "Visits", data: @visits, dataset: dataset_options, library: library_options},
-     {
-       name: "Uniques",
-       data: @unique_visits,
-       dataset: unique_visits_options,
-       library: library_options,
-      }
-   ]
+    [
+      {name: "Visits", data: @visits, dataset: dataset_options},
+      {name: "Uniques", data: @unique_visits, dataset: unique_visits_options}
+    ]
   end
 
   def library_options
@@ -67,7 +62,7 @@ class LinkViewGraphComponent < ViewComponent::Base
   def dataset_options
     {
       backgroundColor: "#2C7BE5",
-      borderColor: "#2C7BE5",
+      borderColor: "#2C7BE5"
     }
   end
 
