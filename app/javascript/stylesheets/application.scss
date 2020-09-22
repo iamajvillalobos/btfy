@@ -1,10 +1,12 @@
-@import url('https://rsms.me/inter/inter.css');
-@import './theme.css';
+@import url("https://rsms.me/inter/inter.css");
+@import "./theme.min.css";
 
 // For rails forms errors
-.field_with_errors { display: inline };
+.field_with_errors {
+  display: inline;
+}
 
 // override dashkit dropdown
 .dropdown-toggle::after {
-  content: ""
+  content: "";
 }
