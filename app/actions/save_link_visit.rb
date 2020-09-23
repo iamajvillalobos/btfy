@@ -3,7 +3,7 @@
 class SaveLinkVisit
   extend ::LightService::Action
 
-  expects :visitor_hash, :browser, :device_type, :referrer, :link
+  expects :visitor_hash, :browser, :device_type, :referrer, :link, :user
   promises :visit
 
   executed do |ctx|
@@ -11,7 +11,8 @@ class SaveLinkVisit
       visitor_hash: ctx.visitor_hash,
       browser: ctx.browser,
       device_type: ctx.device_type,
-      referrer: ctx.referrer
+      referrer: ctx.referrer,
+      user: ctx.user
     )
   end
 end

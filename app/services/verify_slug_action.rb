@@ -2,7 +2,7 @@ class VerifySlugAction
   extend LightService::Action
 
   expects :custom_domain, :slug
-  promises :link, :url
+  promises :link, :url, :user
 
   executed do |ctx|
     ctx.link = if ctx.custom_domain
@@ -16,5 +16,6 @@ class VerifySlugAction
     end
 
     ctx.url = ctx.link.destination_url
+    ctx.user = ctx.link.user
   end
 end

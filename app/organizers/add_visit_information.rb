@@ -6,7 +6,8 @@ class AddVisitInformation
   def self.call(params)
     with(
       request: params.request,
-      link: params.link
+      link: params.link,
+      user: params.user
     ).reduce(actions)
   end
 
