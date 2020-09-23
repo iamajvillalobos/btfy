@@ -15,8 +15,3 @@ namespace :user do
     end
   end
 end
-
-
-users.each do |user|
-  puts "User #{user.email} has #{user.link_visits.count} click visits"
-end
