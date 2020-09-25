@@ -21,9 +21,7 @@
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to "Links", links_path, class: "dropdown-item" %>
           <%= link_to "Domains", custom_domains_path, class: "dropdown-item" %>
-          <%= link_to "Bio", bio_path, class: "dropdown-item" if @current_user.bio %>
           <%= link_to "Settings", account_path, class: "dropdown-item" %>
-          <%= link_to "Support", new_support_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </div>

@@ -1,116 +1,16 @@
 <%= render SettingsHeaderComponent.new %>
 <div class="row justify-content-start">
-  <div class="col-12 col-md-8">
-    <%= form_with model: @account, local: true do |f| %>
-      <!-- Avatar -->
-      <div class="row justify-content-between align-items-center">
-        <div class="col">
-          <div class="row align-items-center">
-            <div class="col-auto">
-              <div class="avatar">
-                <%= image_tag @account.image, class: "avatar-img rounded-circle" %>
-              </div>
-            </div>
-            <div class="col ml-n2">
-              <h4 class="mb-1">Your avatar</h4>
-              <small class="text-muted">PNG or JPEG, less than 5MB or it won't look good 😆</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <%= f.file_field :avatar, class: "form-control-file" %>
-        </div>
-      </div>
-      <hr class="my-5">
-      <!-- End of Avatar -->
-      <!-- Details -->
-      <div class="row">
-        <div class="col-12 col-md-6">
+  <div class="col-12 col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <%= form_with model: @account, local: true do |f| %>
           <div class="form-group">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, class: "form-control" %>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="form-group">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, class: "form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="form-group">
-            <%= f.label :bio %>
-            <small class="form-text text-muted">
-              Tell us something about yourself in 160 characters or less
-            </small>
-            <%= f.text_area :bio, class: "form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="form-group">
-            <%= f.label :timezone %>
+            <%= f.label :timezone, "Reporting Timezone" %>
             <%= f.time_zone_select :timezone, nil, { include_blank: true }, { class: "custom-select" } %>
           </div>
-        </div>
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        <% end %>
       </div>
-      <%= f.submit "Save", class: "btn btn-primary" %>
-      <hr class="my-5">
-      <!-- End of Details -->
-    <% end %>
-  </div>
-</div>
-<div class="row justify-content-start">
-  <div class="col-12 col-md-8">
-    <%= form_with model: current_user, url: user_attributes_path, method: :put, local: true do |f| %>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="form-group">
-            <%= f.label :username %>
-            <small class="form-text text-muted">
-              You can change your username anytime but this will change your
-              public bio link too
-            </small>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">@</div>
-              </div>
-              <%= f.text_field :username, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="form-group">
-            <label>Public Bio</label>
-            <small class="form-text text-muted">
-              Create a public profile page where you can put up btfy links
-            </small>
-            <div class="row align-items-center pt-md-2">
-              <div class="col-auto">
-                <!-- Switch -->
-                <div class="custom-control custom-switch">
-                  <%= f.check_box :bio, class: "custom-control-input" %>
-                  <%= f.label :bio, "&nbsp;".html_safe, class: "custom-control-label" %>
-                </div>
-              </div>
-              <div class="col ml-n4">
-                <!-- Help text -->
-                <small class="text-muted">
-                  <% if current_user.bio %>
-                    You're bio can now be seen in public
-                  <% else %>
-                    You're currently invisible
-                  <% end %>
-                </small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%= f.submit "Save", class: "btn btn-primary" %>
-    <% end %>
+    </div>
   </div>
 </div>
