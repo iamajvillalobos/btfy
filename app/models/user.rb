@@ -20,6 +20,10 @@ class User < ApplicationRecord
     true
   end
 
+  def subscription_plan
+    Plan.find_by(paddle_plan_id: subscription.processor_plan)
+  end
+
   def admin?
     id == 1 && email == "hello@ajvillalobos.com"
   end

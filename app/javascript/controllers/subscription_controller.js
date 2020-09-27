@@ -1,31 +1,31 @@
-import { Controller } from "stimulus";
+import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  initialize() {
-    this.user = JSON.parse(this.data.get("user"));
+  initialize () {
+    this.user = JSON.parse(this.data.get('user'))
   }
 
-  connect() {
-    Paddle.Setup({ vendor: Number(this.data.get("vendor-id")) });
+  connect () {
+    Paddle.Setup({ vendor: Number(this.data.get('vendor-id')) })
   }
 
-  subscribe(event) {
+  subscribe (event) {
     Paddle.Checkout.open({
-      product: this.data.get("product-id"),
+      product: this.data.get('product-id'),
       email: this.user.email,
       passthrough: JSON.stringify({
         owner_id: this.user.id,
-        owner_type: "User",
+        owner_type: 'User'
       }),
-      successCallback: this.checkoutComplete.bind(this),
-    });
+      successCallback: this.checkoutComplete.bind(this)
+    })
   }
 
-  checkoutComplete(data) {
-    let isCompleted = data.checkout.completed;
+  checkoutComplete (data) {
+    let isCompleted = data.checkout.completed
 
     if (isCompleted) {
-      location.href = this.data.get("settings-path");
+      location.href = this.data.get('settings-path')
     }
   }
 }

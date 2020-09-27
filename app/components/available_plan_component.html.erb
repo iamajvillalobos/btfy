@@ -1,4 +1,7 @@
-<div class="card" data-controller="subscription">
+<div class="card" data-controller="subscription"
+  data-subscription-user="<%= @user.to_json %>"
+  data-subscription-product-id="<%= @plan.paddle_plan_id %>"
+  data-subscription-settings-path="<%= settings_path %>">
   <div class="card-body">
     <h6 class="text-uppercase text-center text-muted my-4"><%= plan_title %></h6>
     <!-- Price -->
@@ -23,7 +26,9 @@
     </div>
 
     <!-- Button -->
-    <%= link_to "Upgrade to #{plan_title.titleize}", "",
-      class: "btn btn-block #{plan_class}" %>
+    <button data-action="subscription#subscribe"
+      class="btn btn-block <%= plan_class %>">
+      Upgrade to <%= plan_title.titleize %>
+    </button>
   </div>
 </div>

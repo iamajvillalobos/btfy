@@ -8,6 +8,10 @@
     <% if current_page?(api_keys_path) %>
       <meta name="turbolinks-visit-control" content="reload">
     <% end %>
+    <% if current_page?(billing_path) %>
+      <meta name="turbolinks-visit-control" content="reload">
+      <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+    <% end %>
     <%= render PlausibleAnalyticsComponent.new %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>

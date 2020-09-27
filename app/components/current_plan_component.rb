@@ -7,7 +7,7 @@ class CurrentPlanComponent < ViewComponent::Base
     if @user.free_plan?
       "Free"
     else
-      "$5/mo"
+      "$#{@user.subscription_plan.price.floor}/mo"
     end
   end
 end
