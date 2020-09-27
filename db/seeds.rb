@@ -23,3 +23,8 @@ end
 10.times do
   user.custom_domains.create!(name: Faker::Internet.domain_name)
 end
+
+# Create Plans
+Plan.create!(period: "monthly", price: 5, paddle_plan_id: "631104")
+Plan.create!(period: "yearly", price: 50, paddle_plan_id: "631105")
+Plan.create!(period: "lifetime", price: 150, paddle_plan_id: "631107")

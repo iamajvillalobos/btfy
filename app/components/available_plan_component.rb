@@ -1,26 +1,19 @@
 class AvailablePlanComponent < ViewComponent::Base
-  def initialize(user:, type:)
+  def initialize(user:, plan:)
     @user = user
-    @type = type
+    @plan = plan
   end
 
   def plan_title
-    "#{@type} plan"
+    "#{@plan.period} plan"
   end
 
   def plan_price
-    case @type
-    when "monthly"
-      5
-    when "yearly"
-      50
-    when "lifetime"
-      150
-    end
+    @plan.price.floor
   end
 
   def plan_savings
-    case @type
+    case @plan.period
     when "monthly"
       "Save 0%"
     when "yearly"
@@ -31,18 +24,11 @@ class AvailablePlanComponent < ViewComponent::Base
   end
 
   def plan_period
-    case @type
-    when "monthly"
-      "month"
-    when "yearly"
-      "year"
-    when "lifetime"
-      "one-time"
-    end
+    @plan.period
   end
 
   def plan_class
-    case @type
+    case @plan.period
     when "lifetime"
       "btn-primary"
     else

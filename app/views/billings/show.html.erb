@@ -2,15 +2,11 @@
   <div class="col-12">
     <%= render PageHeaderComponent.new(pretitle: "billing", title: "Upgrade") %>
     <div class="row">
-      <div class="col-12 col-md-4">
-        <%= render AvailablePlanComponent.new(user: current_user, type: "monthly") %>
-      </div>
-      <div class="col-12 col-md-4">
-        <%= render AvailablePlanComponent.new(user: current_user, type: "yearly") %>
-      </div>
-      <div class="col-12 col-md-4">
-        <%= render AvailablePlanComponent.new(user: current_user, type: "lifetime") %>
-      </div>
+      <% @plans.each do |plan| %>
+        <div class="col-12 col-md-4">
+          <%= render AvailablePlanComponent.new(user: current_user, plan: plan) %>
+        </div>
+      <% end %>
     </div>
     <div class="row">
       <div class="col-12">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_153707) do
+ActiveRecord::Schema.define(version: 2020_09_27_174229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,14 @@ ActiveRecord::Schema.define(version: 2020_09_27_153707) do
     t.string "status"
     t.string "update_url"
     t.string "cancel_url"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "period"
+    t.decimal "price"
+    t.string "paddle_plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "public_profiles", force: :cascade do |t|
