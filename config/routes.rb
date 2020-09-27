@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :links, except: [:destroy]
   resource :support, only: [:new, :create]
   resource :account, only: [:show, :update]
-  resource :billing, only: [:show]
+  resource :billing, only: [:show] do
+    get :waiting
+  end
   resources :api_keys, only: [:index, :create, :edit, :update] do
     post :reactivate
     post :deactivate

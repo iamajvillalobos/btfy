@@ -6,6 +6,8 @@ class CurrentPlanComponent < ViewComponent::Base
   def plan_rate
     if @user.free_plan?
       "Free"
+    elsif @user.subscription.cancelled?
+      "Free"
     else
       "$#{@user.subscription_plan.price.floor}/mo"
     end

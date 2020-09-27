@@ -6,4 +6,8 @@ class BillingsController < ApplicationController
   def show
     @plans = Plan.all
   end
+
+  def waiting
+    render layout: "auth"
+  end
 end

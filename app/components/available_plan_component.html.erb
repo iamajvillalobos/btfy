@@ -1,7 +1,7 @@
 <div class="card" data-controller="subscription"
   data-subscription-user="<%= @user.to_json %>"
   data-subscription-product-id="<%= @plan.paddle_plan_id %>"
-  data-subscription-settings-path="<%= settings_path %>">
+  data-subscription-settings-path="<%= waiting_billing_path %>">
   <div class="card-body">
     <h6 class="text-uppercase text-center text-muted my-4"><%= plan_title %></h6>
     <!-- Price -->
