@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col-12">
+    <%= render PageHeaderComponent.new(pretitle: "overview", title: "Settings") %>
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <%= render CurrentPlanComponent.new(user: current_user) %>
+      </div>
+      <div class="col-12 col-md-6"></div>
+    </div>
+  </div>
+</div>

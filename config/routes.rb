@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     post :reactivate
     post :deactivate
   end
+  resource :settings, only: [:show]
 
   # For removal
   resource :bio, only: [:show]
