@@ -14,10 +14,6 @@ class User < ApplicationRecord
 
   # after_create :enable_trial
 
-  def account
-    Account.find_or_create_by(user: self)
-  end
-
   def free_plan?
     return false if subscribed?
     return false if on_generic_trial?
