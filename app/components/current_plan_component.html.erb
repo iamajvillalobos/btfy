@@ -6,7 +6,12 @@
         <span class="h2 mb-0"><%= plan_rate %></span>
       </div>
       <div class="col-auto">
-        <%= link_to "Upgrade", billing_path, class: "btn btn-sm btn-primary" %>
+        <% if @user.free_plan? %>
+          <%= link_to "Upgrade", billing_path, class: "btn btn-sm btn-primary" %>
+        <% else %>
+          <%= link_to "Cancel", @user.subscription.cancel_url,
+            class: "btn btn-sm btn-danger" %>
+        <% end %>
       </div>
     </div>
   </div>

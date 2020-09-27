@@ -15,9 +15,7 @@ class User < ApplicationRecord
   # after_create :enable_trial
 
   def free_plan?
-    return false if subscribed?
-    return false if on_generic_trial?
-    true
+    subscription.nil? || subscription.cancelled?
   end
 
   def subscription_plan
