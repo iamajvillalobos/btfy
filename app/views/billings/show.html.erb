@@ -1,7 +1,21 @@
-<%= render SettingsHeaderComponent.new %>
-<div class="row">
-  <div class="col-12 col-md-6">
-    <%= render UserCurrentPlanCardComponent.new(
-      user: current_user, show_button: true) %>
+<div class="container">
+  <div class="col-12">
+    <%= render PageHeaderComponent.new(pretitle: "billing", title: "Upgrade") %>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <%= render AvailablePlanComponent.new(user: current_user, type: "monthly") %>
+      </div>
+      <div class="col-12 col-md-4">
+        <%= render AvailablePlanComponent.new(user: current_user, type: "yearly") %>
+      </div>
+      <div class="col-12 col-md-4">
+        <%= render AvailablePlanComponent.new(user: current_user, type: "lifetime") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <%= render PlanFeaturesComponent.new %>
+      </div>
+    </div>
   </div>
 </div>
