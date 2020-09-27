@@ -16,20 +16,18 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show]
   resources :custom_domains, except: [:show]
   resources :links, except: [:destroy]
-  resources :public_profile_links, only: [:create, :destroy]
-  resource :subscriptions, only: [:show, :destroy]
   resource :support, only: [:new, :create]
-
-  # Settings
   resource :account, only: [:show, :update]
-  resource :user_attributes, only: [:update]
-  # resource :billing, only: [:show]
-  resource :bio, only: [:show]
+  resource :billing, only: [:show]
   resources :api_keys, only: [:index, :create, :edit, :update] do
     post :reactivate
     post :deactivate
   end
 
+  # For removal
+  resource :bio, only: [:show]
+  resource :user_attributes, only: [:update]
+  resources :public_profile_links, only: [:create, :destroy]
   resources :public_profile, only: [:show, :update]
   get "/@:username", to: "public_profile#show"
 
@@ -51,8 +49,7 @@ Rails.application.routes.draw do
       post :impersonate, on: :member
       post :stop_impersonating, on: :collection
     end
-    resources :user_plans
-  end
+    end
   get "/admin", to: "admin/links#index"
 
 

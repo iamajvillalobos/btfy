@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_23_180945) do
+ActiveRecord::Schema.define(version: 2020_09_27_153707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,16 +170,6 @@ ActiveRecord::Schema.define(version: 2020_09_23_180945) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["key"], name: "index_salts_on_key", unique: true
-  end
-
-  create_table "user_plans", force: :cascade do |t|
-    t.string "name"
-    t.decimal "amount", default: "0.0", null: false
-    t.string "interval"
-    t.integer "paddle_plan_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "register_link"
   end
 
   create_table "users", force: :cascade do |t|

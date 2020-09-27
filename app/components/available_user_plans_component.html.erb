@@ -1,7 +1,0 @@
-<div class="row">
-  <% @plans.each do |plan| %>
-    <div class="col-12 col-md-4">
-      <%= render AvailableUserPlanComponent.new(plan: plan, user: @user) %>
-    </div>
-  <% end %>
-</div>

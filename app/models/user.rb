@@ -18,11 +18,6 @@ class User < ApplicationRecord
     Account.find_or_create_by(user: self)
   end
 
-  def user_plan
-    return nil unless subscribed?
-    UserPlan.find_by(paddle_plan_id: subscription.processor_plan)
-  end
-
   def free_plan?
     return false if subscribed?
     return false if on_generic_trial?

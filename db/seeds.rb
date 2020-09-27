@@ -23,20 +23,3 @@ end
 10.times do
   user.custom_domains.create!(name: Faker::Internet.domain_name)
 end
-
-# User plans
-UserPlan.create!(name: "Free", interval: "month", register_link: "/free")
-UserPlan.create!(
-	name: "Monthly",
-	interval: "month",
-	amount: 5.0,
-	register_link: "/monthly",
-	paddle_plan_id: 628081
-)
-UserPlan.create!(
-  name: "Yearly",
-  interval: "year",
-  amount: 50.0,
-  register_link: "/yearly",
-  paddle_plan_id: 628080
-)
