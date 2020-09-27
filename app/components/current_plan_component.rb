@@ -6,10 +6,12 @@ class CurrentPlanComponent < ViewComponent::Base
   def plan_rate
     if @user.free_plan?
       "Free"
-    elsif @user.subscription.cancelled?
-      "Free"
+    elsif @user.subscription_plan.period == "monthly"
+      "$#{@user.subscription_plan.price.floor}/month"
+    elsif @user.subscription_plan.period == "yearly"
+      "$#{@user.subscription_plan.price.floor}/year"
     else
-      "$#{@user.subscription_plan.price.floor}/mo"
+      "$#{@user.subscription_plan.price.floor}"
     end
   end
 end
