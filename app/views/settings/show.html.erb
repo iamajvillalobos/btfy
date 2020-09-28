@@ -1,5 +1,6 @@
 <div class="container">
   <div class="col-12">
+    <%= render NotificationComponent.new() %>
     <%= render PageHeaderComponent.new(pretitle: "overview", title: "Settings") %>
 
     <div class="row">
@@ -8,6 +9,12 @@
       </div>
       <div class="col-12 col-md-6">
         <%= render CurrentVisitsPerMonthComponent.new(user: current_user) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <%= render AccountSettingsComponent.new(user: current_user) %>
       </div>
     </div>
   </div>

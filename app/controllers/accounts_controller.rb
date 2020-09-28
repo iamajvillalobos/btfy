@@ -16,7 +16,7 @@ class AccountsController < ApplicationController
       flash[:notice] = account.errors.full_messages.to_sentence
     end
 
-    redirect_to account_path
+    redirect_to settings_path
   end
 
   private
