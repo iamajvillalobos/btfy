@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="text-uppercase text-center text-muted my-4"><%= @title %></h6>
+    <!-- Price -->
+    <div class="row no-gutters align-items-center justify-content-center">
+      <div class="col-auto">
+        <div class="h2 mb-0">$</div>
+      </div>
+      <div class="col-auto">
+        <div class="display-2 mb-0"><%= @price %></div>
+      </div>
+    </div>
+
+    <!-- Period -->
+    <h6 class="text-uppercase text-center text-muted">
+      / <%= plan_period %>
+    </h6>
+
+    <!-- Savings -->
+
+    <div class="text-center mb-5">
+      <span class="badge badge-soft-primary"><%= plan_savings %></span>
+    </div>
+
+    <!-- Button -->
+    <%= link_to "Sign up", plan_link,
+      class: "btn btn-primary btn-block" %>
+  </div>
+</div>
