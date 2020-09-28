@@ -1,5 +1,6 @@
 class RedirectLinksController < ApplicationController
   layout "errors"
+  skip_authorization_check
 
   def new
     link = LinkFinder.call(request, params[:slug]).url
