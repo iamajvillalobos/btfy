@@ -25,7 +25,7 @@
               <td>
                 <div class="d-flex align-items-center justify-content-between">
                   <%= link_to link.redirect_url, link.redirect_url %>
-                  <%= render CopyLinkButtonComponent.new(link) %>
+                  <%= render CopyButtonComponent.new(link.redirect_url) %>
                 </div>
               </td>
               <td>
