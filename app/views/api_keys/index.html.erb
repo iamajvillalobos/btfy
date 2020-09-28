@@ -1,10 +1,12 @@
-<%= render SettingsHeaderComponent.new %>
+<%= render NotificationComponent.new() %>
+<%= render PageHeaderComponent.new(pretitle: "overview", title: "API") %>
 
 <div class="row">
-  <div class="col-12 col-md-6">
+  <div class="col-12">
     <%= render ApiKeysTableComponent.new(@api_keys) %>
   </div>
-    <div class="col-12 col-md-6">
-    <%= render ApiKeysSidebarComponent.new %>
-  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+  <%= render ApiKeysSidebarComponent.new %>
 </div>

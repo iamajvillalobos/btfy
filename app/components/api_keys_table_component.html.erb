@@ -21,10 +21,13 @@
       <tbody>
         <% @api_keys.each do |api_key| %>
           <tr>
-            <td><%= api_key.key %></td>
+            <td>
+              <%= api_key.key %>
+              <%= render CopyButtonComponent.new(api_key.key) %>
+            </td>
             <td>
               <% if api_key.deactivated_at.nil? %>
-                <span class="badge badge-light">Active</span>
+                <span class="badge badge-soft-success">Active</span>
               <% else %>
                 <span class="badge badge-soft-danger">Deactivated</span>
               <% end %>
