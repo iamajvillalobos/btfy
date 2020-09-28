@@ -13,6 +13,10 @@ class User < ApplicationRecord
   has_one :public_profile, dependent: :destroy
 
   after_create :enable_trial
+  
+  def account
+    Account.find_or_create_by(user: self)
+  end
 
   def free_plan?
     subscription.nil? || subscription.cancelled?
