@@ -6,7 +6,9 @@
       <div class="col-12 col-md-6">
         <%= render CurrentPlanComponent.new(user: current_user) %>
       </div>
-      <div class="col-12 col-md-6"></div>
+      <div class="col-12 col-md-6">
+        <%= render CurrentVisitsPerMonthComponent.new(user: current_user) %>
+      </div>
     </div>
   </div>
 </div>
