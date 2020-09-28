@@ -3,7 +3,8 @@ class LinksController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-  authorize_resource
+
+  load_and_authorize_resource
 
   def index
     @links = current_user.links.order(created_at: :desc)

@@ -1,5 +1,6 @@
 <div class="container">
   <div class="col-12">
+    <%= render NotificationComponent.new() %>
     <%= render PageHeaderComponent.new(pretitle: "billing", title: "Upgrade") %>
     <div class="row">
       <% @plans.each do |plan| %>

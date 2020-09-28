@@ -1,4 +1,6 @@
 class MarketingController < ApplicationController
+  skip_authorization_check
+  
   def index
     if request.host != ENV["DEFAULT_URL_HOST"]
       if custom_domain = CustomDomain.find_by(name: request.host)

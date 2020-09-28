@@ -1,5 +1,6 @@
 class SupportsController < ApplicationController
   layout "dashboard"
+  skip_authorization_check
 
   before_action :authenticate_user!
 

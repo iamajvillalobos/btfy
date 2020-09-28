@@ -2,6 +2,7 @@ class Admin::UsersController < ApplicationController
   layout "admin"
 
   before_action :authenticate_admin_user!
+  skip_authorization_check
 
   def index
     @users = User.order(created_at: :desc)

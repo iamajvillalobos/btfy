@@ -1,7 +1,9 @@
 class ApiKeysController < ApplicationController
   layout "dashboard"
-  
-  authorize_resource
+
+  before_action :authenticate_user!
+
+  load_and_authorize_resource
   
   def index
     @api_keys = current_user.api_keys.order(created_at: :desc)
