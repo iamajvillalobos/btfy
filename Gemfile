@@ -8,6 +8,7 @@ gem "active_storage_validations", "~> 0.9.0"
 gem "aws-sdk-s3", "~> 1.79", require: false
 gem "bootsnap", "1.4.7", require: false
 gem "cancancan", "~> 3.1"
+gem "canonical-rails", github: "jumph4x/canonical-rails"
 gem "chartkick", "3.3.2"
 gem "countries", "~> 3.0"
 gem "device_detector", "~> 1.0"
@@ -59,5 +60,5 @@ group :test do
   gem "selenium-webdriver", "3.142.7"
   gem "webdrivers", "4.4.1"
   gem "capybara-screenshot", "~> 1.0"
-  gem 'simplecov', require: false
+  gem "simplecov", require: false
 end
