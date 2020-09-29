@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   end
 
   root to: "marketing#index"
+  get "/terms", to: "marketing#terms"
 
   authenticate :admin_user do |user|
     mount Sidekiq::Web => "/sidekiq"

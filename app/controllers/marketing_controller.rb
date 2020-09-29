@@ -14,4 +14,7 @@ class MarketingController < ApplicationController
       end
     end
   end
+
+  def terms
+  end
 end

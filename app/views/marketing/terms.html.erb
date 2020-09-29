@@ -1,0 +1,49 @@
+<div class="d-flex flex-column vh-100">
+  <div class="container flex-grow-1">
+    <div class="row justify-content-center py-5">
+      <div class="col-12">
+        <%= link_to root_path do %>
+          <%= render LandingPageLogoComponent.new %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center py-5">
+      <div class="col-12 col-md-6">
+        <h1 class="display-2 font-weight-bolder">
+          Terms and Conditions
+        </h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+        <h2 class="display-4 mb-2 ml-n1">You</h2>
+        <p class="lead">Be nice.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center pt-5">
+      <div class="col-12 col-md-6">
+        <h2 class="display-4 mb-2 ml-n1">Us</h2>
+        <p class="lead">
+          btfy will be as accurate as possible with metrics, based on the data
+          that we gather from your visitors.
+        </p>
+        <p class="lead">
+          btfy charges for access on monthly, yearly and lifetime plans.
+          btfy does not currently offer refunds, either partial or in full.        
+        </p>
+        <p class="lead">
+          btfy's service may change without prior notice. Changes could affect pricing, pricing policies, features and access restrictions.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light">
+    <div class="container py-5">
+      <%= render MarketingFooterComponent.new %>
+    </div>
+  </div>
+</div>
