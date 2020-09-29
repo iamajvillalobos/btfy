@@ -1,8 +1,2 @@
 @import url('https://rsms.me/inter/inter.css');
 @import './theme.min.css';
-
-.features {
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
