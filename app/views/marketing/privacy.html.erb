@@ -1,0 +1,125 @@
+<div class="d-flex flex-column vh-100">
+  <div class="container flex-grow-1">
+    <!-- Logo -->
+    <div class="row justify-content-center py-5">
+      <div class="col-12">
+        <%= link_to root_path do %>
+        <%= render LandingPageLogoComponent.new %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center py-5">
+      <div class="col-12 col-md-8">
+
+
+
+        <!-- Text -->
+        <h1 class="mt-4 mb-2 font-weight-bold">Privacy</h1>
+
+        <p>
+          Btfy is built and operated as a privacy-first company. We make money from paying customers, so there’s no need to sell, rent or give away any personal data from customers. Fundamental to our software is also the idea that data in aggregate is as useful as specific personal data, so we collect zero personal data from your visitors.
+        </p>
+
+        <p>
+          We only ask for personal information when we actually need it—like our payment form. We use fair and lawful means to collect it, and only with your knowledge and consent.
+        </p>
+
+        <p>The only third parties that we share data with are secure and we only share what’s required:</p>
+
+        <ul>
+          <li>
+            Paddle, for third-party secure payment processing. We do not store or collect any of your 
+            payment card details.
+          </li>
+          <li>
+            Postmark, for transactional and account-related emails. These emails are critical to the maintenance and continued use of your account, and we sent these sparingly.
+          </li>
+        </ul>
+
+        <h2 class="mt-4 mb-2 font-weight-bold">Information Collection and Use</h2>
+        <p>
+          We collect several different types of information for various purposes to provide and improve our Service to you.
+        </p>
+
+        <h3 class="mt-4 mb-2 font-weight-bold">Personal Data</h3>
+        <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
+
+        <ul>
+          <li>Email address</li>
+          <li>First name and last name</li>
+          <li>Non-personally identifiable personal data for usage</li>
+        </ul>
+
+        <h3 class="mt-4 mb-2 font-weight-bold">Usage Data</h3>
+        <p>
+          We do not collect information such as your computer's Internet Protocol address (e.g. IP address), browser version, unique device identifiers and other diagnostic data. All data collected is aggregate data without personal information (this is the whole reason we exists).
+        </p>
+
+        <h3 class="mt-4 mb-2 font-weight-bold">Location Data</h3>
+        <p>We do not use and store information about your location except for country of origin (we do not track IP address or anything more granular than country.</p>
+
+        <h3 class="mt-4 mb-2 font-weight-bold">Tracking & Cookies Data</h3>
+        <p>We do not use cookies and store data by using multiple, unrelated complex hashes to track visits to our site and pages on it</p>
+
+        <h3 class="mt-4 mb-2 font-weight-bold">What we use it for</h3>
+        <p>When your visitor clicks your shorten link. The following information is collected:</p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Data Point</th>
+              <th>Example</th>
+              <th class="w-50">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTTP Referer</td>
+              <td>https://twitter.com</td>
+              <td>
+                We use this referrer string to understand the number of visitors
+                that clicks through your links from other sites.
+              </td>
+            </tr>
+            <tr>
+              <td>Browser</td>
+              <td>Firefox</td>
+              <td>
+                We use this to understand what browsers people use when visiting
+                your links. This is derived from the User-Agent HTTP header.
+                The full User-Agent is discarded.
+              </td>
+            </tr>
+            <tr>
+              <td>Device Type</td>
+              <td>Mobile</td>
+              <td>
+                We use this to understand what devices people use when visiting
+                your links. This is derived from the User-Agent HTTP header. The full User-Agent is discarded.
+              </td>
+            </tr>
+            <tr>
+              <td>Country</td>
+              <td>Philippines</td>
+              <td>
+                We look up the visitor’s country using the IP address. We do not track anything more granular than the country of origin and the IP address of the visitor is discarded. We never store IP addresses in our database or logs.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-4 mb-2 font-weight-bold">Contact Us</h3>
+        <p>
+          <a href="mailto:support@btfy.io">Contact us</a> if you have any questions. If you have an account with Btfy you can contact us to request all information collected about you or to request removal of all information.
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <div class="bg-light">
+    <div class="container py-5">
+      <%= render MarketingFooterComponent.new %>
+    </div>
+  </div>
+</div>
