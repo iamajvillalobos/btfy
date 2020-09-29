@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Btfy - Create short links with privacy in mind</title>
+    <% if current_page?("/terms") %>
+      <title>Btfy - Terms and Conditions</title>
+    <% elsif current_page?("/privacy") %>
+      <title>Btfy - Privacy Policy</title>
+    <% else %>
+      <title>Btfy - Create short links with privacy in mind</title>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
