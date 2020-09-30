@@ -1,3 +1,132 @@
+<a name="2020-09-30"></a>
+### 2020-09-30
+
+
+#### Features
+
+* setup canonical initalizer	 ([d080696](/../../commit/d080696))
+* integrate canonical gem	 ([fd87121](/../../commit/fd87121))
+
+
+<a name="2020-09-29"></a>
+### 2020-09-29
+
+
+#### Features
+
+* Add dynamic title and update social media tags	 ([b0dab5d](/../../commit/b0dab5d))
+* move features the LandingPageFeaturesComponent	 ([2319e8c](/../../commit/2319e8c))
+* Tweak privacy a bit	 ([6bacaca](/../../commit/6bacaca))
+* match styling to privacy page	 ([64db75a](/../../commit/64db75a))
+* Add privacy page	 ([8665d24](/../../commit/8665d24))
+* Add terms page	 ([96da7d7](/../../commit/96da7d7))
+* Create landing page with more copy	 ([d95b2f2](/../../commit/d95b2f2))
+
+
+#### Bug Fixes
+
+* change login link	 ([b3d4405](/../../commit/b3d4405))
+* Add missing login button	 ([755f982](/../../commit/755f982))
+
+
+<a name="2020-09-28"></a>
+### 2020-09-28
+
+
+#### Features
+
+* Change title text for public pages	 ([9beacca](/../../commit/9beacca))
+* Create a separate marketing pack	 ([31cbe7a](/../../commit/31cbe7a))
+* Add API to menu dropdown and tweak page	 ([c18279c](/../../commit/c18279c))
+* Apply proper authorization through out the app	 ([f16c0ff](/../../commit/f16c0ff))
+* Add dashboard link in menu dropdown	 ([488f543](/../../commit/488f543))
+* Add default timezone for user	 ([af40096](/../../commit/af40096))
+* Add AccountsSettingsComponent	 ([08c763c](/../../commit/08c763c))
+* Add visits per month card	 ([390b23f](/../../commit/390b23f))
+* remove username in navbar	 ([e523327](/../../commit/e523327))
+* Make settings link go to settings path	 ([eb24580](/../../commit/eb24580))
+* enable trial for new users again	 ([fc58f34](/../../commit/fc58f34))
+* Show cancel button when user is already in a plan	 ([730be9e](/../../commit/730be9e))
+* Add waiting page when user subscribes	 ([18c60d9](/../../commit/18c60d9))
+* Connect AvailablePlan with Paddle checkout	 ([16b48a3](/../../commit/16b48a3))
+* Add Plan model	 ([9328c7f](/../../commit/9328c7f))
+* Create page for upgrading free plan	 ([458be73](/../../commit/458be73))
+* Create CurrentPlanComponent	 ([bb0d0ab](/../../commit/bb0d0ab))
+
+
+#### Bug Fixes
+
+* skip authorization check for redirect controller	 ([ffb5c81](/../../commit/ffb5c81))
+* Bring back the account method in User	 ([fab009c](/../../commit/fab009c))
+* Remove inner container class	 ([ed6251e](/../../commit/ed6251e))
+* proper suffix per plan	 ([ecc2f63](/../../commit/ecc2f63))
+
+
+<a name="2020-09-27"></a>
+### 2020-09-27
+
+
+#### Features
+
+* remove previous implementation of billing	 ([a677282](/../../commit/a677282))
+
+
+<a name="2020-09-26"></a>
+### 2020-09-26
+
+
+#### Features
+
+* Remove IP address on logs when doing Geolookup Job	 ([e447a40](/../../commit/e447a40))
+
+
+<a name="2020-09-25"></a>
+### 2020-09-25
+
+
+#### Features
+
+* Hide bio and other fields that are not essentials	 ([ebc1fa0](/../../commit/ebc1fa0))
+
+
+<a name="2020-09-24"></a>
+### 2020-09-24
+
+
+#### Features
+
+* Add Metatags and Plausible in auth pages	 ([c94a613](/../../commit/c94a613))
+* Create humans.txt	 ([881fe8d](/../../commit/881fe8d))
+* Add sitemap.xml	 ([c58b2ea](/../../commit/c58b2ea))
+* Create task to associate current link visits to users	 ([72d11d3](/../../commit/72d11d3))
+* attach User when creating a LinkVisit	 ([5104d81](/../../commit/5104d81))
+* Add belongs_to from LinkVisit to User	 ([da87c1d](/../../commit/da87c1d))
+
+
+#### Bug Fixes
+
+* clean up rake task	 ([d4fe880](/../../commit/d4fe880))
+
+
+<a name="2020-09-21"></a>
+### 2020-09-21
+
+
+#### Features
+
+* Clean out referrers	 ([bd87f52](/../../commit/bd87f52))
+* Show unique counts in referrers table	 ([b1dd507](/../../commit/b1dd507))
+
+
+#### Bug Fixes
+
+* add nil as default value for account timezone	 ([c63e51f](/../../commit/c63e51f))
+* blank lines in top links table for stats less than the limit	 ([98b5837](/../../commit/98b5837))
+* don't show stats with nil keys	 ([2eb096d](/../../commit/2eb096d))
+* blank lines in referrer table for stats less than the limit	 ([c78c665](/../../commit/c78c665))
+* Restore graph styling	 ([1dc3955](/../../commit/1dc3955))
+
+
 <a name="2020-09-18"></a>
 ### 2020-09-18
 
