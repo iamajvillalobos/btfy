@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_one :public_profile, dependent: :destroy
 
   after_create :enable_trial
+  after_create :send_welcome_email
   
   def account
     Account.find_or_create_by(user: self)
@@ -38,5 +39,9 @@ class User < ApplicationRecord
 
   def enable_trial
     update(trial_ends_at: 30.days.from_now)
+  end
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome_email.deliver_later
   end
 end
