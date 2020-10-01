@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
     client.deliver_with_template(
       from: "support@btfy.io",
       to: @user.email,
-      template_id: 20461746,
+      template_id: ENV["POSTMARK_WELCOME_EMAIL_TEMPLATE"],
       template_model: {}
     )
   end
