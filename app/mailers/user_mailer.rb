@@ -1,6 +1,8 @@
 class UserMailer < ApplicationMailer
   def welcome_email
-    @user = params[:user]
+    @user = User.find_by(id: params[:user_id])
+    return if @user.nil?
+
     client = Postmark::ApiClient.new(
       ENV["POSTMARK_API_TOKEN"],
       secure: false
