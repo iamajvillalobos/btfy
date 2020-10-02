@@ -22,7 +22,8 @@ class ReferrerDomain
   end
 
   def host_or_path(url)
-    url = Addressable::URI.parse(url)
-    url.host || url.path.split("/").first
+    return if url.nil?
+    uri = Addressable::URI.parse(url)
+    uri.host || uri.path.split("/").first
   end
 end
