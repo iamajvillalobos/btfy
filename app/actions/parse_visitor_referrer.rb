@@ -7,6 +7,6 @@ class ParseVisitorReferrer
   promises :referrer
 
   executed do |ctx|
-    ctx.referrer = ctx.request.referrer || "Direct / None"
+    ctx.referrer = ReferrerDomain.new(url: ctx.request.referrer).name
   end
 end
