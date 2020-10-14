@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   after_create :enable_trial
   after_create :send_welcome_email
+  after_create :notify_slack
   
   def account
     Account.find_or_create_by(user: self)
@@ -43,5 +44,10 @@ class User < ApplicationRecord
 
   def send_welcome_email
     UserMailer.with(user_id: self.id).welcome_email.deliver_later
+  end
+
+  def notify_slack
+    notification = SignupNotification.with(user: self)
+    notification.deliver_later(AdminUser.first)
   end
 end
