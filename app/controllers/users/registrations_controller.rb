@@ -11,9 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    notification = SignupNotification.with(user: resource)
+    notification.deliver_later(AdminUser.first)
+  end
 
   # GET /resource/edit
   # def edit
