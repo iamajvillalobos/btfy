@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_050909) do
+ActiveRecord::Schema.define(version: 2020_10_14_101216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,17 @@ ActiveRecord::Schema.define(version: 2020_09_28_050909) do
     t.bigint "public_profile_id"
     t.index ["custom_domain_id"], name: "index_links_on_custom_domain_id"
     t.index ["user_id"], name: "index_links_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "recipient_type", null: false
+    t.bigint "recipient_id", null: false
+    t.string "type", null: false
+    t.jsonb "params"
+    t.datetime "read_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient_type_and_recipient_id"
   end
 
   create_table "pay_charges", id: :serial, force: :cascade do |t|
