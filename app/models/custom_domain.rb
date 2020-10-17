@@ -5,4 +5,10 @@ class CustomDomain < ApplicationRecord
 
   has_many :links, dependent: :destroy
   belongs_to :user
+
+  enum status: {
+    pending: 0,
+    success: 1,
+    failed: 2
+  }
 end

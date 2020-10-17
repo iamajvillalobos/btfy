@@ -57,6 +57,6 @@ class CustomDomainsController < ApplicationController
   end
 
   def custom_domain_params
-    params.require(:custom_domain).permit(:name, :redirect_url)
+    params.require(:custom_domain).permit(:name, :redirect_url, :not_found_url)
   end
 end

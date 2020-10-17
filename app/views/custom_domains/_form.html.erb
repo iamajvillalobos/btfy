@@ -15,11 +15,19 @@
           </div>
           
           <div class="form-group">
-            <%= form.label :redirect_url %>
+            <%= form.label :redirect_url, "Root Redirect URL" %>
             <small class="form-text text-muted">
-              This is where we redirect your users when they visit your connected domain
+              When they visit the base url of your short link, they will be redirect to this link
             </small>
             <%= form.text_field :redirect_url, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :not_found_url, "404 Redirect URL" %>
+            <small class="form-text text-muted">
+              When your link is not available, they will be redirected to this link
+            </small>
+            <%= form.text_field :not_found_url, class: "form-control" %>
           </div>
 
           <div class="d-flex justify-content-between mt-3">

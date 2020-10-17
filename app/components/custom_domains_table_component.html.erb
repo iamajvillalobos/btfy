@@ -14,6 +14,8 @@
             <th>ID</th>
             <th>Name</th>
             <th>Redirect URL</th>
+            <th>404 URL</th>
+            <th>Status</th>
             <th>Links</th>
             <th></th>
           </tr>
@@ -24,6 +26,8 @@
               <td><%= domain.id %></td>
               <td class="name"><%= domain.name %></td>
               <td><%= domain.redirect_url %></td>
+              <td><%= domain.not_found_url %></td>
+              <td><%= domain.status %></td>
               <td><%= domain.links.count %></td>
               <td class="text-right">
                 <div class="dropdown">
