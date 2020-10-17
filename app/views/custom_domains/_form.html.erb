@@ -11,7 +11,11 @@
             <small class="form-text text-muted">
               Enter the your domain without http or https
             </small>
-            <%= form.text_field :name, class: "form-control" %>
+            <% if custom_domain.persisted? %>
+              <%= form.text_field :name, class: "form-control bg-light", disabled: true %>
+            <% else %>
+              <%= form.text_field :name, class: "form-control" %>
+            <% end %>
           </div>
           
           <div class="form-group">
