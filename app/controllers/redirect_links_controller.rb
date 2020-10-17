@@ -4,7 +4,7 @@ class RedirectLinksController < ApplicationController
 
   def new
     if link = LinkFinder.call(request, params[:slug])
-      redirect_to RedirectLink.call(link).redirect_url
+      redirect_to RedirectLink.call(link.link).url
     else
       render "errors/not_found"
     end

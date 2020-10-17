@@ -7,7 +7,8 @@ class ValidateUrl
   promises :status
 
   executed do |ctx|
-    response = HTTParty.get(ctx.link.destination_url)
+    url = ctx.link.destination_url
+    response = HTTParty.get(url)
 
     if response.code == 200
       ctx.status = :success

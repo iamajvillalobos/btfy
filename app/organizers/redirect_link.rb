@@ -4,7 +4,7 @@ class RedirectLink
   extend ::LightService::Organizer
 
   def self.call(link)
-    with(link: link.link).reduce(actions)
+    with(link: link).reduce(actions)
   end
 
   def self.actions

@@ -4,10 +4,10 @@ class RedirectUrl
   extend ::LightService::Action
 
   expects :link, :status
-  promises :redirect_url
+  promises :url
 
   executed do |ctx|
-    ctx.redirect_url = if ctx.status == :success
+    ctx.url = if ctx.status == :success
       ctx.link.destination_url
     else
       if ctx.link.custom_domain
