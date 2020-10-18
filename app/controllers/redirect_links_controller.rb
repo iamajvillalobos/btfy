@@ -3,8 +3,10 @@ class RedirectLinksController < ApplicationController
   skip_authorization_check
 
   def new
-    if link = LinkFinder.call(request, params[:slug])
-      redirect_to RedirectLink.call(link.link).url
+    link = LinkFinder.call(request, params[:slug]).link
+
+    if link
+      redirect_to RedirectLink.call(link).url
     else
       render "errors/not_found"
     end
