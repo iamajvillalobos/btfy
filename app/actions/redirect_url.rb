@@ -11,7 +11,7 @@ class RedirectUrl
       ctx.link.destination_url
     else
       if ctx.link.custom_domain
-        ctx.link.custom_domain.not_found_url
+        ctx.link.custom_domain.not_found_url || "/404"
       else
         "/404"
       end
