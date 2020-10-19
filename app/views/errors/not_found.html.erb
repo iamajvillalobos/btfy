@@ -5,13 +5,17 @@
         <h6 class="text-uppercase text-muted mb-4">
           404 error
         </h6>
-        <h1 class="display-4 mb-3">
+        <h1 class="display-4 mb-4">
           Something's wrong here
         </h1>
         <p class="text-muted mb-4">
           This is a 404 error, which means you've clicked on a bad link or
           entered an invalid URL. Maybe what you are looking for can be found
           at <%= link_to "btfy.io", root_path %>.
+        </p>
+        <p class="text-muted mb-4 alert alert-light small">
+          If you are using a custom domain. You can set your own 404 redirect page
+          on the <%= link_to "domain settings", custom_domains_path %>.
         </p>
       </div>
     </div>
