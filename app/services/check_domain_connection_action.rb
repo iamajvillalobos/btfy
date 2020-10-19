@@ -4,18 +4,17 @@ class CheckDomainConnectionAction
   expects :domain
 
   executed do |ctx|
-    cname_entry = ""
+    host_ip = get_ip(ENV.fetch("DEFAULT_URL_HOST"))
+    domain_ip = get_ip(ctx.domain.name)
 
-    begin
-      cname_entry = Resolv::DNS.open { |dns|
-        dns.getresource(ctx.domain.name, Resolv::DNS::Resource::IN::CNAME)
-      }.name.to_s
-    rescue Resolv::ResolvError => e
-      ctx.fail_and_return!(e)
-    end
-
-    if cname_entry != ENV.fetch("DEFAULT_URL_HOST")
+    if host_ip != domain_ip
       ctx.fail_and_return!("Domain not configured properly.")
     end
+  end
+
+  def self.get_ip(domain)
+    Resolv.getaddress(domain)
+  rescue Resolv::ResolvError
+    nil
   end
 end
