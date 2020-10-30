@@ -4,17 +4,18 @@ class CheckDomainConnectionAction
   expects :domain
 
   executed do |ctx|
-    host_ip = get_ip(ENV.fetch("DEFAULT_URL_HOST"))
-    domain_ip = get_ip(ctx.domain.name)
+    host_domain = ENV.fetch("DEFAULT_URL_HOST")
+    domain = ctx.domain.name
+    url = "https://4c39cgk3vj.execute-api.us-east-1.amazonaws.com/check_dns"
+    params = {
+      host_domain: host_domain,
+      user_domain: domain
+    }
 
-    if host_ip != domain_ip
+    response = HTTParty.get(url, query: params)
+
+    if !response.success?
       ctx.fail_and_return!("Domain not configured properly.")
     end
-  end
-
-  def self.get_ip(domain)
-    Resolv.getaddress(domain)
-  rescue Resolv::ResolvError
-    nil
   end
 end
