@@ -1,0 +1,4 @@
+create_salt_job:
+  cron: 0 12 * * * # every 12:00am
+  class: CreateSaltJob
+  queue: default
