@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :set_raven_context
+
   include Pagy::Backend
   check_authorization :unless => :devise_controller?
 
@@ -17,5 +19,10 @@ class ApplicationController < ActionController::Base
     super
     payload[:request_id] = request.uuid
     payload[:user_id] = current_user.id if current_user
+  end
+
+  def set_raven_context
+    Raven.user_context(id: current_user.id)
+    Raven.extra_context(params: params.to_unsafe_h, url: request.url)
   end
 end

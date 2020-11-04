@@ -65,3 +65,5 @@ group :test do
 end
 
 gem "sidekiq-cron", "~> 1.2"
+
+gem "sentry-raven", "~> 3.1"
