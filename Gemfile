@@ -63,3 +63,5 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem "simplecov", require: false
 end
+
+gem "sidekiq-cron", "~> 1.2"
