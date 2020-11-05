@@ -50,6 +50,7 @@ class CustomDomainsController < ApplicationController
   end
 
   def setup_dns
+    @custom_domain = CustomDomain.find(params[:custom_domain_id])
   end
 
   private

@@ -1,3 +1,50 @@
-<h1>setup dns</h1>
+<div class="row justify-content-start">
+  <div class="col-12">
+    <%= render(PageHeaderComponent.new(
+      pretitle: "Your action is required", title: "Configure DNS"))
+    %>
 
-<%= link_to "View Custom Domains", custom_domains_path, class: "btn btn-primary"%>
+    <div class="row">
+      <div class="col-12 col-md-8">
+          <div class="alert alert-light small mb-0">
+            Your domain will not be available immediately, it can take up to
+            <strong>24 hours</strong> for the DNS to propogate. We'll email you
+            when the setup is complete.
+          </div>
+
+          <hr class="my-5"/>
+          
+          <p class="small text-black-50">
+            Apply the following DNS configuration to turn any domain into your own link
+            shortener. All you have to do is "point" your <strong>CNAME Records</strong>
+            to Btfy.
+          </p>
+
+          <div class="card">
+            <table class="table table-sm card-table table-bordered">
+              <thead>
+                <tr>
+                  <th>Record Type</th>
+                  <th>Hostname(or name)</th>
+                  <th>Points to(or address)
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CNAME</td>
+                  <td>Add link, click or any subdomain of your choosing</td>
+                  <td><%= @custom_domain.dns_target %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr class="my-5"/>
+
+          <%= link_to "View my domains", custom_domains_path, class: "btn btn-primary btn-lg"%>
+
+      </div>
+    </div>
+  </div>
+</div>
+
