@@ -11,6 +11,7 @@
       <table class="table table-sm table-nowrap card-table">
         <thead>
           <tr>
+            <th>Status</th>
             <th>Name</th>
             <th>Redirect URL</th>
             <th>404 URL</th>
@@ -21,6 +22,7 @@
         <tbody class="list">
           <% @domains.each do |domain| %>
             <tr>
+              <td><%= domain.status %></td>
               <td class="name"><%= domain.name %></td>
               <td><%= domain.redirect_url %></td>
               <td><%= domain.not_found_url %></td>

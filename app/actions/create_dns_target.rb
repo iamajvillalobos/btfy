@@ -17,13 +17,12 @@ class CreateDnsTarget
       }
     }
     response = HTTParty.post(url, options)
+    dns_response = OpenStruct.new(response.parsed_response)
 
     if response.success?
-      dns_response = OpenStruct.new(response.parsed_response)
       ctx.domain.dns_target = dns_response.cname
-      ctx.domain.status = dns_response.status
     else
-      ctx.fail_and_return!(response.message)
+      ctx.fail_and_return!(dns_response.message)
     end
   end
 end

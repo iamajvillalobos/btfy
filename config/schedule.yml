@@ -2,3 +2,8 @@ create_salt_job:
   cron: 0 12 * * * # every 12:00am
   class: CreateSaltJob
   queue: default
+
+update_custom_domain_status_job:
+  cron: "*/3 * * * *" # every 3 minutes
+  class: UpdateCustomDomainStatusJob
+  queue: default
