@@ -6,6 +6,7 @@ class CreateCustomDomain
       domain: domain
     ).reduce(
       ValidateDomainNameAction,
+      CreateDnsTarget,
       SaveDomainAction
     )
   end
