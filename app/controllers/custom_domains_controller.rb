@@ -22,11 +22,10 @@ class CustomDomainsController < ApplicationController
     result = CreateCustomDomain.call(@custom_domain)
 
     if result.success?
-      redirect_to custom_domains_path, notice: "Domain added successfully."
+      redirect_to custom_domain_setup_dns_path(@custom_domain)
     else
       flash.now[:error] = result.message
       render :new
-      return
     end
   end
 
@@ -48,6 +47,9 @@ class CustomDomainsController < ApplicationController
       format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def setup_dns
   end
 
   private
