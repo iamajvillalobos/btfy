@@ -14,25 +14,24 @@
 
           <hr class="my-5"/>
           
-          <p class="small text-black-50">
-            Apply the following DNS configuration to turn any domain into your own link
-            shortener. All you have to do is "point" your <strong>CNAME Records</strong>
-            to Btfy.
-          </p>
+          <ol>
+            <li>Go to your DNS provider's website</li>
+            <li>Create a <strong>CNAME</strong> record for <%= @custom_domain.name %></li>
+            <li>Point the record to <strong><%= @custom_domain.dns_target %></strong></li>
+            <li>If you're using Cloudflare, make sure to disable the orange cloud proxy</li>
+          </ol>
 
           <div class="card">
             <table class="table table-sm card-table table-bordered">
               <thead>
                 <tr>
                   <th>Record Type</th>
-                  <th>Hostname(or name)</th>
                   <th>Points to(or address)
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>CNAME</td>
-                  <td>Add link, click or any subdomain of your choosing</td>
                   <td><%= @custom_domain.dns_target %></td>
                 </tr>
               </tbody>
