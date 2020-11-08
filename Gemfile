@@ -25,6 +25,7 @@ gem "paddle_pay", "~> 0.0.1"
 gem "pagy", "~> 3.8"
 gem "pay", git: "https://github.com/nm/pay", branch: "paddle"
 gem "pg", ">= 0.18", "< 2.0"
+gem "platform-api", "~> 3.2"
 gem "postmark-rails", "~> 0.20.0"
 gem "pretender", "~> 0.3.4"
 gem "puma", "~> 4.1"
@@ -33,6 +34,8 @@ gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "redis", "~> 4.0"
 gem "rollbar", "~> 2.27"
 gem "sass-rails", ">= 6"
+gem "sentry-raven", "~> 3.1"
+gem "sidekiq-cron", "~> 1.2"
 gem "sidekiq", "6.1.1"
 gem "skylight", "~> 4.3"
 gem "stamp", "0.6.0"
@@ -40,7 +43,9 @@ gem "timecop", "0.9.1"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "validate_url", "~> 1.0"
+gem "vcr", "~> 6.0"
 gem "view_component", "2.18.0"
+gem "webmock", "~> 3.9"
 gem "webpacker", "~> 4.0"
 gem "whenever", "~> 1.0"
 
@@ -63,7 +68,3 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem "simplecov", require: false
 end
-
-gem "sidekiq-cron", "~> 1.2"
-
-gem "sentry-raven", "~> 3.1"

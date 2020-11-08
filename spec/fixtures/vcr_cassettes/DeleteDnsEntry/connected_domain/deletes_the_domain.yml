@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.heroku.com/apps//domains/ajv.im
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - 'Bearer '
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 04:43:21 GMT
+      Request-Id:
+      - bfe4aa9f-6bc7-4e62-bac9-c1430c928072,3774a12a-2974-bce1-d27a-047e64192675,4a7d3c17-2162-4297-8470-e8b4e2636832
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Cascade:
+      - pass
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.010299437'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"not_found","message":"The requested API endpoint was not found.
+        Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify
+        your intended version with the `Accept` header?"}'
+  recorded_at: Sun, 08 Nov 2020 04:43:21 GMT
+recorded_with: VCR 6.0.0

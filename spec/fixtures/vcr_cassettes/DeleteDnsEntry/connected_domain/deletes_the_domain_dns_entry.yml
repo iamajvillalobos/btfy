@@ -1,0 +1,479 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.heroku.com/apps//domains/ajv.im
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - 'Bearer '
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 04:53:29 GMT
+      Request-Id:
+      - c79aa29c-4cd3-4aa2-8fdf-5a1af3ad16d2,70ba95b3-2445-cf08-2058-f0cf355ab81a,db1e5f47-aee0-408e-f0ac-31ddb956a0fd
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Cascade:
+      - pass
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.009581333'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"not_found","message":"The requested API endpoint was not found.
+        Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify
+        your intended version with the `Accept` header?"}'
+  recorded_at: Sun, 08 Nov 2020 04:53:29 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps//domains/%23%3CCustomDomain:0x00007fbf3c055f20%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - 'Bearer '
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 04:59:40 GMT
+      Request-Id:
+      - 967571bf-a1ad-4703-9966-d28778193100,625847d6-3956-3e84-3b06-8649d41a88c8,770a6f19-1e64-c3c5-f6ca-6b4e0d54fbff
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Cascade:
+      - pass
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.005907723'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"not_found","message":"The requested API endpoint was not found.
+        Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify
+        your intended version with the `Accept` header?"}'
+  recorded_at: Sun, 08 Nov 2020 04:59:40 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps//domains/%23%3CCustomDomain:0x00007fbe61416820%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - 'Bearer '
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:00:39 GMT
+      Request-Id:
+      - 2e8718ba-1ad0-4695-887f-f8952c87b482,e8720d76-d0d3-6e59-466c-102e8fca286d,1f22f755-4620-3d71-03a7-2b4937e4359b
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Cascade:
+      - pass
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.006789496'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"not_found","message":"The requested API endpoint was not found.
+        Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify
+        your intended version with the `Accept` header?"}'
+  recorded_at: Sun, 08 Nov 2020 05:00:39 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps//domains/%23%3CCustomDomain:0x00007fb7e157ddc0%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - 'Bearer '
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:01:09 GMT
+      Request-Id:
+      - 3258586e-1c22-4f55-928c-5a0bb29c42da,0ca56ec4-fea9-185d-2d17-2629d2396eb4,d4b563bd-6b92-47b7-b918-af20ea1a0607
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Cascade:
+      - pass
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.009716707'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"not_found","message":"The requested API endpoint was not found.
+        Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify
+        your intended version with the `Accept` header?"}'
+  recorded_at: Sun, 08 Nov 2020 05:01:10 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/ajvillalobos-btfy/domains/%23%3CCustomDomain:0x00007f9ecf1519c0%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - Bearer 32929d9c-7a41-4397-915e-36050ab8d42a
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private, no-cache
+      Content-Length:
+      - '87'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:06:49 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - 8e81cf73-0118-4780-8aca-79f70a20fbea,c42c2751-8eff-a833-30f0-539f42e3bcf9,5eb87a6a-b901-e83d-964b-2938a939f48a
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.044208502'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"resource":"domain_name","id":"not_found","message":"Couldn''t find
+        that domain name."}'
+  recorded_at: Sun, 08 Nov 2020 05:06:49 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/ajvillalobos-btfy/domains/%23%3CCustomDomain:0x00007fc71fdf76c0%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - Bearer 32929d9c-7a41-4397-915e-36050ab8d42a
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private, no-cache
+      Content-Length:
+      - '87'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:07:12 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - bbc422e8-0fc8-4286-94e0-b855d2997bae,3bf47b67-fdd0-1900-49c5-2793b3ae98a9,03c2dfb4-b4de-10f8-91f9-e711dcb4ac60
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.046657651'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"resource":"domain_name","id":"not_found","message":"Couldn''t find
+        that domain name."}'
+  recorded_at: Sun, 08 Nov 2020 05:07:12 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/ajvillalobos-btfy/domains/ajvillalobos.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - Bearer 32929d9c-7a41-4397-915e-36050ab8d42a
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache
+      Content-Length:
+      - '512'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:09:54 GMT
+      Etag:
+      - '"23e8981f7fdc8a26231e1f9cf6384bfd"'
+      Last-Modified:
+      - Sun, 08 Nov 2020 04:55:56 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - a3385f6b-8feb-4c8e-b0cf-e2b4754794d1,d2d9c36d-25a0-639a-e5a1-0a5eb4b0240f,f75820eb-9344-ae71-c948-b44a18fafd4a
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.038101203'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"acm_status":"failing","acm_status_reason":"Unable to resolve DNS
+        for ajvillalobos.com","app":{"id":"c968171f-5b71-4e97-9ef2-47956d854704","name":"ajvillalobos-btfy"},"cname":"crystalline-passionflower-mw0yout50c54q265acjvz5ms.herokudns.com","created_at":"2020-11-08T04:55:56Z","hostname":"ajvillalobos.com","id":"89e94494-967b-4c03-bb60-609c72b612f3","kind":"custom","status":"succeeded","updated_at":"2020-11-08T05:09:17Z","sni_endpoint":{"id":"646427f6-4183-4a19-be6a-c50ae9d53bcb","name":"othnielia-10412"}}'
+  recorded_at: Sun, 08 Nov 2020 05:09:54 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/ajvillalobos-btfy/domains/ajvillalobos.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - Bearer 32929d9c-7a41-4397-915e-36050ab8d42a
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache
+      Content-Length:
+      - '512'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:09:56 GMT
+      Etag:
+      - '"23e8981f7fdc8a26231e1f9cf6384bfd"'
+      Last-Modified:
+      - Sun, 08 Nov 2020 04:55:56 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - c0dc02b6-42dd-4425-9f58-338d3f1cf8b8,957dcd2c-eb48-aac6-e267-5bc0876f023a,bc4410ea-fd51-fe14-0ce0-6eac98a4d833
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.039364425'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"acm_status":"failing","acm_status_reason":"Unable to resolve DNS
+        for ajvillalobos.com","app":{"id":"c968171f-5b71-4e97-9ef2-47956d854704","name":"ajvillalobos-btfy"},"cname":"crystalline-passionflower-mw0yout50c54q265acjvz5ms.herokudns.com","created_at":"2020-11-08T04:55:56Z","hostname":"ajvillalobos.com","id":"89e94494-967b-4c03-bb60-609c72b612f3","kind":"custom","status":"succeeded","updated_at":"2020-11-08T05:09:17Z","sni_endpoint":{"id":"646427f6-4183-4a19-be6a-c50ae9d53bcb","name":"othnielia-10412"}}'
+  recorded_at: Sun, 08 Nov 2020 05:09:56 GMT
+- request:
+    method: delete
+    uri: https://api.heroku.com/apps/ajvillalobos-btfy/domains/ajvillalobos.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - Bearer 32929d9c-7a41-4397-915e-36050ab8d42a
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache
+      Content-Length:
+      - '512'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:09:57 GMT
+      Etag:
+      - '"23e8981f7fdc8a26231e1f9cf6384bfd"'
+      Last-Modified:
+      - Sun, 08 Nov 2020 04:55:56 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - d0777a47-52a8-433b-a76d-f47b9be13648,69f02dbd-e296-56a7-3b04-b17f17c971ab,8f581a93-068f-07ab-7177-06d94842a02a
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.076557436'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"acm_status":"failing","acm_status_reason":"Unable to resolve DNS
+        for ajvillalobos.com","app":{"id":"c968171f-5b71-4e97-9ef2-47956d854704","name":"ajvillalobos-btfy"},"cname":"crystalline-passionflower-mw0yout50c54q265acjvz5ms.herokudns.com","created_at":"2020-11-08T04:55:56Z","hostname":"ajvillalobos.com","id":"89e94494-967b-4c03-bb60-609c72b612f3","kind":"custom","status":"succeeded","updated_at":"2020-11-08T05:09:17Z","sni_endpoint":{"id":"646427f6-4183-4a19-be6a-c50ae9d53bcb","name":"othnielia-10412"}}'
+  recorded_at: Sun, 08 Nov 2020 05:09:57 GMT
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/ajvillalobos-btfy/domains/ajvillalobos.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Authorization:
+      - Bearer 32929d9c-7a41-4397-915e-36050ab8d42a
+      If-None-Match:
+      - '"23e8981f7fdc8a26231e1f9cf6384bfd"'
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private, no-cache
+      Content-Length:
+      - '87'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 08 Nov 2020 05:09:58 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - afe5046d-3a2c-4b16-8c38-cb8cacd9cd96,90e2fac0-f1c9-534f-499b-0a5e1bdf1fce,d62e0f0d-bfed-d182-ce2c-30475132c2f5
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (4f676408e4ed), 1.1 spaces-router (4f676408e4ed)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.053708386'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"resource":"domain_name","id":"not_found","message":"Couldn''t find
+        that domain name."}'
+  recorded_at: Sun, 08 Nov 2020 05:09:58 GMT
+recorded_with: VCR 6.0.0
