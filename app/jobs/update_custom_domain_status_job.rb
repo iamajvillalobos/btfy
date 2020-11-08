@@ -14,8 +14,13 @@ class UpdateCustomDomainStatusJob < ApplicationJob
 
     domains.each do |domain|
       status = CheckDnsStatus.call(domain)
-      puts "status: #{status}"
       domain.update(status: ACM_STATUS[status])
+
+      if status == "cert issued"
+        CustomDomainMailer.with(user_id: domain.user.id, domain_id: domain.id)
+          .domain_ready_email
+          .deliver_later
+      end
     end
   end
 end

@@ -1,6 +1,6 @@
-require_relative 'boot'
+require_relative "boot"
 require "view_component/engine"
-require 'rails/all'
+require "rails/all"
 require "resolv"
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,7 +21,7 @@ module Btfy
     config.active_job.queue_adapter = :sidekiq
 
     # Customize error pages routes
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
 
     # Use Postmark for emails
     config.action_mailer.delivery_method = :postmark
