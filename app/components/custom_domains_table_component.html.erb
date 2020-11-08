@@ -22,7 +22,7 @@
         <tbody class="list">
           <% @domains.each do |domain| %>
             <tr>
-              <td><%= domain.status %></td>
+              <td><%= render CustomDomainStatusIconComponent.new(domain) %></td>
               <td class="name"><%= domain.name %></td>
               <td><%= domain.redirect_url %></td>
               <td><%= domain.not_found_url %></td>
