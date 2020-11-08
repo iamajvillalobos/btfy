@@ -1,3 +1,192 @@
+<a name="2020-11-09"></a>
+### 2020-11-09
+
+
+#### Features
+
+* remove rollbar	 ([9315460](/../../commit/9315460))
+
+
+<a name="2020-11-08"></a>
+### 2020-11-08
+
+
+#### Features
+
+* don't delete links when deleting a custom domain	 ([f947a1b](/../../commit/f947a1b))
+* Send email to user when domain is ready	 ([a0d2aec](/../../commit/a0d2aec))
+* add status icons for custom domains	 ([5eedc07](/../../commit/5eedc07))
+* improve dns configuration instructions	 ([a556915](/../../commit/a556915))
+* refactor CheckDnsStatus to use PlatformAPI	 ([01ba921](/../../commit/01ba921))
+* refactor CreateDnsTarget to use PlatformAPI	 ([55c1b2d](/../../commit/55c1b2d))
+* don't show custom domains that are not yet active	 ([1fa0d81](/../../commit/1fa0d81))
+* delete dns entry when deleting a domain	 ([904ca5c](/../../commit/904ca5c))
+* Add DeleteCustomDomain organizer	 ([8b3c831](/../../commit/8b3c831))
+* Add DeleteCustomDomainRecord	 ([0f7fd2a](/../../commit/0f7fd2a))
+* add DeleteDnsEntry action	 ([68bcb10](/../../commit/68bcb10))
+
+
+#### Bug Fixes
+
+* dont' add retry option	 ([d34b931](/../../commit/d34b931))
+
+
+<a name="2020-11-06"></a>
+### 2020-11-06
+
+
+#### Features
+
+* check custom domain ssl status in the background	 ([c6660e7](/../../commit/c6660e7))
+* add information to setup dns page	 ([ea98e5e](/../../commit/ea98e5e))
+* fetch dns target from heroku when creating a new domain	 ([afa7977](/../../commit/afa7977))
+* add dns target field to custom domain	 ([313acc1](/../../commit/313acc1))
+
+
+<a name="2020-11-05"></a>
+### 2020-11-05
+
+
+#### Features
+
+* add new workflow for adding a custom domain	 ([4fc0f60](/../../commit/4fc0f60))
+* add schedule for running CreateSaltJob	 ([2736b12](/../../commit/2736b12))
+* add sidekiq-cron	 ([35dfd15](/../../commit/35dfd15))
+
+
+#### Bug Fixes
+
+* remove user context for raven	 ([033a411](/../../commit/033a411))
+
+
+<a name="2020-10-31"></a>
+### 2020-10-31
+
+
+#### Features
+
+* move dns checker logic to aws lambda	 ([18b74ac](/../../commit/18b74ac))
+
+
+<a name="2020-10-25"></a>
+### 2020-10-25
+
+
+#### Features
+
+* allow dash in the link slug	 ([750754c](/../../commit/750754c))
+
+
+<a name="2020-10-21"></a>
+### 2020-10-21
+
+
+#### Features
+
+* only load crisp chat on production	 ([dcc2a9b](/../../commit/dcc2a9b))
+
+
+<a name="2020-10-20"></a>
+### 2020-10-20
+
+
+#### Bug Fixes
+
+* simplify dns check for adding custom domains	 ([d5b6408](/../../commit/d5b6408))
+
+
+<a name="2020-10-19"></a>
+### 2020-10-19
+
+
+#### Features
+
+* add crisp chat integration	 ([f374698](/../../commit/f374698))
+* Add text to reminder custom domain users to add not found url	 ([c2457b1](/../../commit/c2457b1))
+* require not_found_url field in custom domains	 ([7a7d120](/../../commit/7a7d120))
+
+
+#### Bug Fixes
+
+* redirect users to btfy 404 page when custom domain not found url is not set yet	 ([1b268bd](/../../commit/1b268bd))
+
+
+<a name="2020-10-18"></a>
+### 2020-10-18
+
+
+#### Bug Fixes
+
+* compare on the link context instead of the whole context	 ([795632b](/../../commit/795632b))
+
+
+<a name="2020-10-17"></a>
+### 2020-10-17
+
+
+#### Features
+
+* remove id and status in custom domains table	 ([3ff937b](/../../commit/3ff937b))
+* redirect link to 404 page from custom domain if not found	 ([e11e799](/../../commit/e11e799))
+* add status and not found url to custom domain	 ([27a3a4f](/../../commit/27a3a4f))
+
+
+<a name="2020-10-15"></a>
+### 2020-10-15
+
+
+#### Features
+
+* move notify slack as a callback on User model	 ([a1c19d0](/../../commit/a1c19d0))
+
+
+<a name="2020-10-14"></a>
+### 2020-10-14
+
+
+#### Features
+
+* send notification to #signups channel	 ([e105d1d](/../../commit/e105d1d))
+* setup noticed	 ([ff56a30](/../../commit/ff56a30))
+
+
+#### Bug Fixes
+
+* require resolv library separately to avoid problem in prod	 ([531a79f](/../../commit/531a79f))
+
+
+<a name="2020-10-03"></a>
+### 2020-10-03
+
+
+#### Features
+
+* use ReferrerDomain in ParseVisitorReferrer action	 ([cec7176](/../../commit/cec7176))
+
+
+#### Bug Fixes
+
+* lock down settings page for unauthenticated user	 ([b9b607a](/../../commit/b9b607a))
+* return if url is nil	 ([1ea31d6](/../../commit/1ea31d6))
+* use the url.path if url.host is not found	 ([b60d124](/../../commit/b60d124))
+
+
+<a name="2020-10-01"></a>
+### 2020-10-01
+
+
+#### Features
+
+* customize the postmark welcome email template id	 ([43d1139](/../../commit/43d1139))
+* Send welcome email when user register	 ([1b946e5](/../../commit/1b946e5))
+
+
+#### Bug Fixes
+
+* missing skip authorization check for accounts	 ([e4890a3](/../../commit/e4890a3))
+* don't pass the whole user object in mailer	 ([a551e2a](/../../commit/a551e2a))
+
+
 <a name="2020-09-30"></a>
 ### 2020-09-30
 
