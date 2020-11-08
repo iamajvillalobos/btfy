@@ -14,6 +14,7 @@ class UpdateCustomDomainStatusJob < ApplicationJob
 
     domains.each do |domain|
       status = CheckDnsStatus.call(domain)
+      next if status.nil?
       domain.update(status: ACM_STATUS[status])
 
       if status == "cert issued"
