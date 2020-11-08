@@ -30,15 +30,16 @@ class CustomDomainsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @custom_domain.update(custom_domain_params)
-        format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully updated." }
-        format.json { render :show, status: :ok, location: @custom_domain }
-      else
-        format.html { render :edit }
-        format.json { render json: @custom_domain.errors, status: :unprocessable_entity }
-      end
-    end
+    result = DeleteCustomDomain.call(@custom_domain)
+    # respond_to do |format|
+    #   if @custom_domain.update(custom_domain_params)
+    #     format.html { redirect_to custom_domains_path, notice: "Custom domain was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @custom_domain }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @custom_domain.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def destroy
