@@ -38,7 +38,7 @@
                     <%= link_to "Edit", edit_custom_domain_path(domain), class: "dropdown-item" %>
                     <%= link_to "Delete", custom_domain_path(domain),
                       method: :delete,
-                      data: { confirm: "This will delete all links that you created with this domain, are you sure you want to delete?" },
+                      data: { confirm: "Deleting this custom domain WILL NOT delete your links associated with it, proceed?" },
                       class: "dropdown-item"
                     %>
                   </div>

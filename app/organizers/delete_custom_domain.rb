@@ -11,8 +11,8 @@ class DeleteCustomDomain
 
   def self.actions
     [
-      DeleteDnsEntry,
-      DeleteCustomDomainRecord
+      DeleteCustomDomainRecord,
+      DeleteDnsEntry
     ]
   end
 end

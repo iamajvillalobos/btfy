@@ -4,7 +4,7 @@ class CustomDomain < ApplicationRecord
   validates :redirect_url, url: true
   validates :not_found_url, url: true
 
-  has_many :links, dependent: :destroy
+  has_many :links, dependent: :nullify
   belongs_to :user
 
   enum status: {

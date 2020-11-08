@@ -12,8 +12,8 @@ RSpec.describe DeleteCustomDomain do
 
   it "runs all the actions" do
     actions = [
-      DeleteDnsEntry,
-      DeleteCustomDomainRecord
+      DeleteCustomDomainRecord,
+      DeleteDnsEntry
     ]
 
     actions.each do |action|
