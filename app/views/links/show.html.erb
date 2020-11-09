@@ -1,6 +1,9 @@
 <div class="header">
   <div class="header-body">
     <div class="row align-items-center">
+      <div class="col-auto">
+        <%= render QrCodeComponent.new(@link.redirect_url, 3) %>
+      </div>
       <div class="col">
         <h6 class="header-pretitle"><%= @link.destination_url.truncate(100) %></h6>
         <div class="d-flex align-items-center">
