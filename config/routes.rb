@@ -57,14 +57,14 @@ Rails.application.routes.draw do
       post :impersonate, on: :member
       post :stop_impersonating, on: :collection
     end
-    end
+  end
   get "/admin", to: "admin/links#index"
-
 
   # API endpoints
   namespace :api do
     namespace :v1 do
       resources :links, only: [:create]
+      resources :shortmenu, only: [:create]
     end
   end
 
