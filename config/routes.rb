@@ -35,7 +35,6 @@ Rails.application.routes.draw do
   resource :user_attributes, only: [:update]
   resources :public_profile_links, only: [:create, :destroy]
   resources :public_profile, only: [:show, :update]
-  get "/@:username", to: "public_profile#show"
 
   authenticated :user do |user|
     root to: "dashboards#show", as: :authenticated_root
