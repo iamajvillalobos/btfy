@@ -18,7 +18,7 @@ class LinkViewGraphComponent < ViewComponent::Base
 
   def data
     [
-      {name: "Visits", data: @visits, dataset: dataset_options},
+      {name: "Clicks", data: @visits, dataset: dataset_options},
       {name: "Uniques", data: @unique_visits, dataset: unique_visits_options}
     ]
   end
