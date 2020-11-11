@@ -6,9 +6,7 @@
     </svg>
   </button>
   <div class="dropdown-menu">
-    <%= link_to "Today", "#{@path}?period=day", class: "dropdown-item" %>
     <%= link_to "Last 7 days", "#{@path}?period=7d", class: "dropdown-item" %>
     <%= link_to "Last 30 days", "#{@path}?period=30d", class: "dropdown-item" %>
-    <%= link_to "Last 60 days", "#{@path}?period=60d", class: "dropdown-item" %>
   </div>
 </div>
