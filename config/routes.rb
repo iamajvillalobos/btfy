@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :custom_domains do
     get :setup_dns
   end
-  resources :links, except: [:destroy]
+  resources :links
   resource :support, only: [:new, :create]
   resource :account, only: [:show, :update]
   resource :billing, only: [:show] do

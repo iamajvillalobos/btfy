@@ -53,8 +53,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # DELETE /links/1
-  # DELETE /links/1.json
   def destroy
     @link.destroy
     respond_to do |format|

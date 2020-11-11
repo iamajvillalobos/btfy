@@ -7,7 +7,7 @@ class Link < ApplicationRecord
   belongs_to :user
   belongs_to :public_profile, optional: true
 
-  has_many :visits, class_name: "LinkVisit", dependent: :destroy
+  has_many :visits, class_name: "LinkVisit", dependent: :nullify
 
   def redirect_url
     Rails.application.routes.url_helpers.redirect_url(
