@@ -56,6 +56,7 @@ Rails.application.routes.draw do
       post :impersonate, on: :member
       post :stop_impersonating, on: :collection
     end
+    resources :link_visits, only: [:index]
   end
   get "/admin", to: "admin/links#index"
 

@@ -1,0 +1,23 @@
+<div class="table-responsive mb-0">
+  <div class="card-header">
+    <span class="card-header-title">Latest Link Visits</span>
+  </div>
+  <table class="table table-sm table-nowrap table-hover card-table">
+    <thead>
+      <tr>
+        <th>Link</th>
+        <th>User</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @link_visits.each do |visit| %>
+        <tr>
+          <td><%= visit.link.redirect_url %></td>
+          <td><%= visit.user.email %></td>
+          <td><%= visit.created_at.stamp("Jan 01, 2020 5:30pm") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
