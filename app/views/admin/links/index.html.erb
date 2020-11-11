@@ -12,25 +12,6 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <%= render LinkViewGraphComponent.new(
-        visits: @stats.total_visits,
-        uniques: @stats.total_visits)
-      %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <%= render TopLinksTableComponent.new(links: @stats.top_links) %>
-    </div>
-    <div class="col-12 col-md-6">
-      <%= render ReferrerTableComponent.new(
-      visits: @stats.total_referrers,
-      uniques: @stats.total_unique_referrers,
-      label: "Referrers") %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
       <div class="card">
         <%= render AdminLinksTableComponent.new(@links) %>
       </div>

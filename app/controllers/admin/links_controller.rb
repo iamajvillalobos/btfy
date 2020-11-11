@@ -5,7 +5,6 @@ class Admin::LinksController < ApplicationController
   skip_authorization_check
 
   def index
-    @links = Link.order(created_at: :desc).first(20)
-    @stats = GroupLinkStatsViewer.call(Link.all, "30d")
+    @links = Link.order(created_at: :desc)
   end
 end
