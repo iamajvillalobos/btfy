@@ -27,21 +27,16 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
-    <%= render ReferrerTableComponent.new(
-      visits: @stats.referrers,
-      uniques: @stats.unique_referrers,
-      label: "Referrers") %>
+  <div class="col-12 col-md-3">
+    <%= render ReferrerTableComponent.new(visits: @stats.referrers, uniques: @stats.unique_referrers, label: "Referrers") %>
   </div>
-</div>
-<div class="row">
-  <div class="col-12 col-md-4">
+  <div class="col-12 col-md-3">
     <%= render TotalStatTableComponent.new(stats: @stats.device_types, label: "Device Type") %>
   </div>
-  <div class="col-12 col-md-4">
+  <div class="col-12 col-md-3">
     <%= render TotalStatTableComponent.new(stats: @stats.browsers, label: "Browser") %>
   </div>
-  <div class="col-12 col-md-4">
+  <div class="col-12 col-md-3">
     <%= render TotalStatTableComponent.new(stats: @stats.countries, label: "Country") %>
   </div>
 </div>

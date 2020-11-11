@@ -13,6 +13,10 @@ class ReferrerTableComponent < ViewComponent::Base
     VIEW_LIMIT - @stats.count
   end
 
+  def dashboard_page?
+    current_page?("/") || current_page?("/dashboard")
+  end
+
   private
 
   def generate_stats

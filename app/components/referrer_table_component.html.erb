@@ -4,7 +4,9 @@
       <thead>
         <tr>
           <th><%= @label %></th>
-          <th class="text-right">Visits</th>
+          <% if dashboard_page? %>
+            <th class="text-right">Clicks</th>
+          <% end %>
           <th class="text-right">Uniques</th>
         </tr>
       </thead>
@@ -12,7 +14,9 @@
         <% @stats.each do |stat, count| %>
           <tr>
             <td><%= stat %></td>
-            <td class="text-right"><%= count[:visits] %></td>
+            <% if dashboard_page? %>
+              <td class="text-right"><%= count[:visits] %></td>
+            <% end %>
             <td class="text-right"><%= count[:uniques] %></td>
           </tr>
         <% end %>
@@ -20,7 +24,9 @@
           <% stats_limit_diff.times do %>
             <tr class="d-none d-md-table-row">
               <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <% if dashboard_page? %>
+                <td>&nbsp;</td>
+              <% end %>
               <td>&nbsp;</td>
             </tr>
           <% end %>
