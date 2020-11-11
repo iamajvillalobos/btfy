@@ -5,6 +5,6 @@ class Admin::LinksController < ApplicationController
   skip_authorization_check
 
   def index
-    @links = Link.order(created_at: :desc)
+    @pagy, @links = pagy(Link.order(created_at: :desc))
   end
 end
