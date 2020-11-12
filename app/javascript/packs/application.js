@@ -1,5 +1,6 @@
 import "../controllers";
 import "../stylesheets/application.scss";
+import LocalTime from "local-time"
 require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
@@ -18,3 +19,5 @@ document.addEventListener("turbolinks:load", function () {
 
   new ClipboardJS(".btn-clipboard-copy");
 });
+
+LocalTime.start()
