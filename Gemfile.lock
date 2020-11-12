@@ -196,6 +196,7 @@ GEM
       addressable (~> 2.7)
     light-service (0.15.0)
       activesupport (>= 3.0.0)
+    local_time (2.1.0)
     lograge (0.11.2)
       actionpack (>= 4)
       activesupport (>= 4)
@@ -448,6 +449,7 @@ DEPENDENCIES
   httparty (~> 0.18.1)
   jbuilder (~> 2.7)
   light-service
+  local_time (~> 2.1)
   lograge (~> 0.11.2)
   noticed (~> 1.2)
   paddle_pay (~> 0.0.1)
