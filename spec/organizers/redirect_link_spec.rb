@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe RedirectLink, type: :organizer do
+RSpec.describe RedirectLink, vcr: { record: :once } do
   let!(:user) { create(:user) }
   let!(:salt) { create(:salt) }
 
@@ -14,7 +14,7 @@ RSpec.describe RedirectLink, type: :organizer do
     end
 
     it "ctx.url is 404 url" do
-      link = create(:link)
+      link = create(:link, destination_url: "https://error.found")
       ctx = described_class.call(link)
       expect(ctx.url).to eq "/404"
     end
@@ -37,7 +37,12 @@ RSpec.describe RedirectLink, type: :organizer do
       })
     end
 
-    let(:invalid_link) { create(:link, custom_domain: custom_domain) }
+    let(:invalid_link) do
+      create(:link, {
+        destination_url: "https://error.found",
+        custom_domain: custom_domain
+      })
+    end
 
     it "ctx.url is destination_url" do
       ctx = described_class.call(valid_link)
