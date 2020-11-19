@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_155803) do
+ActiveRecord::Schema.define(version: 2020_11_19_052557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,7 +102,9 @@ ActiveRecord::Schema.define(version: 2020_11_05_155803) do
     t.bigint "custom_domain_id"
     t.bigint "user_id"
     t.bigint "public_profile_id"
+    t.boolean "no_tracking", default: true
     t.index ["custom_domain_id"], name: "index_links_on_custom_domain_id"
+    t.index ["no_tracking"], name: "index_links_on_no_tracking"
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 

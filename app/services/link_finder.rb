@@ -9,7 +9,7 @@ class LinkFinder
       ParseRequestParamsAction,
       VerifyDomainAction,
       VerifySlugAction,
-      reduce_if(->(ctx) { ctx.success? }, [
+      reduce_if(->(ctx) { ctx.success? && !ctx.link.no_tracking? }, [
         AddVisitInformation
       ])
     )
