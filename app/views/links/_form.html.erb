@@ -51,7 +51,18 @@
       
       <div class="d-flex justify-content-between mt-3">
         <%= link_to "Cancel", links_path, class: "btn btn-white" %>
-        <%= form.submit class: "btn btn-primary" %>
+        <div class="d-flex align-items-center">
+          <div class="custom-control custom-switch mr-3">
+            <%# <input type="checkbox" class="custom-control-input" id="customSwitch1"> %>
+            <%# <label class="custom-control-label" for="customSwitch1">Track this click</label> %>
+
+            <%= form.check_box :no_tracking, class: "custom-control-input" %>
+            <%= form.label :no_tracking, class: "custom-control-label"%>
+
+          </div>
+
+          <%= form.submit class: "btn btn-primary" %>
+        </div>
       </div>
     <% end %>
   </div>
