@@ -59,7 +59,7 @@ Rails.application.routes.draw do
     end
     resources :link_visits, only: [:index]
   end
-  get "/admin", to: "admin/dashboard#show"
+  get "/admin", to: "admin/dashboards#show"
 
   # API endpoints
   namespace :api do
