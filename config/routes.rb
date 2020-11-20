@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resource :dashboard, only: [:show]
     resources :links, only: [:index]
     resources :custom_domains, only: [:index]
     resources :users, only: [:index] do
@@ -58,7 +59,7 @@ Rails.application.routes.draw do
     end
     resources :link_visits, only: [:index]
   end
-  get "/admin", to: "admin/links#index"
+  get "/admin", to: "admin/dashboard#show"
 
   # API endpoints
   namespace :api do
