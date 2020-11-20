@@ -1,0 +1,44 @@
+<div class="container">
+  <%= render PageHeaderComponent.new(pretitle: "Admin", title: "Dashboard") %>
+
+  <div class="row">
+    <div class="col">
+      <%= render StatsCardCompleteComponent.new(
+        @links_created_today,
+        @links_created_yday,
+        "Links Created") do |component| %>
+
+        <% component.with(:icon) do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="24" width="24" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+          </svg>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col">
+      <%= render StatsCardCompleteComponent.new(
+        @link_visits_today,
+        @link_visits_yday,
+        "Link Visits") do |component| %>
+
+        <% component.with(:icon) do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="24" width="24" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col">
+      <%= render StatsCardCompleteComponent.new(
+        @users_today,
+        @users_yday,
+        "New Registration") do |component| %>
+
+        <% component.with(:icon) do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="24" width="24" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        <% end %>
+      <% end %>
+    </div>
+</div>
