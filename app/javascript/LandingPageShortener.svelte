@@ -13,7 +13,7 @@
       },
     };
 
-    let response = await fetch("http://lvh.me:3000/api/v1/links", {
+    let response = await fetch("/api/v1/links", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
