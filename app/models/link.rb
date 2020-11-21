@@ -18,7 +18,7 @@ class Link < ApplicationRecord
 
   def as_json(options={})
     options[:methods] ||= [:redirect_url]
-    options[:except] ||= [:public_profile_id]
+    options[:except] ||= [:public_profile_id, :user_id]
 
     super(options)
   end
