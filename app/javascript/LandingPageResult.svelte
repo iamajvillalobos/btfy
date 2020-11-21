@@ -1,6 +1,9 @@
 <script>
+  import ClipboardJS from "clipboard";
+
   export let result;
   let link = result.link;
+  let copyButtonText = "Copy";
 
   const truncate = (string) => {
     let limit = 50;
@@ -11,6 +14,15 @@
 
     return string;
   };
+
+  const handleCopyClick = () => {
+    copyButtonText = "Copied";
+    setTimeout(() => {
+      copyButtonText = "Copy";
+    }, 1500);
+  };
+
+  new ClipboardJS(".btn-clipboard-copy");
 </script>
 
 <hr />
@@ -20,7 +32,10 @@
     <a href={link.redirect_url}>{link.redirect_url}</a>
     <p class="mb-0 small text-secondary">{truncate(link.destination_url)}</p>
   </div>
-  <button class="btn btn-light">Copy</button>
+  <button
+    data-clipboard-text={link.redirect_url}
+    class="btn {copyButtonText == 'Copy' ? 'btn-light' : 'btn-primary'} btn-clipboard-copy"
+    on:click={handleCopyClick}>{copyButtonText}</button>
 </div>
 
 <div
