@@ -4,8 +4,6 @@
   let longURL = "";
   let result;
 
-  $: console.log(result);
-
   const shortenLink = async () => {
     let data = {
       link: {
