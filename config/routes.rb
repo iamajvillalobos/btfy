@@ -64,6 +64,7 @@ Rails.application.routes.draw do
   # API endpoints
   namespace :api do
     namespace :v1 do
+      post "/shorten", to: "links#create"
       resources :links, only: [:create]
       resources :shortmenu, only: [:create]
     end

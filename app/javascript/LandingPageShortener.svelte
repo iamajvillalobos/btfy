@@ -11,11 +11,10 @@
       },
     };
 
-    let response = await fetch("/api/v1/links", {
+    let response = await fetch("/api/v1/shorten", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.LANDING_PAGE_USER_API}`,
       },
       body: JSON.stringify(data),
     });
