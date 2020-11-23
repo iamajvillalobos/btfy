@@ -10,9 +10,9 @@ class MarketingPricingPlanComponent < ViewComponent::Base
     when "month"
       "Save 0%"
     when "year"
-      "Save 20%"
+      "Save 50%"
     when "lifetime"
-      "Unbeatable value"
+      "Best Value"
     end
   end
 

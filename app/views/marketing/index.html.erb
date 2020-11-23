@@ -42,25 +42,25 @@
 <div class="bg-white">
   <div class="container py-5">
     <div class="py-5">
-      <h2 class="display-2 mb-1">Pricing</h2>
-      <p class="lead font-weight-normal">
+      <h2 class="display-2 mb-2">Pricing</h2>
+      <p class="lead font-weight-normal text-muted">
           One plan, different deals, pick what's best for you
       </p>
     </div>
     <div class="row">
       <div class="col-12 col-md-4">
         <%= render MarketingPricingPlanComponent.new(
-          title: "monthly", price: 5, period: "month")
+          title: "monthly", price: 15, period: "month")
         %>
       </div>
       <div class="col-12 col-md-4">
         <%= render MarketingPricingPlanComponent.new(
-          title: "yearly", price: 50, period: "year")
+          title: "yearly", price: 99, period: "year")
         %>
       </div>
       <div class="col-12 col-md-4">
         <%= render MarketingPricingPlanComponent.new(
-          title: "lifetime", price: 150, period: "lifetime")
+          title: "lifetime", price: 300, period: "lifetime")
         %>
       </div>
     </div>

@@ -17,9 +17,9 @@ class AvailablePlanComponent < ViewComponent::Base
     when "monthly"
       "Save 0%"
     when "yearly"
-      "Save 20%"
+      "Save 50%"
     when "lifetime"
-      "Unbeatable Value"
+      "Best Value"
     end
   end
 
