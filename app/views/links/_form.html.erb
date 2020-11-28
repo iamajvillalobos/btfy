@@ -19,7 +19,7 @@
               Choose from your domains
             </small>
             <%= form.select :custom_domain_id,
-              custom_domain_dropdown,
+              options_for_select(custom_domain_dropdown, selected: link&.custom_domain&.id),
               {},
               { class: "custom-select" }
             %>
