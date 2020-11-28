@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.1"
+ruby "2.7.2"
 
 gem "active_link_to", "~> 1.0"
 gem "active_storage_validations", "~> 0.9.0"
