@@ -32,7 +32,7 @@ class LinksController < ApplicationController
     result = CreateLink.call(@link)
 
     if result.success?
-      redirect_to links_path, notice: "Link was successfully created."
+      redirect_to result.link
     else
       flash.now[:error] = result.message
       render :new

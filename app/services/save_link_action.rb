@@ -1,7 +1,7 @@
 class SaveLinkAction
   extend LightService::Action
 
-  expects :name, :slug
+  expects :name, :slug, :link
 
   executed do |ctx|
     link = ctx[:link]
@@ -12,5 +12,7 @@ class SaveLinkAction
     unless link.save
       ctx.fail!(link.errors.full_messages)
     end
+
+    ctx.link = link
   end
 end

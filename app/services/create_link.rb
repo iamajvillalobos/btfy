@@ -5,6 +5,7 @@ class CreateLink
     with(
       link: link
     ).reduce(
+      CheckDuplicateLinkAction,
       GenerateLinkNameAction,
       GenerateAvailableSlugAction,
       AssociateToCustomDomainAction,
