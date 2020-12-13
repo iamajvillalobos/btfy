@@ -17,6 +17,11 @@
     <%= javascript_pack_tag 'marketing' %>
   </head>
   <body class="bg-white">
+    <% if flash[:notice] %>
+      <div class="bg-dark">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
