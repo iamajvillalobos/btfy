@@ -17,21 +17,21 @@
     </div>
   </nav>
 
-  <div class="row mt-5 mb-6">
+  <div class="row mt-5 mb-6 justify-content-center">
     <div class="col-12 col-lg-6">
-      <h1 class="display-3 text-left font-weight-bolder">
+      <h1 class="display-3 text-center font-weight-bolder">
         Privacy-focused short links, simplified
       </h1>
 
-      <p class="text-secondary text-left font-weight-normal">
+      <p class="text-secondary text-center font-weight-normal mb-0">
         Shorten, share and track links without storing cookie or any personal
         data. Start protecting your visitor's privacy today.
       </p>
 
-      <div class="shorten-url"></div>
-    </div>
+      <div class="d-flex justify-content-center my-5">
+        <%= link_to "Get started for free", "/register", class: "btn btn-primary"%>
+      </div>
 
-    <div class="col-12 col-lg-6 mt-4 mt-lg-0">
       <img class="img-fluid img-thumbnail rounded" alt="btfy dashboard" src="https://btfy-app.s3-ap-southeast-1.amazonaws.com/landing-page/dashboard-new-landing-page.png" />
     </div>
   </div>
