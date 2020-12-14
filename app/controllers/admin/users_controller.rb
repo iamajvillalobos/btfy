@@ -18,4 +18,11 @@ class Admin::UsersController < ApplicationController
     stop_impersonating_user
     redirect_to root_path
   end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+
+    redirect_to admin_users_path
+  end
 end

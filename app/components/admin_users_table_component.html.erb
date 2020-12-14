@@ -14,8 +14,17 @@
           <td><%= user.email %></td>
           <td><%= user.links.count %></td>
           <td><%= user.custom_domains.count %></td>
-          <td><%= link_to "Impersonate", impersonate_admin_user_path(user),
-            method: :post, class: "btn btn-sm btn-danger" %></td>
+          <td class="text-right">
+            <%= link_to "Impersonate",
+              impersonate_admin_user_path(user),
+              method: :post,
+              class: "btn btn-sm btn-primary" %>
+            <%= link_to "Delete",
+              admin_user_path(user),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-sm btn-danger" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

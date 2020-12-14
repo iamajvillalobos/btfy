@@ -53,7 +53,7 @@ Rails.application.routes.draw do
     resource :dashboard, only: [:show]
     resources :links, only: [:index]
     resources :custom_domains, only: [:index]
-    resources :users, only: [:index] do
+    resources :users, only: [:index, :destroy] do
       post :impersonate, on: :member
       post :stop_impersonating, on: :collection
     end
