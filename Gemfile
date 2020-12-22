@@ -18,6 +18,7 @@ gem "hiredis", "~> 0.6.3"
 gem "httparty", "~> 0.18.1"
 gem "jbuilder", "~> 2.7"
 gem "light-service"
+gem 'listen'
 gem "lograge", "~> 0.11.2"
 gem "noticed", "~> 1.2"
 gem "paddle_pay", "~> 0.0.1"
