@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/jumph4x/canonical-rails.git
-  revision: 16eae2dc79f3df78c693bd3a04340f270c9e6387
-  specs:
-    canonical-rails (0.2.9)
-      rails (>= 4.1, < 6.1)
-
-GIT
   remote: https://github.com/nm/pay
   revision: 31bd6699947ead50535909c3c7be928c07d40f86
   branch: paddle
@@ -434,7 +427,6 @@ DEPENDENCIES
   aws-sdk-s3 (~> 1.79)
   bootsnap (= 1.4.7)
   cancancan (~> 3.1)
-  canonical-rails!
   capybara (>= 2.15)
   capybara-screenshot (~> 1.0)
   chartkick (= 3.3.2)
