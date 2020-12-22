@@ -29,7 +29,7 @@ gem "postmark-rails", "~> 0.20.0"
 gem "pretender", "~> 0.3.4"
 gem "puma", "~> 5.0"
 gem "rack-attack", "~> 6.3"
-gem "rails", "~> 6.0.3", ">= 6.0.3.2"
+gem "rails", "~> 6.1"
 gem "redis", "~> 4.0"
 gem "sass-rails", ">= 6"
 gem "sentry-raven", "~> 3.1"
@@ -70,3 +70,4 @@ end
 gem "rqrcode", "~> 1.1"
 
 gem "local_time", "~> 2.1"
+gem "image_processing", "~> 1.0"
