@@ -8,14 +8,19 @@ class ValidateUrl
 
   executed do |ctx|
     url = ctx.link.destination_url
-    response = HTTParty.get(url)
 
-    if response.code == 200
-      ctx.status = :success
-    else
-      ctx.status = :failed
-    end
+    # replace https with http
+    url.gsub!("https", "http")
+
+    response = HTTP.get(url)
+    ctx.status = if response.code == 200 || response.code == 302
+                   :success
+                 else
+                   :failed
+                 end
   rescue SocketError => e
+    ctx.status = :failed
+  rescue OpenSSL::SSL::SSLError
     ctx.status = :failed
   end
 end
