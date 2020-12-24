@@ -13,7 +13,8 @@ class ValidateUrl
     url.gsub!("https", "http")
 
     response = HTTP.get(url)
-    ctx.status = if response.code == 200 || response.code == 302
+
+    ctx.status = unless response.code == 404
                    :success
                  else
                    :failed
