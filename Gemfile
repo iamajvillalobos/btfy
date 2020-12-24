@@ -15,10 +15,12 @@ gem "devise", "4.7.2"
 gem "faker", "2.13.0"
 gem "groupdate", "5.0.0"
 gem "hiredis", "~> 0.6.3"
+gem "http", "~> 4.4"
 gem "httparty", "~> 0.18.1"
+gem "image_processing", "~> 1.0"
 gem "jbuilder", "~> 2.7"
 gem "light-service"
-gem 'listen'
+gem "local_time", "~> 2.1"
 gem "lograge", "~> 0.11.2"
 gem "noticed", "~> 1.2"
 gem "paddle_pay", "~> 0.0.1"
@@ -32,10 +34,11 @@ gem "puma", "~> 5.0"
 gem "rack-attack", "~> 6.3"
 gem "rails", "~> 6.1"
 gem "redis", "~> 4.0"
+gem "rqrcode", "~> 1.1"
 gem "sass-rails", ">= 6"
 gem "sentry-raven", "~> 3.1"
-gem "sidekiq-cron", "~> 1.2"
 gem "sidekiq", "6.1.1"
+gem "sidekiq-cron", "~> 1.2"
 gem "skylight", "~> 4.3"
 gem "stamp", "0.6.0"
 gem "timecop", "0.9.1"
@@ -47,6 +50,7 @@ gem "view_component", "2.18.0"
 gem "webmock", "~> 3.9"
 gem "webpacker", "~> 4.0"
 gem "whenever", "~> 1.0"
+gem 'listen'
 
 group :development, :test do
   gem "dotenv-rails", "2.7.6"
@@ -67,8 +71,3 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem "simplecov", require: false
 end
-
-gem "rqrcode", "~> 1.1"
-
-gem "local_time", "~> 2.1"
-gem "image_processing", "~> 1.0"

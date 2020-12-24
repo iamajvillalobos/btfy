@@ -457,6 +457,7 @@ DEPENDENCIES
   faker (= 2.13.0)
   groupdate (= 5.0.0)
   hiredis (~> 0.6.3)
+  http (~> 4.4)
   httparty (~> 0.18.1)
   image_processing (~> 1.0)
   jbuilder (~> 2.7)
@@ -504,4 +505,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.1.4
+   2.2.3
