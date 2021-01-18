@@ -4,7 +4,7 @@ class CountryLookupJob < ApplicationJob
   def perform(ip, visit_id)
     # get country details
     url = "https://ipapi.co/#{ip}/country/"
-    result = HTTParty.get(url).body.readpartial
+    result = HTTParty.get(url)
     country_code = result.body
     country_name = ISO3166::Country.new(country_code).name
 
