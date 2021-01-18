@@ -2,19 +2,14 @@ class CountryLookupJob < ApplicationJob
   queue_as :default
 
   def perform(ip, visit_id)
-    # initialize client
-    client = MaxMind::GeoIP2::Client.new(
-      account_id: ENV["GEOLITE_USER_ID"],
-      license_key: ENV["GEOLITE_LICENSE_KEY"],
-      host: "geolite.info"
-    )
-
-    # fetch country details from IP
-    record = client.country(ip)
-    country = record.country.name
+    # get country details
+    url = "https://ipapi.co/#{ip}/country/"
+    result = HTTParty.get(url).body.readpartial
+    country_code = result.body
+    country_name = ISO3166::Country.new(country_code).name
 
     # update link visit country
     visit = LinkVisit.find(visit_id)
-    visit.update(country: country)
+    visit.update(country: country_name)
   end
 end
