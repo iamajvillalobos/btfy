@@ -2,9 +2,19 @@ class CountryLookupJob < ApplicationJob
   queue_as :default
 
   def perform(ip, visit_id)
-    url = "http://api.ipstack.com/#{ip}?access_key=#{ENV['IPSTACK_API_KEY']}"
-    response = ::HTTParty.get(url)
+    # initialize client
+    client = MaxMind::GeoIP2::Client.new(
+      account_id: ENV["GEOLITE_USER_ID"],
+      license_key: ENV["GEOLITE_LICENSE_KEY"],
+      host: "geolite.info"
+    )
+
+    # fetch country details from IP
+    record = client.country(ip)
+    country = record.country.name
+
+    # update link visit country
     visit = LinkVisit.find(visit_id)
-    visit.update(country: response["country_name"])
+    visit.update(country: country)
   end
 end
