@@ -40,6 +40,18 @@ class User < ApplicationRecord
     username || email
   end
 
+  def export_links
+    attributes = %w(destination_url redirect_url)
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      links.each do |link|
+        csv << attributes.map { |attr| link.send(attr) }
+      end
+    end
+  end
+
   private
 
   def enable_trial

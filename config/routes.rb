@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     post :deactivate
   end
   resource :settings, only: [:show]
+  resource :export_links, only: [:new]
 
   # For removal
   resource :bio, only: [:show]
