@@ -7,6 +7,7 @@ gem "active_link_to", "~> 1.0"
 gem "active_storage_validations", "~> 0.9.0"
 gem "aws-sdk-s3", "~> 1.79", require: false
 gem "bootsnap", "1.4.7", require: false
+gem "cloudflare-rails", "~> 1.1"
 gem "cancancan", "~> 3.1"
 gem "chartkick", "3.3.2"
 gem "countries", "~> 3.0"
