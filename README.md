@@ -1,24 +1,20 @@
-# README
+## Btfy
+A simple, open-source, privacy-focused link management platform alternative to Bitly
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Features
+1. Privacy-focused approach to tracking clicks
+2. Branded links with custom domain support
+3. Simple dashboard for getting an overview of your link performances
+4. API for batch links creation
 
-Things you may want to cover:
+### Accounts
+1. Heroku (Hosting)
+2. IPstack (IP Geolocation API)
+3. Paddle (Billing)
+4. Skylight (Performance Tracking)
+5. Sentry (Bug Tracking)
+6. Postmark (Email)
 
-* Ruby version
+-- Optional --
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+7. AWS (S3 / Images)
