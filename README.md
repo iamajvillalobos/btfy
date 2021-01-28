@@ -9,7 +9,7 @@ A simple, open-source, privacy-focused link management platform alternative to B
 
 ### Accounts
 1. Heroku (Hosting)
-2. IPstack (IP Geolocation API)
+2. Maxmind Geolite Free (GeoIP)
 3. Paddle (Billing)
 4. Skylight (Performance Tracking)
 5. Sentry (Bug Tracking)
