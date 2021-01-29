@@ -1,0 +1,30 @@
+<div class="container mx-auto">
+  <%= render(PageHeaderWithButtonComponent.new(
+    pretitle: "overview",
+    title: "Coupons",
+    btn_link: new_admin_coupon_path,
+    btn_text: "create coupon"))
+  %>
+  <div class="card">
+    <div class="table-responsive mb-0">
+      <table class="table table-sm table-nowrap table-hover card-table">
+        <thead>
+            <tr>
+              <th>Code</th>
+              <th>Quote</th>
+              <th>Times Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @coupons.each do |coupon| %>
+              <tr>
+                <td><%= coupon.code %></td>
+                <td><%= coupon.uses %></td>
+                <td>xxx</td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
