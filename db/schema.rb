@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_065050) do
+ActiveRecord::Schema.define(version: 2021_01_29_021023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 2020_12_22_065050) do
     t.datetime "deactivated_at"
     t.bigint "user_id"
     t.index ["key"], name: "index_api_keys_on_key", unique: true
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.text "code", null: false
+    t.integer "uses", default: 1
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "custom_domains", force: :cascade do |t|
