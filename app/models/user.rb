@@ -55,7 +55,7 @@ class User < ApplicationRecord
   private
 
   def enable_trial
-    update(trial_ends_at: 30.days.from_now)
+    update(trial_ends_at: 2.weeks.from_now)
   end
 
   def send_welcome_email
