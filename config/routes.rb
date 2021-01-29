@@ -59,7 +59,11 @@ Rails.application.routes.draw do
       post :stop_impersonating, on: :collection
     end
     resources :link_visits, only: [:index]
-    resources :coupons, only: [:index, :new, :create, :destroy]
+    resources :coupons, only: [:index, :new] do
+      collection do
+        post :import
+      end
+    end
   end
   get "/admin", to: "admin/dashboards#show"
 

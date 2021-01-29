@@ -8,4 +8,12 @@ class Admin::CouponsController < ApplicationController
     @coupons = Coupon.all
   end
 
+  def import
+    CSV.foreach(params[:csv], headers: true) do |row|
+      Coupon.create!(code: row[0])
+    end
+
+    redirect_to admin_coupons_path
+  end
+
 end

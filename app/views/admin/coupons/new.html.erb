@@ -1,0 +1,16 @@
+<div class="container mx-auto">
+  <%= render(PageHeaderComponent.new(pretitle: "New", title: "Import Coupons")) %>
+
+  <div class="card">
+    <div class="card-body">
+      <%= form_with url: import_admin_coupons_path, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :csv, "Select CSV File" %>
+          <%= f.file_field :csv, class: "form-control" %>
+        </div>
+
+        <%= f.submit "Import", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
