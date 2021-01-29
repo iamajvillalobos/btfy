@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_021023) do
+ActiveRecord::Schema.define(version: 2021_01_29_052821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,9 +77,9 @@ ActiveRecord::Schema.define(version: 2021_01_29_021023) do
 
   create_table "coupons", force: :cascade do |t|
     t.text "code", null: false
-    t.integer "uses", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "activated", default: false
   end
 
   create_table "custom_domains", force: :cascade do |t|

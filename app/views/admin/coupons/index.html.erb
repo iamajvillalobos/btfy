@@ -11,16 +11,14 @@
         <thead>
             <tr>
               <th>Code</th>
-              <th>Quote</th>
-              <th>Times Used</th>
+              <th>Activated</th>
             </tr>
         </thead>
         <tbody>
             <% @coupons.each do |coupon| %>
               <tr>
                 <td><%= coupon.code %></td>
-                <td><%= coupon.uses %></td>
-                <td>xxx</td>
+                <td><%= coupon.activated? %></td>
               </tr>
             <% end %>
         </tbody>
