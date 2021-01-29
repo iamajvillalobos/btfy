@@ -14,7 +14,7 @@
       <% @link_visits.each do |visit| %>
         <tr>
           <td><%= visit&.link&.redirect_url %></td>
-          <td><%= visit.user.email %></td>
+          <td><%= visit&.user&.email %></td>
           <td><%= helpers.local_time(visit.created_at.stamp("Jan 01, 2020 5:30pm")) %></td>
         </tr>
       <% end %>
