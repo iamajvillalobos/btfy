@@ -1,7 +1,12 @@
 <div class="container">
   <div class="col-12">
     <%= render NotificationComponent.new() %>
-    <%= render PageHeaderComponent.new(pretitle: "billing", title: "Upgrade") %>
+    <%= render(PageHeaderWithButtonComponent.new(
+      pretitle: "billing",
+      title: "Upgrade",
+      btn_link: new_billing_redeem_path,
+      btn_text: "Redeem Coupon"))
+    %>
     <div class="row">
       <% @plans.each do |plan| %>
         <div class="col-12 col-md-4">

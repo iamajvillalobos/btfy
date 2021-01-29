@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <%= form_with url: billing_redeem_path do |f| %>
+      <%= render NotificationComponent.new() %>
+
+      <div class="form-group">
+        <%= f.label :code, "Enter coupon code" %>
+        <%= f.text_field :code, class: "form-control" %>
+      </div>
+
+      <%= f.submit "Redeem", class: "btn btn-primary" %>
+    <% end %>    
+  </div>
+</div>

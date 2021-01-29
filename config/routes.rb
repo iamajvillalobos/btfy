@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :update]
   resource :billing, only: [:show] do
     get :waiting
+
+    resource :redeem, only: [:new, :create]
   end
   resources :api_keys, only: [:index, :create, :edit, :update] do
     post :reactivate
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
   end
   resource :settings, only: [:show]
   resource :export_links, only: [:new]
+  resource :redeem, only: [:create]
 
   # For removal
   resource :bio, only: [:show]
