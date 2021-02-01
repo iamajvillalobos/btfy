@@ -11,7 +11,7 @@ class RedeemsController < ApplicationController
     coupon = Coupon.find_by(code: params[:code], activated: false)
 
     if coupon
-      lifetime_plan = Plan.find_by(period: "lifetime",)
+      lifetime_plan = Plan.find_by(period: "lifetime")
       Pay.subscription_model.create!(
         name: "default",
         owner: current_user,

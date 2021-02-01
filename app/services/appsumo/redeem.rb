@@ -8,7 +8,7 @@ module Appsumo
         coupon: coupon
       ).reduce(
         ActivateCoupon,
-        # MakeLifetimeAccount,
+        MakeLifetimeAccount,
       )
     end
   end
