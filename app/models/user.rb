@@ -56,6 +56,10 @@ class User < ApplicationRecord
     end
   end
 
+  def active_for_authentication?
+    super && !deactivated
+  end
+
   private
 
   def enable_trial
