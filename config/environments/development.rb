@@ -74,4 +74,5 @@ Rails.application.configure do
 
   # Allow to send emails in development and use postmark
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = false
 end
