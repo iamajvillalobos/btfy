@@ -5,6 +5,7 @@
         <th>User</th>
         <th>Links</th>
         <th>Custom Domains</th>
+        <th>Plan</th>
         <th></th>
       </tr>
     </thead>
@@ -14,6 +15,15 @@
           <td><%= user.email %></td>
           <td><%= user.links.count %></td>
           <td><%= user.custom_domains.count %></td>
+          <td>
+            <% if user.free_plan? %>
+              Free Trial
+            <% elsif user.lifetime_deal_plan? %>
+              Lifetime Deal
+            <% else %>
+              <%= user.subscription_plan.period.capitalize %>
+            <% end %>
+          </td>
           <td class="text-right">
             <%= link_to "Impersonate",
               impersonate_admin_user_path(user),
