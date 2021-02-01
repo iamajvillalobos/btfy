@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get "register", to: "users/registrations#new"
   end
 
+  resource :appsumo, only: [:show, :create]
+
   devise_for :admin_users, path: "admin_users"
 
   resource :dashboard, only: [:show]
