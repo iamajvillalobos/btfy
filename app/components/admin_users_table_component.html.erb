@@ -6,6 +6,7 @@
         <th>Links</th>
         <th>Custom Domains</th>
         <th>Plan</th>
+        <th>Status</th>
         <th></th>
       </tr>
     </thead>
@@ -24,11 +25,16 @@
               <%= user.subscription_plan.period.capitalize %>
             <% end %>
           </td>
+          <td><%= user.deactivated? ? "Deactivated" : "Active" %></td>
           <td class="text-right">
             <%= link_to "Impersonate",
               impersonate_admin_user_path(user),
               method: :post,
               class: "btn btn-sm btn-primary" %>
+            <%= link_to "Deactivate",
+              deactivated_user_path(user),
+              method: :delete,
+              class: "btn btn-sm btn-warning" %>
             <%= link_to "Delete",
               admin_user_path(user),
               method: :delete,

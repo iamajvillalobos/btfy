@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resource :settings, only: [:show]
   resource :export_links, only: [:new]
   resource :redeem, only: [:create]
+  resources :deactivated_users, only: [:destroy]
 
   # For removal
   resource :bio, only: [:show]
