@@ -28,6 +28,10 @@ class User < ApplicationRecord
     subscription.nil? || subscription.cancelled?
   end
 
+  def lifetime_deal_plan?
+    subscription && subscription.processor_id == "coupon"
+  end
+
   def subscription_plan
     Plan.find_by(paddle_plan_id: subscription.processor_plan)
   end
