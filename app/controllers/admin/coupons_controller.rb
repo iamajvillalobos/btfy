@@ -5,7 +5,7 @@ class Admin::CouponsController < ApplicationController
   skip_authorization_check
 
   def index
-    @coupons = Coupon.all
+    @pagy, @coupons = pagy(Coupon.order(activated: :desc))
   end
 
   def import
