@@ -5,6 +5,6 @@ class Admin::CustomDomainsController < ApplicationController
   skip_authorization_check
 
   def index
-    @custom_domains = CustomDomain.order(created_at: :desc)
+    @pagy, @custom_domains = pagy(CustomDomain.order(created_at: :desc))
   end
 end
