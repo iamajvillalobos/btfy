@@ -5,7 +5,8 @@ class Admin::UsersController < ApplicationController
   skip_authorization_check
 
   def index
-    @users = User.order(created_at: :desc)
+    users = User.order(created_at: :desc)
+    @pagy, @users = pagy(users)
   end
 
   def impersonate

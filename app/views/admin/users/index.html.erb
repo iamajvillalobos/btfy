@@ -7,14 +7,14 @@
       </h6>
       <div class="d-flex align-items-center">
         <h1 class="header-title">Users</h1>
-        <span class="badge badge-pill badge-soft-secondary ml-2"><%= @users.count %></span>
+        <span class="badge badge-pill badge-soft-secondary ml-2"><%= @pagy.count %></span>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <%= render AdminUsersTableComponent.new(@users) %>
+        <%= render AdminUsersTableComponent.new(@users, @pagy) %>
       </div>
     </div>
   </div>
