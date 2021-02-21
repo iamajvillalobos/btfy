@@ -11,7 +11,6 @@
       <table class="table table-sm table-nowrap card-table">
         <thead>
           <tr>
-            <th>Name</th>
             <th>Original URL</th>
             <th>Short Link</th>
             <th></th>
@@ -20,26 +19,25 @@
         <tbody class="list">
           <% @links.each do |link| %>
             <tr>
-              <td class="name"><%= link.name.truncate(25) %></td>
               <td><%= link.destination_url.truncate(50) %></td>
               <td>
-                <div class="d-flex align-items-center justify-content-between">
-                  <%= link_to link.redirect_url, link.redirect_url %>
-                  <%= render CopyButtonComponent.new(link.redirect_url) %>
-                </div>
+                <%= link_to link.redirect_url, link.redirect_url %>
               </td>
               <td>
-                <%= link_to "View", link, class: "btn btn-sm btn-white" %>
-                <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-white ml-2" %>
-                <%= link_to link_path(link),
-                  method: :delete,
-                  class: "btn btn-sm btn-white ml-2 text-danger",
-                  method: :delete,
-                  data: { confirm: "Deleting this link WILL NOT reset your clicks per month quota, are you sure?" } do %>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                  </svg>
-                <% end %>
+                <div class="d-flex">
+                  <%= render CopyButtonComponent.new(link.redirect_url) %>
+                  <%= link_to "View", link, class: "btn btn-sm btn-white ml-2" %>
+                  <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-white ml-2" %>
+                  <%= link_to link_path(link),
+                    method: :delete,
+                    class: "btn btn-sm btn-white ml-2 text-danger",
+                    method: :delete,
+                    data: { confirm: "Deleting this link WILL NOT reset your clicks per month quota, are you sure?" } do %>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                  <% end %>
+                </div>
               </td>
             </tr>
           <% end %>

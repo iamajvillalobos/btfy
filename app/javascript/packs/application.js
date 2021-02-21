@@ -1,6 +1,6 @@
 import "../controllers";
 import "../stylesheets/application.scss";
-import LocalTime from "local-time"
+import LocalTime from "local-time";
 require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
@@ -16,8 +16,6 @@ import ClipboardJS from "clipboard";
 
 document.addEventListener("turbolinks:load", function () {
   hljs.initHighlighting();
-
-  new ClipboardJS(".btn-clipboard-copy");
 });
 
-LocalTime.start()
+LocalTime.start();

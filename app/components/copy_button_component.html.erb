@@ -1,5 +1,18 @@
-<button class="btn btn-sm btn-clipboard-copy" data-clipboard-text=<%= @text %>>
-  <svg class="text-primary" height="16" width="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-  </svg>
-</button>
+<div data-controller="copy-button">
+  <button
+    class="btn btn-white btn-sm"
+    data-clipboard-text="<%= @text %>"
+    data-action="copy-button#copy"
+  >
+    <span class="clipboard-text bg-primary text-white rounded py-1 px-2 position-absolute mt-n1 ml-n6 d-none">Copied!</span>
+
+    <svg height="20" width="20" class="clipboard" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+    </svg>
+
+    <svg height="20" width="20" class="clipboard-check d-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+      <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+    </svg>
+  </button>
+</div>
