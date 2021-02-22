@@ -47,6 +47,17 @@
             <%= form.text_field :slug, class: "form-control" %>
           </div>
         </div>
+
+        <div class="col-12 col-lg-12">
+          <div class="form-group">
+            <%= form.label :tag_list, "Tags" %>
+            <small class="text-muted">(Optional)</small>
+            <small class="form-text text-muted">
+              Separate tags with comma
+            </small>
+            <%= form.text_area :tag_list, class: "form-control" %>
+          </div>
+        </div>
       </div>
       
       <div class="d-flex justify-content-between mt-3">

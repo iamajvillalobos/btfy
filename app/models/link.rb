@@ -9,6 +9,8 @@ class Link < ApplicationRecord
 
   has_many :visits, class_name: "LinkVisit", dependent: :destroy
 
+  acts_as_taggable_on :tags
+
   def redirect_url
     Rails.application.routes.url_helpers.redirect_url(
       host: host,
