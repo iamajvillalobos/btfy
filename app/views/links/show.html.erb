@@ -7,6 +7,7 @@
           <h1 class="header-title"><%= @link.redirect_url %></h1>
           <%= link_to "Edit", edit_link_path(@link), class: "btn btn-sm btn-white ml-3" %>
         </div>
+        <%= render TagListComponent.new(@link) %>
       </div>
       <div class="col-auto mt-3 mt-md-0">
         <%= render PeriodDropdownComponent.new(path: link_path,
