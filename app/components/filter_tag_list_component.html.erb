@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-header-title">Tags</h3>
+  </div>
+  <div class="card-body">
+    <p class="small text-muted">Click on any of the tags to filter links</p>
+    <div class="d-flex flex-wrap">
+      <% @links.tag_counts.each do |tag| %>
+        <span class="badge badge-soft-primary m-1"><%= tag.name %></span>
+      <% end %>
+    </div>
+  </div>
+</div>
