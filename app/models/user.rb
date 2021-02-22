@@ -17,8 +17,6 @@ class User < ApplicationRecord
   has_one :public_profile, dependent: :destroy
 
   after_create :enable_trial
-  after_create :send_welcome_email
-  after_create :notify_slack
   
   def account
     Account.find_or_create_by(user: self)
