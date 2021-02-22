@@ -74,3 +74,5 @@ group :test do
 end
 
 gem "maxmind-geoip2", "~> 0.5.0"
+
+gem "acts-as-taggable-on", "~> 7.0"
