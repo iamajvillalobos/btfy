@@ -72,7 +72,16 @@ Rails.application.configure do
   # Allow all hosts to access development
   config.hosts.clear
 
-  # Allow to send emails in development and use postmark
+  # Allow to send emails in development
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = false
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.smtp_settings = {
+    address: ENV["SES_SMTP_SERVERNAME"],
+    port: 587,
+    user_name: ENV["SES_SMTP_USERNAME"],
+    password: ENV["SES_SMTP_PASSWORD"],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end
