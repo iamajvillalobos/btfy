@@ -6,7 +6,9 @@
     <p class="small text-muted">Click on any of the tags to filter links</p>
     <div class="d-flex flex-wrap">
       <% @links.tag_counts.each do |tag| %>
-        <span class="badge badge-soft-primary m-1"><%= tag.name %></span>
+        <%= link_to links_path(tags: tag.name) do %>
+          <span class="badge badge-soft-primary m-1"><%= tag.name %></span>
+        <% end %>
       <% end %>
     </div>
   </div>

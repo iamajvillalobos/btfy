@@ -7,7 +7,11 @@ class LinksController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @links = current_user.links.order(created_at: :desc)
+    @links = if params[:tags].present?
+      current_user.links.tagged_with(params[:tags])
+    else
+      current_user.links.order(created_at: :desc)
+    end
   end
 
   def show
