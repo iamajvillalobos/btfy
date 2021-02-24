@@ -1,1 +1,4 @@
-<%== show %>
+<div class="d-flex flex-column">
+  <%== qrcode_url.to_s %>
+  <%= link_to "Download", download_qrcode_path(url: @url), target: "_blank", class: "btn btn-sm btn-light mt-2" %>
+</div>

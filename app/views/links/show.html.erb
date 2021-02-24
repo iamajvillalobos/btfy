@@ -1,13 +1,16 @@
 <div class="header">
   <div class="header-body">
     <div class="row align-items-center">
-      <div class="col">
-        <h6 class="header-pretitle"><%= @link.destination_url.truncate(100) %></h6>
-        <div class="d-flex align-items-center">
-          <h1 class="header-title"><%= @link.redirect_url %></h1>
-          <%= link_to "Edit", edit_link_path(@link), class: "btn btn-sm btn-white ml-3" %>
+      <div class="col d-flex align-items-center">
+        <%= render QrCodeComponent.new(@link.redirect_url) %>
+        <div class="ml-4">
+          <h6 class="header-pretitle"><%= @link.destination_url.truncate(100) %></h6>
+          <div class="d-flex align-items-center">
+            <h1 class="header-title"><%= @link.redirect_url %></h1>
+            <%= link_to "Edit", edit_link_path(@link), class: "btn btn-sm btn-white ml-3" %>
+          </div>
+          <%= render TagListComponent.new(@link) %>
         </div>
-        <%= render TagListComponent.new(@link) %>
       </div>
       <div class="col-auto mt-3 mt-md-0">
         <%= render PeriodDropdownComponent.new(path: link_path,

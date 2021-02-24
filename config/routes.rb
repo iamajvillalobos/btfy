@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   resource :redeem, only: [:create]
   resources :deactivated_users, only: [:destroy]
 
+  resource :qrcode, only: [] do
+    get :download
+  end
+
   # For removal
   resource :bio, only: [:show]
   resource :user_attributes, only: [:update]

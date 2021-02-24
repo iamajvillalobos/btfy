@@ -1,17 +1,9 @@
 class QrCodeComponent < ViewComponent::Base
-  def initialize(url, size = 5)
+  def initialize(url)
     @url = url
-    @size = size
   end
 
-  def show
-    qrcode = RQRCode::QRCode.new(@url)
-    qrcode.as_svg(
-      offset: 0,
-      color: "000",
-      shape_rendering: "crispEdges",
-      module_size: @size,
-      standalone: true
-    )
+  def qrcode_url
+    RQRCode::QRCode.new(@url).as_svg(module_size: 3)
   end
 end
