@@ -10,6 +10,14 @@
     <%= render FilterTagListComponent.new(@links) %>
   </div>
   <div class="col-10">
-    <%= render LinksTableComponent.new(@links) %>
+    <%= search_form_for @q, class: "mb-2 d-flex" do |f| %>
+      <%= f.search_field :destination_url_cont,
+        class: "form-control form-control-prepended search",
+        placeholder: "Search URL"
+      %>
+      <%= f.submit class: "btn btn-primary btn ml-3" %>
+    <% end %>
+    <hr />
+    <%= render LinksTableComponent.new(@links, @q) %>
   </div>
 </div>

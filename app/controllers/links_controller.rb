@@ -7,10 +7,11 @@ class LinksController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @q = current_user.links.ransack(params[:q])
     @links = if params[:tags].present?
-      current_user.links.tagged_with(params[:tags])
+      @q.result.tagged_with(params[:tags])
     else
-      current_user.links.order(created_at: :desc)
+      @q.result
     end
   end
 
