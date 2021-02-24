@@ -24,19 +24,22 @@
                 <%= link_to link.redirect_url, link.redirect_url %>
               </td>
               <td>
-                <div class="d-flex">
+                <div class="d-flex align-items-center justify-content-end">
                   <%= render CopyButtonComponent.new(link.redirect_url) %>
-                  <%= link_to "View", link, class: "btn btn-sm btn-white ml-2" %>
-                  <%= link_to "Edit", edit_link_path(link), class: "btn btn-sm btn-white ml-2" %>
-                  <%= link_to link_path(link),
-                    method: :delete,
-                    class: "btn btn-sm btn-white ml-2 text-danger",
-                    method: :delete,
-                    data: { confirm: "Deleting this link WILL NOT reset your clicks per month quota, are you sure?" } do %>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <svg height="20" width="20" class="text-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                     </svg>
-                  <% end %>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <%= link_to "View", link, class: "dropdown-item" %>
+                    <%= link_to "Edit", edit_link_path(link), class: "dropdown-item" %>
+                    <%= link_to "Delete", link_path(link),
+                      method: :delete,
+                      class: "dropdown-item",
+                      method: :delete,
+                      data: { confirm: "Deleting this link WILL NOT reset your clicks per month quota, are you sure?" } %>
+                  </div>
                 </div>
               </td>
             </tr>
