@@ -36,7 +36,7 @@ gem "postmark-rails", "~> 0.20.0"
 gem "pretender", "~> 0.3.4"
 gem "puma", "~> 5.0"
 gem "rack-attack", "~> 6.3"
-gem "rails", "~> 6.1"
+gem "rails", "~> 6.1.3.2"
 gem "ransack", "~> 2.4"
 gem "redis", "~> 4.0"
 gem "sass-rails", ">= 6"
@@ -78,3 +78,5 @@ end
 gem "rqrcode", "~> 1.2"
 
 gem "inline_svg", "~> 1.7"
+
+gem "turnout", "~> 2.5"
