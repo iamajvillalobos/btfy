@@ -7,7 +7,7 @@
         <div class="h2 mb-0">$</div>
       </div>
       <div class="col-auto">
-        <div class="display-2 mb-0"><%= @price %></div>
+        <div class="display-2 mb-0"><%= number_to_currency(@price, unit: "", precision: 0) %></div>
       </div>
     </div>
 

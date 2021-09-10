@@ -1,0 +1,23 @@
+<div class="table-responsive mb-0">
+  <div class="card-header">
+    <span class="card-header-title">All Plans</span>
+  </div>
+  <table class="table table-sm table-nowrap table-hover card-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @plans.each do |plan| %>
+        <tr>
+          <td><%= plan.period.capitalize %></td>
+          <td><%= plan.price %></td>
+          <td><%= link_to "Edit", edit_admin_plan_path(plan) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
