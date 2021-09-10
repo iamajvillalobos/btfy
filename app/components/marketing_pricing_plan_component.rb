@@ -7,9 +7,9 @@ class MarketingPricingPlanComponent < ViewComponent::Base
 
   def plan_savings
     case @period
-    when "month"
+    when "monthly"
       "Save 0%"
-    when "year"
+    when "yearly"
       "Save 50%"
     when "lifetime"
       "Best Value"

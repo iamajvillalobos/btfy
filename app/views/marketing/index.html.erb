@@ -48,21 +48,13 @@
       </p>
     </div>
     <div class="row">
-      <div class="col-12 col-md-4">
-        <%= render MarketingPricingPlanComponent.new(
-          title: "monthly", price: 15, period: "month")
-        %>
-      </div>
-      <div class="col-12 col-md-4">
-        <%= render MarketingPricingPlanComponent.new(
-          title: "yearly", price: 99, period: "year")
-        %>
-      </div>
-      <div class="col-12 col-md-4">
-        <%= render MarketingPricingPlanComponent.new(
-          title: "lifetime", price: 300, period: "lifetime")
-        %>
-      </div>
+      <% Plan.order_by_plan.each do |plan| %>
+        <div class="col-12 col-md-4">
+          <%= render MarketingPricingPlanComponent.new(
+            title: plan.period, price: plan.price, period: plan.period)
+          %>
+        </div>
+      <% end %>
     </div>
 
     <div class="row">

@@ -5,7 +5,7 @@ class BillingsController < ApplicationController
   layout "dashboard"
 
   def show
-    @plans = Plan.all
+    @plans = Plan.order_by_plan
   end
 
   def waiting
