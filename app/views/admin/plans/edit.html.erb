@@ -1,0 +1,28 @@
+<div class="container">
+
+  <%= render PageHeaderComponent.new(pretitle: "overview", title: "Edit Plan") %>
+
+  <div class="card">
+    <div class="card-body">
+      <%= form_with model: @plan, url: admin_plan_path, local: true do |f| %>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="form-group">
+              <%= f.label :period %>
+              <%= f.text_field :period, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="form-group">
+              <%= f.label :price %>
+              <%= f.text_field :price, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

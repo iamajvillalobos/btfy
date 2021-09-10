@@ -74,6 +74,7 @@ Rails.application.routes.draw do
         post :import
       end
     end
+    resources :plans, only: [:index, :show, :edit, :update]
   end
   get "/admin", to: "admin/dashboards#show"
 
